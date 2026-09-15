@@ -1,0 +1,93 @@
+/* site.css — the shell every screen page shares: colour, type, header, sections,
+   rows, the back link. Components that only lessons use live in lesson.css.
+   Source of truth: work/page-maker/. Never edit the copy in artifacts/assets/. */
+
+/* ─ palette ─────────────────────────────────────────────────────────────────
+   Light is defined on bare :root so a page is never colourless. Dark redefines
+   only the tokens, twice: once for the system setting, once for an explicit
+   [data-theme="dark"], so a toggle wins in both directions. */
+:root{
+  --page:#F1F4EE; --page-ink:#131C17; --page-muted:#5E6E64; --page-line:#CFD7CB; --page-soft:#E5EBE1;
+  --card:#FFFFFF; --ink:#131C17; --muted:#61715F; --line:#C7D1C4;
+  --surface:#FFFFFF; --surface-line:#C7D1C4;
+  --grass:#E9EFE6; --grass-2:#DCE6D7;
+  --cone:#C1451C; --pitch:#1B5340; --keeper:#EFBE12;
+  --yes:#177A46; --yes-soft:#E1F0E7;
+  --no:#C1352A; --no-soft:#F8E3E0;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --page:#0C1310; --page-ink:#E6ECE6; --page-muted:#93A297; --page-line:#222E27; --page-soft:#161F1A;
+  --surface:#131C17; --surface-line:#2A362E;
+}}
+:root[data-theme="dark"]{
+  --page:#0C1310; --page-ink:#E6ECE6; --page-muted:#93A297; --page-line:#222E27; --page-soft:#161F1A;
+  --surface:#131C17; --surface-line:#2A362E;
+}
+
+/* ─ base ────────────────────────────────────────────────────────────────── */
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--page-ink);
+  font-family:"Asap",system-ui,-apple-system,sans-serif;font-size:18px;line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Archivo",system-ui,sans-serif;margin:0;line-height:1.08;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+:focus-visible{outline:3px solid var(--cone);outline-offset:2px}
+
+/* ─ hero ────────────────────────────────────────────────────────────────── */
+header{padding:44px 0 34px}
+header .kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--cone);font-weight:600}
+header h1{font-size:clamp(38px,8vw,64px);font-weight:800;letter-spacing:-.03em;margin:12px 0 0}
+header .sub{margin-top:16px;color:var(--page-muted);max-width:52ch}
+
+/* ─ sections ────────────────────────────────────────────────────────────── */
+section{padding:46px 0;border-top:1px solid var(--page-line)}
+.sechead{display:flex;gap:16px;align-items:baseline;margin-bottom:8px}
+.sechead .n{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(32px,6vw,46px);
+  color:var(--cone);line-height:1;letter-spacing:-.02em}
+.sechead h2{font-size:clamp(28px,5.4vw,42px);font-weight:800;letter-spacing:-.025em}
+footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--page-muted);font-size:15px}
+
+/* ─ rows: a list of links, each with a label, a title, and a note ───────── */
+.list{display:flex;flex-direction:column;gap:10px}
+a.item{display:flex;gap:18px;align-items:baseline;text-decoration:none;color:inherit;
+  background:var(--surface);border:1px solid var(--surface-line);border-radius:6px;padding:18px 20px;
+  transition:border-color .12s, transform .12s}
+a.item:hover{border-color:var(--cone);transform:translateX(2px)}
+.item .n{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--cone);flex:0 0 auto;width:74px}
+.item .body{flex:1 1 auto;min-width:0}
+.item .t{font-family:"Archivo",sans-serif;font-weight:700;font-size:22px;letter-spacing:-.015em;
+  display:block;text-decoration:underline;text-decoration-color:var(--page-line);
+  text-underline-offset:3px}
+a.item:hover .t{text-decoration-color:var(--cone)}
+.item .d{font-size:15.5px;color:var(--page-muted);margin-top:4px;display:block}
+
+/* a row with no page behind it yet */
+.item.todo{display:flex;gap:18px;align-items:baseline;background:transparent;
+  border:1px dashed var(--page-line);border-radius:6px;padding:18px 20px;color:var(--page-muted)}
+.item.todo .n{color:var(--page-muted)}
+.item.todo .t{text-decoration:none}
+
+/* a numbered row — lessons, where the number is how you find one */
+.lesson .n{font-family:"Archivo",sans-serif;font-weight:800;font-size:22px;line-height:1;
+  width:34px;letter-spacing:-.02em;text-transform:none}
+
+.tag{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;border:1px solid var(--page-line);border-radius:2px;padding:3px 7px;
+  color:var(--page-muted);flex:0 0 auto;align-self:center}
+.tag.cards{border-color:var(--cone);color:var(--cone)}
+
+/* ─ back link ───────────────────────────────────────────────────────────────
+   Every page below the front page carries one at the top and one at the bottom,
+   so you never have to reach for the browser's own back button on a phone.
+   Quiet until hovered, and never printed. */
+.back{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--page-muted);text-decoration:none;
+  display:inline-flex;align-items:center;gap:7px;padding:5px 0;
+  border-bottom:1px solid transparent;transition:color .12s, border-color .12s}
+.back:hover{color:var(--cone);border-bottom-color:var(--cone)}
+.back-top{display:flex;justify-content:flex-end;padding-top:18px}
+.back-bottom{display:flex;justify-content:flex-end;padding:0 0 46px}
+@media print{ .back-top, .back-bottom, .noprint { display:none } }

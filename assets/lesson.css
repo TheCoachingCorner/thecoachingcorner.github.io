@@ -1,0 +1,100 @@
+/* lesson.css — the components a lesson page is built from. Load after site.css.
+   Source of truth: work/page-maker/. Never edit the copy in artifacts/assets/. */
+
+/* ─ lesson hero ─────────────────────────────────────────────────────────────
+   Lesson pages run a tighter header than the front page: the content starts
+   sooner because the reader arrived here on purpose. */
+header{padding:24px 0 16px}
+header h1{font-size:clamp(30px,6vw,44px)}
+header .kicker{font-size:11px}
+section{padding:20px 0}
+.sechead{margin-bottom:4px}
+.sechead h2{font-size:clamp(22px,4vw,30px)}
+
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px;
+  font-size:15.5px;color:var(--page-muted)}
+.meta b{color:var(--page-ink);font-weight:600}
+.chain{font-family:"Archivo",sans-serif;font-weight:800;letter-spacing:-.02em;
+  font-size:clamp(22px,5vw,34px);margin:22px 0 0;color:var(--page-ink);text-wrap:balance}
+.footnote{font-size:14px;color:var(--page-muted);margin-top:6px;font-style:italic}
+.lede-p{font-size:18.5px;margin-top:4px}
+.note{font-size:16px;color:var(--page-muted);margin-top:10px}
+.note a{color:var(--cone);text-decoration:none;border-bottom:1.5px solid var(--cone)}
+
+/* ─ figures ─────────────────────────────────────────────────────────────────
+   A figure is a card. Three kinds sit in it: a pitch diagram sized off the
+   viewport HEIGHT so it fits one screen, a wide diagram sized off width, and a
+   drawing that fills the card edge to edge. */
+figure{margin:26px 0 0;background:var(--card);border:1px solid var(--line);border-radius:8px;
+  padding:24px 20px 18px;color:var(--ink)}
+figure svg{display:block;width:100%;height:auto}
+figcaption{margin-top:16px;text-align:center;font-family:"Archivo",sans-serif;font-weight:700;
+  font-size:clamp(20px,4.4vw,27px);letter-spacing:-.015em;color:var(--ink);text-wrap:balance}
+figcaption span{display:block;font-family:"Asap",sans-serif;font-weight:400;font-size:16px;
+  color:var(--muted);margin-top:7px;letter-spacing:0}
+
+/* Height-driven, so the whole field lands on one screen. dvh, not vh: Safari
+   measures vh against the LARGE viewport and ignores its own toolbars, which
+   cuts about 140px off the bottom on an iPad. */
+.pitch-fig{padding:14px 16px 10px;margin-top:14px}
+.pitch-fig svg{height:min(70vh,780px);height:min(70dvh,780px);
+  width:auto;max-width:100%;margin:0 auto;display:block}
+/* Short screens — iPad landscape, small windows. The header gives some back too,
+   not just the field, or it runs off the bottom. */
+@media (max-height:880px){
+  .pitch-fig svg{height:min(58vh,470px);height:min(58dvh,470px)}
+  header{padding:16px 0 12px}
+  header h1{font-size:clamp(26px,5vw,34px)}
+  .meta{margin-top:8px;font-size:13.5px}
+}
+.wide-fig svg{width:100%;height:auto;max-height:none}
+.photo-fig{padding:0;overflow:hidden}
+.photo-fig img{display:block;width:100%;height:auto}
+
+/* a bad/good pair inside one figure */
+figure .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:560px){figure .pair{grid-template-columns:1fr}}
+figure .pane{display:flex;flex-direction:column;gap:10px}
+.verdict{font-family:"Archivo",sans-serif;font-weight:700;font-size:17px;display:flex;
+  align-items:center;gap:8px;justify-content:center}
+.verdict.y{color:var(--yes)} .verdict.n{color:var(--no)}
+
+/* ─ what we tell them ───────────────────────────────────────────────────────
+   .say is a cue: who it is for, the words said out loud, and why. .say.big is
+   the one that matters most in its section. */
+h3{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--page-muted);margin:34px 0 16px}
+.says{display:flex;flex-direction:column;gap:14px}
+.say{background:var(--page-soft);border-left:4px solid var(--pitch);border-radius:0 4px 4px 0;padding:15px 18px}
+.say .who{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--pitch);display:block;margin-bottom:5px}
+.say .quote{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(19px,3.6vw,23px);
+  letter-spacing:-.015em;line-height:1.25}
+.say .after{font-size:16px;color:var(--page-muted);margin-top:7px}
+.say.big{border-left-color:var(--cone);background:var(--page-soft)}
+.say.big .quote{font-size:clamp(22px,4.6vw,29px)}
+.say.big .who{color:var(--cone)}
+
+/* ─ position cards: the grid that links out to the printouts ─────────────── */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-top:18px}
+.card-l{display:flex;align-items:center;gap:13px;text-decoration:none;color:inherit;
+  background:var(--page-soft);border:1px solid var(--page-line);border-radius:5px;padding:13px 15px}
+.card-l:hover{border-color:var(--cone)}
+.card-l .badge2{font-family:"Archivo",sans-serif;font-weight:800;font-size:15px;
+  color:#fff;background:var(--pitch);width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.card-l .badge2.gk{background:var(--keeper);color:var(--ink)}
+.card-l .badge2.fw{background:var(--cone)}
+.card-l .t2{font-family:"Archivo",sans-serif;font-weight:700;font-size:16px}
+.card-l .s2{display:block;font-family:"Asap",sans-serif;font-weight:400;
+  font-size:13.5px;color:var(--page-muted)}
+@media print{ .card-l{break-inside:avoid} .cards{gap:8px} }
+
+/* hover ring on a clickable position in a diagram */
+figure a .pos{transition:none}
+figure a:hover .ring, figure a:focus-visible .ring{opacity:1}
+.ring{opacity:0;fill:none;stroke:var(--cone);stroke-width:3.5}
+
+/* a section that is not written yet */
+.todo{border:2px dashed var(--page-line);border-radius:6px;padding:18px 20px;
+  margin-top:26px;color:var(--page-muted);font-size:15.5px}

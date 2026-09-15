@@ -3,65 +3,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="assets/site.css">
 <style>
-:root{
-  --page:#F1F4EE; --page-ink:#131C17; --page-muted:#5E6E64; --page-line:#CFD7CB; --page-soft:#E5EBE1;
-  --card:#FFFFFF; --line:#C7D1C4; --cone:#C1451C; --pitch:#1B5340;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --page:#0C1310; --page-ink:#E6ECE6; --page-muted:#93A297; --page-line:#222E27; --page-soft:#161F1A;
-  --card:#131C17; --line:#2A362E;
-}}
-:root[data-theme="dark"]{
-  --page:#0C1310; --page-ink:#E6ECE6; --page-muted:#93A297; --page-line:#222E27; --page-soft:#161F1A;
-  --card:#131C17; --line:#2A362E;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--page);color:var(--page-ink);
-  font-family:"Asap",system-ui,-apple-system,sans-serif;font-size:18px;line-height:1.6;
-  -webkit-font-smoothing:antialiased}
-h1,h2{font-family:"Archivo",system-ui,sans-serif;margin:0;line-height:1.08;text-wrap:balance}
-p{margin:0}
-.wrap{max-width:880px;margin:0 auto;padding:0 22px}
-
+/* front page: a bigger hero, and section labels that stay out of the way */
 header{padding:52px 0 32px}
-header .kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--cone);font-weight:600}
-header h1{font-size:clamp(40px,9vw,70px);font-weight:800;letter-spacing:-.03em;margin:12px 0 0}
-header .sub{margin-top:16px;color:var(--page-muted);max-width:50ch}
-
-section{padding:32px 0;border-top:1px solid var(--page-line)}
+header h1{font-size:clamp(40px,9vw,70px)}
+header .sub{max-width:50ch}
+section{padding:32px 0}
 h2{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.16em;
   text-transform:uppercase;color:var(--page-muted);margin:0 0 18px}
-.list{display:flex;flex-direction:column;gap:10px}
-
-a.item{display:flex;gap:18px;align-items:baseline;text-decoration:none;color:inherit;
-  background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px 20px;
-  transition:border-color .12s, transform .12s}
-a.item:hover{border-color:var(--cone);transform:translateX(2px)}
-.n{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--cone);flex:0 0 auto;width:74px}
-.body{flex:1 1 auto;min-width:0}
-.t{font-family:"Archivo",sans-serif;font-weight:700;font-size:22px;letter-spacing:-.015em;
-  display:block;text-decoration:underline;text-decoration-color:var(--page-line);
-  text-underline-offset:3px}
-a.item:hover .t{text-decoration-color:var(--cone)}
-.d{font-size:15.5px;color:var(--page-muted);margin-top:4px;display:block}
-
-/* lesson rows: number badge, dashed row for a lesson with no page yet */
-.lesson .n{font-family:"Archivo",sans-serif;font-weight:800;font-size:22px;line-height:1;
-  width:34px;letter-spacing:-.02em;text-transform:none}
-.item.todo{display:flex;gap:18px;align-items:baseline;background:transparent;
-  border:1px dashed var(--page-line);border-radius:6px;padding:18px 20px;color:var(--page-muted)}
-.item.todo .n{color:var(--page-muted)}
-.item.todo .t{text-decoration:none}
-.tag{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.13em;
-  text-transform:uppercase;border:1px solid var(--page-line);border-radius:2px;padding:3px 7px;
-  color:var(--page-muted);flex:0 0 auto;align-self:center}
-.tag.cards{border-color:var(--cone);color:var(--cone)}
-
-footer{padding:28px 0 60px;border-top:1px solid var(--page-line);color:var(--page-muted);
-  font-size:14.5px}
+footer{padding:28px 0 60px;font-size:14.5px}
 </style>
 
 <header><div class="wrap">
@@ -180,10 +131,46 @@ footer{padding:28px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
 <section><div class="wrap">
   <h2>Game day</h2>
   <div class="list">
-    <a class="item" href="rotations/coach-cheatsheet.html">
-      <span class="n">Sideline</span>
-      <span class="body"><span class="t">Coach Cheatsheet</span>
-        <span class="d">Eight rotations, even playing time whether you get through four or all eight.</span></span>
+    <div class="item todo">
+      <span class="n">Cheatsheet</span>
+      <span class="body"><span class="t">Player Rotation</span>
+        <span class="d">Even playing time whether you get through four quarters.</span></span>
+      <span class="tag">stub</span>
+    </div>
+    <a class="item" href="lessons/01-position-fundamentals/position-goalie.html">
+      <span class="n">Printout</span>
+      <span class="body"><span class="t">Goalie</span>
+        <span class="d">Hug the ball<br>Then start our attack</span></span>
+    </a>
+    <a class="item" href="lessons/01-position-fundamentals/position-defender-left.html">
+      <span class="n">Printout</span>
+      <span class="body"><span class="t">Left Defender</span>
+        <span class="d">Closest pressures<br>Other backs up</span></span>
+    </a>
+    <a class="item" href="lessons/01-position-fundamentals/position-defender-right.html">
+      <span class="n">Printout</span>
+      <span class="body"><span class="t">Right Defender</span>
+        <span class="d">Closest pressures<br>Other backs up</span></span>
+    </a>
+    <a class="item" href="lessons/01-position-fundamentals/position-mid-left.html">
+      <span class="n">Printout</span>
+      <span class="body"><span class="t">Left Mid</span>
+        <span class="d">Stay behind the ball</span></span>
+    </a>
+    <a class="item" href="lessons/01-position-fundamentals/position-mid-center.html">
+      <span class="n">Printout</span>
+      <span class="body"><span class="t">Center Mid</span>
+        <span class="d">Stay behind the ball</span></span>
+    </a>
+    <a class="item" href="lessons/01-position-fundamentals/position-mid-right.html">
+      <span class="n">Printout</span>
+      <span class="body"><span class="t">Right Mid</span>
+        <span class="d">Stay behind the ball</span></span>
+    </a>
+    <a class="item" href="lessons/01-position-fundamentals/position-forward.html">
+      <span class="n">Printout</span>
+      <span class="body"><span class="t">Forward</span>
+        <span class="d">Be someone we can pass up to</span></span>
     </a>
   </div>
 </div></section>

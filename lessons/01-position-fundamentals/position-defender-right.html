@@ -117,8 +117,16 @@ svg { display:block; overflow:visible; }
   font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace; font-size:7.4pt;
   font-weight:600; letter-spacing:.11em; text-transform:uppercase;
   display:flex; justify-content:space-between; }
+
+@media screen {
+  a.back { display:block; width:7.66in; margin:0 auto -10px; padding:10px 0;
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; font-weight:600;
+    letter-spacing:.13em; text-transform:uppercase; color:#8A968C; text-decoration:none; }
+  a.back:hover { color:#C1451C; }
+}
+@media print { a.back { display:none; } }
 </style></head>
-<body><div class="sheet">
+<body><a class="back" href="../../">&larr; Coaching Corner</a><div class="sheet">
 <div class="hd bare"><h1>Right Defender</h1></div>
 <div class="block"><h2>Closest pressures, the other backs up.</h2><div class="art"><svg viewBox="0 0 470 300" role="img" aria-label="Good: one defender steps out at the opponent while the second hangs back in the centre, behind them. Bad: both defenders level with each other, and the opponent runs straight through the gap between them."><defs><marker id="ah" viewBox="0 0 12 12" refX="6.2" refY="6" markerWidth="4.4" markerHeight="4.4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="#000"/></marker></defs>
 <path class="split" d="M235 62 L235 268"/>

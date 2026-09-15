@@ -1,0 +1,52 @@
+/* Practice-document print stylesheet — the canonical copy.
+   ---------------------------------------------------------------------------
+   Practice artifacts are MULTI-page documents, unlike the position printouts,
+   which are one page each. The rules that matter here are about pagination:
+   keeping drawings whole, keeping headings attached to what they head, and
+   making sure nothing that is screen furniture reaches the paper.
+
+   Paste this into the <style> of each practice artifact. If you change it,
+   change it here first — artifacts are self-contained on purpose, so this file
+   is the only thing keeping them from drifting apart.
+   --------------------------------------------------------------------------- */
+
+@media print{
+  @page{size:Letter portrait;margin:.55in .6in}
+
+  /* Force the light palette. Chrome still reports the OS dark preference when
+     printing, which otherwise produces a black page and an empty toner cart. */
+  :root{--page:#fff;--page-ink:#131C17;--page-muted:#5E6E64;--page-line:#CFD7CB;--page-soft:#E5EBE1}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  html,body{background:#fff;font-size:11pt;line-height:1.5}
+  .wrap{max-width:none;padding:0}
+  header{padding:0 0 18px}
+  header h1{font-size:30pt}
+  a{text-decoration:none;color:inherit}
+
+  /* A drawing is never cut in half. If it doesn't fit in what's left of the
+     page it moves to the next one whole. This has to sit on the figure —
+     putting it on the section asks for something impossible, so it's ignored. */
+  figure,.ex,.say,.goal,.cues,.rule,.clock,table,.sechead{break-inside:avoid;page-break-inside:avoid}
+  figure{margin:14px 0}
+  /* 6in leaves room for the caption under the tallest drawing, so the figure and
+     its caption still fit one page together. At 7.5in the pair overflowed, the
+     browser gave up on break-inside, and captions stranded at the top of the
+     next page. */
+  figure svg{max-height:6in;height:auto}
+  figcaption{break-inside:avoid;page-break-inside:avoid;
+             break-before:avoid;page-break-before:avoid}
+
+  /* clamp() display type resolves off the page width in print and lands far
+     bigger than the column, which wraps a cue mid-phrase. Any display-size
+     component needs an explicit print size — see header h1 above. */
+  .chain{font-size:19pt;line-height:1.15}
+  .chain,.vocab,.trio div{break-inside:avoid;page-break-inside:avoid}
+
+  /* A heading never strands at the foot of a page. */
+  h1,h2,h3,h4,.sechead{break-after:avoid;page-break-after:avoid}
+  p,li{orphans:3;widows:3}
+
+  /* Nothing that isn't content. */
+  nav,footer,.noprint{display:none}
+}
