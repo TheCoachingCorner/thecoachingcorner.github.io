@@ -39,7 +39,12 @@ section{padding:20px 0}
   padding-top:11px;border-top:1px solid var(--page-line)}
 .lede-p{font-size:18.5px;margin-top:4px}
 .note{font-size:16px;color:var(--page-muted);margin-top:10px}
-.note a{color:var(--cone);text-decoration:none;border-bottom:1.5px solid var(--cone)}
+/* Links inside running text carry the accent and an underline. Without this they
+   fall back to the browser default, which is unreadable on a dark page. */
+.note a, .meta a, .ex a, .lede-p a, .say .after a{color:var(--cone);text-decoration:none;
+  border-bottom:1.5px solid var(--cone)}
+.note a:hover, .meta a:hover, .ex a:hover, .lede-p a:hover, .say .after a:hover{
+  border-bottom-color:transparent}
 
 /* ─ figures ─────────────────────────────────────────────────────────────────
    A figure is a card. Three kinds sit in it: a pitch diagram sized off the
