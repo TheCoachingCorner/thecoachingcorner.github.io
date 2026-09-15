@@ -19,6 +19,24 @@ section{padding:20px 0}
 .chain{font-family:"Archivo",sans-serif;font-weight:800;letter-spacing:-.02em;
   font-size:clamp(22px,5vw,34px);margin:22px 0 0;color:var(--page-ink);text-wrap:balance}
 .footnote{font-size:14px;color:var(--page-muted);margin-top:6px;font-style:italic}
+
+/* ─ callout ─────────────────────────────────────────────────────────────────
+   One statement, set apart and given room: a small label saying what kind of
+   thing it is, the statement itself at display size, and an optional aside
+   underneath. Use it for the one thing a reader should leave with. */
+.callout{margin:24px 0 0;background:var(--page-soft);border-left:5px solid var(--cone);
+  border-radius:0 7px 7px 0;padding:20px 24px 21px}
+.callout .label{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--cone)}
+.callout .lead{font-family:"Archivo",sans-serif;font-weight:800;letter-spacing:-.025em;
+  font-size:clamp(22px,4.3vw,31px);line-height:1.18;margin-top:9px;
+  color:var(--page-ink)}
+/* the separators carry the accent so the beats read as three things, not one line */
+.callout .lead .sep{color:var(--cone);font-weight:700;padding:0 .12em}
+/* a beat never breaks across lines — if it has to wrap it wraps at an arrow */
+.callout .lead .step{white-space:nowrap}
+.callout .aside{font-size:14.5px;color:var(--page-muted);margin-top:11px;font-style:italic;
+  padding-top:11px;border-top:1px solid var(--page-line)}
 .lede-p{font-size:18.5px;margin-top:4px}
 .note{font-size:16px;color:var(--page-muted);margin-top:10px}
 .note a{color:var(--cone);text-decoration:none;border-bottom:1.5px solid var(--cone)}
@@ -68,14 +86,14 @@ h3{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-s
   text-transform:uppercase;color:var(--page-muted);margin:34px 0 16px}
 .says{display:flex;flex-direction:column;gap:14px}
 .say{background:var(--page-soft);border-left:4px solid var(--pitch);border-radius:0 4px 4px 0;padding:15px 18px}
-.say .who{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.13em;
+.say .title{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:700;letter-spacing:.13em;
   text-transform:uppercase;color:var(--pitch);display:block;margin-bottom:5px}
 .say .quote{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(19px,3.6vw,23px);
   letter-spacing:-.015em;line-height:1.25}
 .say .after{font-size:16px;color:var(--page-muted);margin-top:7px}
 .say.big{border-left-color:var(--cone);background:var(--page-soft)}
 .say.big .quote{font-size:clamp(22px,4.6vw,29px)}
-.say.big .who{color:var(--cone)}
+.say.big .title{color:var(--cone)}
 
 /* ─ card grid: a set of links out, each with a badge and a line ──────────── */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-top:18px}

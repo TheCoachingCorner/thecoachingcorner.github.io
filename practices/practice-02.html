@@ -1,7 +1,7 @@
 <title>Welcome to Defense</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="../assets/site.css">
 <style>
 :root{
@@ -73,14 +73,14 @@ h3{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-s
   text-transform:uppercase;color:var(--page-muted);margin:34px 0 16px}
 .says{display:flex;flex-direction:column;gap:14px}
 .say{background:var(--page-soft);border-left:4px solid var(--pitch);border-radius:0 4px 4px 0;padding:15px 18px}
-.say .who{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.13em;
+.say .title{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:700;letter-spacing:.13em;
   text-transform:uppercase;color:var(--pitch);display:block;margin-bottom:5px}
 .say .quote{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(19px,3.6vw,23px);
   letter-spacing:-.015em;line-height:1.25}
 .say .after{font-size:16px;color:var(--page-muted);margin-top:7px}
 .say.big{border-left-color:var(--cone);background:var(--page-soft)}
 .say.big .quote{font-size:clamp(22px,4.6vw,29px)}
-.say.big .who{color:var(--cone)}
+.say.big .title{color:var(--cone)}
 
 .trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
 .trio div{background:var(--page-soft);border-radius:4px;padding:13px 15px}
@@ -200,9 +200,9 @@ footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
     <figcaption>Get there fast, then stop short.<span>We need space so they don’t blow by us.</span></figcaption>
   </figure>
     <div class="says" style="margin-top:14px">
-      <div class="say big"><span class="who">The point</span><span class="quote">“Fast to get there. But stop short.”</span>
+      <div class="say big"><span class="title">The point</span><span class="quote">“Fast to get there. But stop short.”</span>
         <p class="after">If we stop short, that gives us space and time to keep up and force a mistake.</p></div>
-    <div class="say big"><span class="who">The gap</span><span class="quote">“Stay one big step away.”</span>
+    <div class="say big"><span class="title">The gap</span><span class="quote">“Stay one big step away.”</span>
         <p class="after">Close enough to touch them — but don’t. Too far and they go by you; too close and one touch beats you.</p></div>
     </div>
   </div>
@@ -219,13 +219,13 @@ footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
   </figure>
 
     <div class="says" style="margin-top:20px">
-      <div class="say"><span class="who">The feet</span><span class="quote">“Scooter stance.”</span>
+      <div class="say"><span class="title">The feet</span><span class="quote">“Scooter stance.”</span>
         <p class="after">One foot in front, one behind. Show them only one shoulder.</p></div>
-      <div class="say big"><span class="who">Where to look</span><span class="quote">“Watch their belly button, not the ball.”</span>
+      <div class="say big"><span class="title">Where to look</span><span class="quote">“Watch their belly button, not the ball.”</span>
         <p class="after">Feet can trick you. Their hips can’t lie.</p></div>
-      <div class="say"><span class="who">Which way</span><span class="quote">“Send them to the sideline.”</span>
+      <div class="say"><span class="title">Which way</span><span class="quote">“Send them to the sideline.”</span>
         <p class="after">Stand so one way is easy and one way is hard, and the easy way is always away from the middle. Same thing their position card says: <i>keep the ball away from the center.</i></p></div>
-      <div class="say"><span class="who">Careful</span><span class="quote">“You turn them by standing in the way. Not by running through them.”</span></div>
+      <div class="say"><span class="title">Careful</span><span class="quote">“You turn them by standing in the way. Not by running through them.”</span></div>
     </div>
     <p class="note">If they stop, turn, or go backwards — <b>that’s the whole job done.</b> You already won.</p>
   </div>
@@ -241,11 +241,11 @@ footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
     <figcaption>When they lose it, take it and go.<span>You ran down together and the ball came loose. Don’t kick it away — dribble out with it.</span></figcaption>
   </figure>
     <div class="says" style="margin-top:14px">
-      <div class="say big"><span class="who">The whole idea</span><span class="quote">“Don’t kick it away. Dribble it away.”</span>
+      <div class="say big"><span class="title">The whole idea</span><span class="quote">“Don’t kick it away. Dribble it away.”</span>
         <p class="after">This is the one that kills stabbing, and it does it without a single “don’t”: <b>you cannot dribble away from a stab.</b> A poke sends the ball somewhere random. To come away dribbling you have to arrive under control — which only happens if you waited until the ball was actually loose.</p></div>
-      <div class="say big"><span class="who">If it never comes</span><span class="quote">“No ball? You still won.”</span>
+      <div class="say big"><span class="title">If it never comes</span><span class="quote">“No ball? You still won.”</span>
         <p class="after">This one is a bonus, not the job. If you ran with them the whole way and they never got past you, that is a complete piece of defending — whoever ends up with the ball.</p></div>
-      <div class="say"><span class="who">When it does come</span><span class="quote">“Wait for them to lose it. Then it’s yours.”</span>
+      <div class="say"><span class="title">When it does come</span><span class="quote">“Wait for them to lose it. Then it’s yours.”</span>
         <p class="after">Their position card says the same thing: <i>control the ball — kicking away is a pass to the other team.</i> <b>If you reach, they go past you.</b></p></div>
     </div>
   </div>
@@ -253,8 +253,8 @@ footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
   <h3>Midfield — stay behind the ball</h3>
   <p>Imagine a line drawn across the field through the ball. Everyone except the forward wants to be on <b>our</b> side of that line.</p>
   <div class="says" style="margin-top:14px">
-    <div class="say big"><span class="who">Getting back</span><span class="quote">“Beat the ball home.”</span></div>
-    <div class="say"><span class="who">How hard to run</span><span class="quote">“Run to where the ball is going, not where it is.”</span>
+    <div class="say big"><span class="title">Getting back</span><span class="quote">“Beat the ball home.”</span></div>
+    <div class="say"><span class="title">How hard to run</span><span class="quote">“Run to where the ball is going, not where it is.”</span>
       <p class="after">If you’ll get there either way — walk. If you won’t — run.</p></div>
   </div>
 
@@ -326,9 +326,9 @@ footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
   <h3>What we tell the players</h3>
   <p>The two defenders are <b>partners</b>. This section is about <b>which one goes</b> — what that one does when they get there is <i>pressure → turn them → run together</i>, from section 1.</p>
   <div class="says" style="margin-top:14px">
-    <div class="say big"><span class="who">The cue</span><span class="quote">“ONE PRESSURES — ONE BACKS UP.”</span></div>
-    <div class="say"><span class="who">Pressure — closest to the ball</span><span class="quote">“Go slow them down.”</span></div>
-    <div class="say"><span class="who">Backup — the other one</span><span class="quote">“Get behind your partner and protect the goal.”</span>
+    <div class="say big"><span class="title">The cue</span><span class="quote">“ONE PRESSURES — ONE BACKS UP.”</span></div>
+    <div class="say"><span class="title">Pressure — closest to the ball</span><span class="quote">“Go slow them down.”</span></div>
+    <div class="say"><span class="title">Backup — the other one</span><span class="quote">“Get behind your partner and protect the goal.”</span>
       <p class="after">If they get past your partner, you’re there.</p></div>
   </div>
 
@@ -373,12 +373,12 @@ footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
   <h3>What we tell the players</h3>
   <p>The best time to win the ball back is <b>right away</b> — most players slow down as soon as they get it.</p>
   <div class="says" style="margin-top:14px">
-    <div class="say big"><span class="who">First</span><span class="quote">“Win it back in three seconds.”</span></div>
-    <div class="say"><span class="who">If you didn’t</span><span class="quote">“Run to where they’re going, not where they are.”</span>
+    <div class="say big"><span class="title">First</span><span class="quote">“Win it back in three seconds.”</span></div>
+    <div class="say"><span class="title">If you didn’t</span><span class="quote">“Run to where they’re going, not where they are.”</span>
       <p class="after">Cut the corner. Run alongside the ball, not behind the player.</p></div>
-    <div class="say"><span class="who">Getting past them</span><span class="quote">“Get your shoulder in front of theirs.”</span>
+    <div class="say"><span class="title">Getting past them</span><span class="quote">“Get your shoulder in front of theirs.”</span>
       <p class="after">Swim your arm through and take the space — now they’re running behind you instead of past you.</p></div>
-    <div class="say big"><span class="who">The line refs call</span><span class="quote">“Shoulder to shoulder is soccer. Hands are a foul.”</span>
+    <div class="say big"><span class="title">The line refs call</span><span class="quote">“Shoulder to shoulder is soccer. Hands are a foul.”</span>
       <p class="after">Shoulder next to shoulder is legal. An arm across their body, a pull, or a push in the back is not.</p></div>
   </div>
   <p class="note"><b>Don’t</b> chase someone for 40 yards when you’re never going to catch them. Turn around and get back to your position instead.</p>
@@ -414,10 +414,10 @@ footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
   <div class="sechead"><h2>Scrimmage</h2></div>
   <p>Finish with as much <b>7v7-style soccer</b> as our numbers allow. Don’t constantly stop play. Three things to watch for:</p>
   <div class="says" style="margin-top:16px">
-    <div class="say"><span class="who">A defender stabs and gets beaten</span><span class="quote">Freeze it. Replay it.</span>
+    <div class="say"><span class="title">A defender stabs and gets beaten</span><span class="quote">Freeze it. Replay it.</span>
       <p class="after">Back them up five steps and run it again with tiny steps. Takes 20 seconds.</p></div>
-    <div class="say"><span class="who">Both defenders go to the ball</span><span class="quote">“Who’s backing up?”</span></div>
-    <div class="say"><span class="who">We lose the ball</span><span class="quote">“One — two — three!”</span>
+    <div class="say"><span class="title">Both defenders go to the ball</span><span class="quote">“Who’s backing up?”</span></div>
+    <div class="say"><span class="title">We lose the ball</span><span class="quote">“One — two — three!”</span>
       <p class="after">Count out loud so they hear the window to win it back.</p></div>
   </div>
   <p class="note"><b>Praise the backup defender who never touched the ball.</b> Loudly, by name. That job is invisible and it dies without it.</p>

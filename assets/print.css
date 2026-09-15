@@ -41,7 +41,8 @@
      bigger than the column, which wraps a cue mid-phrase. Any display-size
      component needs an explicit print size — see header h1 above. */
   .chain{font-size:19pt;line-height:1.15}
-  .chain,.vocab,.trio div{break-inside:avoid;page-break-inside:avoid}
+  .callout .lead{font-size:19pt;line-height:1.15}
+  .chain,.callout,.vocab,.trio div{break-inside:avoid;page-break-inside:avoid}
 
   /* A heading never strands at the foot of a page. */
   h1,h2,h3,h4,.sechead{break-after:avoid;page-break-after:avoid}

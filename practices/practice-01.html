@@ -1,7 +1,7 @@
 <title>Welcome to 7v7</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="../assets/site.css">
 <style>
 :root{
@@ -73,14 +73,14 @@ h3{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-s
   text-transform:uppercase;color:var(--page-muted);margin:34px 0 16px}
 .says{display:flex;flex-direction:column;gap:14px}
 .say{background:var(--page-soft);border-left:4px solid var(--pitch);border-radius:0 4px 4px 0;padding:15px 18px}
-.say .who{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.13em;
+.say .title{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:700;letter-spacing:.13em;
   text-transform:uppercase;color:var(--pitch);display:block;margin-bottom:5px}
 .say .quote{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(19px,3.6vw,23px);
   letter-spacing:-.015em;line-height:1.25}
 .say .after{font-size:16px;color:var(--page-muted);margin-top:7px}
 .say.big{border-left-color:var(--cone);background:var(--page-soft)}
 .say.big .quote{font-size:clamp(22px,4.6vw,29px)}
-.say.big .who{color:var(--cone)}
+.say.big .title{color:var(--cone)}
 
 .trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
 .trio div{background:var(--page-soft);border-radius:4px;padding:13px 15px}
@@ -203,17 +203,17 @@ footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
 
   <h3>What we tell the players</h3>
   <div class="says">
-    <div class="say"><span class="who">Forward</span><span class="quote">“Be someone we can pass to.”</span></div>
-    <div class="say"><span class="who">Midfield</span><span class="quote">“Move the ball up the field.”</span>
+    <div class="say"><span class="title">Forward</span><span class="quote">“Be someone we can pass to.”</span></div>
+    <div class="say"><span class="title">Midfield</span><span class="quote">“Move the ball up the field.”</span>
       <div class="trio">
         <div><b>Left</b><span>“Keep our left side.”</span></div>
         <div><b>Center</b><span>“Stay connected.”</span></div>
         <div><b>Right</b><span>“Keep our right side.”</span></div>
       </div>
     </div>
-    <div class="say"><span class="who">Defenders</span><span class="quote">“Protect our goal and help each other.”</span>
+    <div class="say"><span class="title">Defenders</span><span class="quote">“Protect our goal and help each other.”</span>
       <p class="after">Left generally stays left. Right generally stays right.</p></div>
-    <div class="say"><span class="who">Goalie</span><span class="quote">“Protect the goal and start our attack.”</span></div>
+    <div class="say"><span class="title">Goalie</span><span class="quote">“Protect the goal and start our attack.”</span></div>
   </div>
 
   <div class="ex">
@@ -272,13 +272,13 @@ footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
 
   <h3>What we tell the players</h3>
   <div class="says">
-    <div class="say big"><span class="who">The rule</span><span class="quote">“Inside the big box: you can use your hands. Outside the box: you’re a regular soccer player. No hands.”</span></div>
-    <div class="say"><span class="who">When defending</span><span class="quote">“Don’t stay glued to the goal line.”</span>
+    <div class="say big"><span class="title">The rule</span><span class="quote">“Inside the big box: you can use your hands. Outside the box: you’re a regular soccer player. No hands.”</span></div>
+    <div class="say"><span class="title">When defending</span><span class="quote">“Don’t stay glued to the goal line.”</span>
       <p class="after">Move forward when the ball is farther away. Move left and right so you stay <b>between the ball and the middle of the goal</b>.</p></div>
-    <div class="say"><span class="who">Ready position</span><span class="quote">“Knees bent. Hands ready. Watch the ball.”</span>
+    <div class="say"><span class="title">Ready position</span><span class="quote">“Knees bent. Hands ready. Watch the ball.”</span>
       <p class="after">Get your <b>body behind the ball</b>.</p></div>
-    <div class="say big"><span class="who">Remember</span><span class="quote">“Your hands might miss. Your body is your backup.”</span></div>
-    <div class="say big"><span class="who">When you catch it</span><span class="quote">“Catch → Hug → Look”</span></div>
+    <div class="say big"><span class="title">Remember</span><span class="quote">“Your hands might miss. Your body is your backup.”</span></div>
+    <div class="say big"><span class="title">When you catch it</span><span class="quote">“Catch → Hug → Look”</span></div>
   </div>
 
   <div class="ex">
@@ -337,12 +337,12 @@ footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
 
   <h3>What we tell the players</h3>
   <div class="says">
-    <div class="say big"><span class="who">First</span><span class="quote">“Don’t rush. You have time.”</span></div>
-    <div class="say big"><span class="who">Then</span><span class="quote">“Catch → Hug → LOOK.”</span>
+    <div class="say big"><span class="title">First</span><span class="quote">“Don’t rush. You have time.”</span></div>
+    <div class="say big"><span class="title">Then</span><span class="quote">“Catch → Hug → LOOK.”</span>
       <p class="after">Look at your teammates. Find someone who is <b>open</b>. Whenever possible, start by looking toward the <b>sides of the field</b>, away from the crowd in the middle.</p></div>
-    <div class="say"><span class="who">How</span><span class="quote">“Roll it. Throw it. Pass it.”</span>
+    <div class="say"><span class="title">How</span><span class="quote">“Roll it. Throw it. Pass it.”</span>
       <p class="after">You don’t need to blast the ball as far as possible.</p></div>
-    <div class="say big"><span class="who">The whole idea</span><span class="quote">“Give the ball to our team.”</span></div>
+    <div class="say big"><span class="title">The whole idea</span><span class="quote">“Give the ball to our team.”</span></div>
   </div>
 
   <div class="ex">
@@ -406,11 +406,11 @@ footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
 
   <h3>What we tell the players</h3>
   <div class="says">
-    <div class="say"><span class="who">The idea</span><span class="quote">“The two defenders are partners.”</span></div>
-    <div class="say big"><span class="who">The cue</span><span class="quote">“ONE GOES — ONE BACKS UP.”</span></div>
-    <div class="say"><span class="who">Aggressor · closest to the ball</span><span class="quote">“Go challenge the attacker.”</span>
+    <div class="say"><span class="title">The idea</span><span class="quote">“The two defenders are partners.”</span></div>
+    <div class="say big"><span class="title">The cue</span><span class="quote">“ONE GOES — ONE BACKS UP.”</span></div>
+    <div class="say"><span class="title">Aggressor · closest to the ball</span><span class="quote">“Go challenge the attacker.”</span>
       <p class="after">Slow them down and try to win the ball.</p></div>
-    <div class="say"><span class="who">Backup · the other one</span><span class="quote">“Get behind your partner and protect the goal.”</span>
+    <div class="say"><span class="title">Backup · the other one</span><span class="quote">“Get behind your partner and protect the goal.”</span>
       <p class="after">If the attacker gets past your partner, <b>you’re there</b>.</p></div>
   </div>
 
@@ -469,7 +469,7 @@ footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
 
   <h3>What we tell the players</h3>
   <div class="says">
-    <div class="say big"><span class="who">The cue</span><span class="quote">“Look → Pick a corner → Put the ball there.”</span>
+    <div class="say big"><span class="title">The cue</span><span class="quote">“Look → Pick a corner → Put the ball there.”</span>
       <p class="after">Don’t just kick as hard as you can.</p></div>
   </div>
   <p style="margin-top:16px;color:var(--page-muted)">Players can pass it into the corner, dribble closer before shooting, or shoot when they have a good opening.</p>
@@ -486,11 +486,11 @@ footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
   <div class="sechead"><h2>Concepts to Introduce Naturally</h2></div>
   <p style="color:var(--page-muted);max-width:60ch">We <b style="color:var(--page-ink)">do not need to teach all of these today</b>. Use them as coaching cues if the situations appear during play.</p>
   <div class="says" style="margin-top:24px">
-    <div class="say big"><span class="who">When we have the ball</span><span class="quote">“GET BIG.”</span>
+    <div class="say big"><span class="title">When we have the ball</span><span class="quote">“GET BIG.”</span>
       <p class="after">Spread out and become someone your teammate can pass to. <b>Wide and forward.</b></p></div>
-    <div class="say big"><span class="who">When they have the ball</span><span class="quote">“GET TOGETHER.”</span>
+    <div class="say big"><span class="title">When they have the ball</span><span class="quote">“GET TOGETHER.”</span>
       <p class="after">Come back toward our goal and help each other. <b>Back and together.</b></p></div>
-    <div class="say big"><span class="who">If you’re lost</span><span class="quote">“FIND YOUR HOME.”</span>
+    <div class="say big"><span class="title">If you’re lost</span><span class="quote">“FIND YOUR HOME.”</span>
       <p class="after">Remember your position and your part of the field.</p></div>
   </div>
 </div></section>
