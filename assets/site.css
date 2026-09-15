@@ -1,5 +1,5 @@
 /* site.css — the shell every screen page shares: colour, type, header, sections,
-   rows, the back link. Components that only lessons use live in lesson.css.
+   rows, the back link. Components that only lessons use live in document.css.
    Source of truth: work/page-maker/. Never edit the copy in artifacts/assets/. */
 
 /* ─ palette ─────────────────────────────────────────────────────────────────
@@ -70,14 +70,14 @@ a.item:hover .t{text-decoration-color:var(--cone)}
 .item.todo .n{color:var(--page-muted)}
 .item.todo .t{text-decoration:none}
 
-/* a numbered row — lessons, where the number is how you find one */
-.lesson .n{font-family:"Archivo",sans-serif;font-weight:800;font-size:22px;line-height:1;
+/* a numbered row: the label is a number, which is how you scan for one */
+.numbered .n{font-family:"Archivo",sans-serif;font-weight:800;font-size:22px;line-height:1;
   width:34px;letter-spacing:-.02em;text-transform:none}
 
 .tag{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.13em;
   text-transform:uppercase;border:1px solid var(--page-line);border-radius:2px;padding:3px 7px;
   color:var(--page-muted);flex:0 0 auto;align-self:center}
-.tag.cards{border-color:var(--cone);color:var(--cone)}
+.tag.accent{border-color:var(--cone);color:var(--cone)}
 
 /* ─ back link ───────────────────────────────────────────────────────────────
    Every page below the front page carries one at the top and one at the bottom,

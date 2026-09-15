@@ -1,8 +1,10 @@
-/* lesson.css — the components a lesson page is built from. Load after site.css.
+/* document.css — the components a long-form page is built from: figures, cues,
+   cards. A lesson, a practice and a drill are all the same kind of object here,
+   so none of these names says "lesson". Load after site.css.
    Source of truth: work/page-maker/. Never edit the copy in artifacts/assets/. */
 
-/* ─ lesson hero ─────────────────────────────────────────────────────────────
-   Lesson pages run a tighter header than the front page: the content starts
+/* ─ hero ────────────────────────────────────────────────────────────────────
+   A document runs a tighter header than an index page: the content starts
    sooner because the reader arrived here on purpose. */
 header{padding:24px 0 16px}
 header h1{font-size:clamp(30px,6vw,44px)}
@@ -36,13 +38,13 @@ figcaption span{display:block;font-family:"Asap",sans-serif;font-weight:400;font
 /* Height-driven, so the whole field lands on one screen. dvh, not vh: Safari
    measures vh against the LARGE viewport and ignores its own toolbars, which
    cuts about 140px off the bottom on an iPad. */
-.pitch-fig{padding:14px 16px 10px;margin-top:14px}
-.pitch-fig svg{height:min(70vh,780px);height:min(70dvh,780px);
+.fit-fig{padding:14px 16px 10px;margin-top:14px}
+.fit-fig svg{height:min(70vh,780px);height:min(70dvh,780px);
   width:auto;max-width:100%;margin:0 auto;display:block}
 /* Short screens — iPad landscape, small windows. The header gives some back too,
    not just the field, or it runs off the bottom. */
 @media (max-height:880px){
-  .pitch-fig svg{height:min(58vh,470px);height:min(58dvh,470px)}
+  .fit-fig svg{height:min(58vh,470px);height:min(58dvh,470px)}
   header{padding:16px 0 12px}
   header h1{font-size:clamp(26px,5vw,34px)}
   .meta{margin-top:8px;font-size:13.5px}
@@ -75,7 +77,7 @@ h3{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-s
 .say.big .quote{font-size:clamp(22px,4.6vw,29px)}
 .say.big .who{color:var(--cone)}
 
-/* ─ position cards: the grid that links out to the printouts ─────────────── */
+/* ─ card grid: a set of links out, each with a badge and a line ──────────── */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-top:18px}
 .card-l{display:flex;align-items:center;gap:13px;text-decoration:none;color:inherit;
   background:var(--page-soft);border:1px solid var(--page-line);border-radius:5px;padding:13px 15px}
