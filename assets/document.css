@@ -118,3 +118,56 @@ figure a:hover .ring, figure a:focus-visible .ring{opacity:1}
 /* a section that is not written yet */
 .todo{border:2px dashed var(--page-line);border-radius:6px;padding:18px 20px;
   margin-top:26px;color:var(--page-muted);font-size:15.5px}
+
+/* ─ takeaways ───────────────────────────────────────────────────────────────
+   The two to four things a session is for, across the top. More than four and
+   none of them is a focus. */
+.goals{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.goal{background:var(--page-soft);border-radius:4px;padding:16px 18px;display:flex;gap:13px;align-items:baseline}
+.goal .n{font-family:"Archivo",sans-serif;font-weight:800;font-size:26px;color:var(--cone);line-height:1}
+.goal .t{font-family:"Archivo",sans-serif;font-weight:700;font-size:18px}
+
+/* A loud line for something that changes how the whole session is run. Sparingly:
+   two of these and the eye stops seeing either. */
+.rule{margin-top:20px;padding:16px 20px;background:var(--cone);color:#fff;border-radius:4px;
+  font-size:17.5px;font-weight:500}
+.rule b{font-weight:600}
+/* a quiet one, for a section that can be dropped if time runs short */
+.optional{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--page-muted);
+  border:1px solid var(--page-line);border-radius:2px;padding:3px 8px;margin-bottom:12px}
+
+/* ─ agenda ──────────────────────────────────────────────────────────────────
+   The run sheet: what happens, when, and a link to it. Built from the .list /
+   .item row in site.css — the clock goes where the label goes and the length
+   goes where the tag goes — so it is the same object, not a second one. */
+.agenda .item{padding:13px 18px}
+.agenda .item .n{font-size:13px;letter-spacing:.06em;color:var(--page-ink);width:58px}
+.agenda .item .t{font-size:18.5px}
+.agenda .tag{color:var(--page-ink)}
+.agenda-total{display:flex;justify-content:space-between;align-items:baseline;
+  margin-top:12px;padding-top:12px;border-top:1px solid var(--page-line);
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--page-muted)}
+.agenda-total b{font-family:"Archivo",sans-serif;font-size:19px;letter-spacing:-.01em;
+  color:var(--page-ink);text-transform:none}
+
+/* ─ activity ────────────────────────────────────────────────────────────────
+   A drill: what it is, how to set it up, what to shout. */
+.ex{margin-top:32px;border:2px solid var(--page-line);border-radius:6px;padding:22px}
+.ex .top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.ex h4{font-size:23px;font-weight:800;letter-spacing:-.02em}
+.badge{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.11em;
+  text-transform:uppercase;padding:4px 9px;border-radius:3px;background:var(--pitch);color:#fff}
+.badge.two{background:var(--cone)}
+.ex ol,.ex ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:7px}
+.ex li::marker{color:var(--cone);font-weight:600}
+.ex p+p,.ex p+ol,.ex p+ul,.ex ol+p,.ex ul+p{margin-top:13px}
+.ex .call{font-family:"Archivo",sans-serif;font-weight:800;font-size:26px;color:var(--cone);
+  letter-spacing:-.01em;margin:10px 0}
+
+/* ─ cues ────────────────────────────────────────────────────────────────────
+   The words to shout while they play. Short enough to yell across a field. */
+.cues{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.cues span{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(16px,3.4vw,20px);
+  background:var(--cone);color:#fff;padding:9px 14px;border-radius:4px}
