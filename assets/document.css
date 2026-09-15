@@ -193,6 +193,12 @@ figure a:hover .ring, figure a:focus-visible .ring{opacity:1}
 .ex .call{font-family:"Archivo",sans-serif;font-weight:800;font-size:26px;color:var(--cone);
   letter-spacing:-.01em;margin:10px 0}
 
+/* A plain list in a section, for a block that does not need to be a drill card.
+   .ex ol / .ex ul win inside a drill, on class specificity. */
+section > .wrap > ul, section > .wrap > ol{margin:14px 0 0;padding-left:22px;
+  display:flex;flex-direction:column;gap:8px}
+section > .wrap > ul li::marker, section > .wrap > ol li::marker{color:var(--cone);font-weight:600}
+
 /* ─ cues ────────────────────────────────────────────────────────────────────
    The words to shout while they play. Short enough to yell across a field. */
 .cues{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
