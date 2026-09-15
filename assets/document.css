@@ -150,6 +150,14 @@ figure a:hover .ring, figure a:focus-visible .ring{opacity:1}
 .agenda .item .n{font-size:13px;letter-spacing:.06em;color:var(--page-ink);width:58px}
 .agenda .item .t{font-size:18.5px}
 .agenda .tag{color:var(--page-ink)}
+/* A gap between two hard activities: water, and moving the cones. Not a thing you
+   do, so it is not a link and it is quieter than the rows either side. */
+.agenda .break{display:flex;gap:18px;align-items:baseline;padding:7px 18px;
+  color:var(--page-muted);font-size:15px}
+.agenda .break .n{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:13px;
+  letter-spacing:.06em;color:var(--page-muted);flex:0 0 auto;width:58px}
+.agenda .break .d{flex:1 1 auto}
+.agenda .break .tag{border-style:dashed;color:var(--page-muted)}
 .agenda-total{display:flex;justify-content:space-between;align-items:baseline;
   margin-top:12px;padding-top:12px;border-top:1px solid var(--page-line);
   font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.13em;
