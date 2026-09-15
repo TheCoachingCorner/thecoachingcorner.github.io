@@ -199,6 +199,15 @@ section > .wrap > ul, section > .wrap > ol{margin:14px 0 0;padding-left:22px;
   display:flex;flex-direction:column;gap:8px}
 section > .wrap > ul li::marker, section > .wrap > ol li::marker{color:var(--cone);font-weight:600}
 
+/* ─ trio ────────────────────────────────────────────────────────────────────
+   A small grid of short labelled points: ready-position checks, harder/easier
+   dials. Two to six of them; the label is a block so it sits above its line. */
+.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
+.trio div{background:var(--page-soft);border-radius:4px;padding:13px 15px}
+.trio b{font-family:"Archivo",sans-serif;font-size:16px;display:block;color:var(--cone);
+  margin-bottom:3px}
+.trio span{font-size:16px;color:var(--page-ink)}
+
 /* ─ cues ────────────────────────────────────────────────────────────────────
    The words to shout while they play. Short enough to yell across a field. */
 .cues{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
