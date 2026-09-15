@@ -48,6 +48,18 @@ a.item:hover{border-color:var(--cone);transform:translateX(2px)}
 a.item:hover .t{text-decoration-color:var(--cone)}
 .d{font-size:15.5px;color:var(--page-muted);margin-top:4px;display:block}
 
+/* lesson rows: number badge, dashed row for a lesson with no page yet */
+.lesson .n{font-family:"Archivo",sans-serif;font-weight:800;font-size:22px;line-height:1;
+  width:34px;letter-spacing:-.02em;text-transform:none}
+.item.todo{display:flex;gap:18px;align-items:baseline;background:transparent;
+  border:1px dashed var(--page-line);border-radius:6px;padding:18px 20px;color:var(--page-muted)}
+.item.todo .n{color:var(--page-muted)}
+.item.todo .t{text-decoration:none}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;border:1px solid var(--page-line);border-radius:2px;padding:3px 7px;
+  color:var(--page-muted);flex:0 0 auto;align-self:center}
+.tag.cards{border-color:var(--cone);color:var(--cone)}
+
 footer{padding:28px 0 60px;border-top:1px solid var(--page-line);color:var(--page-muted);
   font-size:14.5px}
 </style>
@@ -62,11 +74,84 @@ footer{padding:28px 0 60px;border-top:1px solid var(--page-line);color:var(--pag
 <section><div class="wrap">
   <h2>Lessons</h2>
   <div class="list">
-    <a class="item" href="lessons/index.html">
-      <span class="n">All 13</span>
-      <span class="body"><span class="t">Lesson list</span>
-        <span class="d">Three are ready to teach. Position cards live inside lesson 01.</span></span>
+
+    <a class="item lesson" href="lessons/01-position-fundamentals/index.html">
+      <span class="n">01</span>
+      <span class="body"><span class="t">Position Fundamentals</span>
+        <span class="d">Everyone has a spot, and the spot has a job. The 2-3-1.</span></span>
+      <span class="tag cards">+ 7 cards</span>
     </a>
+    <a class="item lesson" href="lessons/02-goalie-introduction/index.html">
+      <span class="n">02</span>
+      <span class="body"><span class="t">Goalie Introduction</span>
+        <span class="d">Where the goalie can use hands, where to stand, how to be ready.</span></span>
+    </a>
+    <a class="item lesson" href="lessons/03-one-on-one-defense/index.html">
+      <span class="n">03</span>
+      <span class="body"><span class="t">One on One Defense</span>
+        <span class="d">Defending someone dribbling straight at you, on your own.</span></span>
+    </a>
+    <div class="item todo lesson">
+      <span class="n">04</span>
+      <span class="body"><span class="t">Defense Partners</span>
+        <span class="d">Two defenders, one job each. Never both at the ball.</span></span>
+      <span class="tag">draft</span>
+    </div>
+    <div class="item todo lesson">
+      <span class="n">05</span>
+      <span class="body"><span class="t">Losing the Ball</span>
+        <span class="d">The first three seconds after we give it away.</span></span>
+      <span class="tag">stub</span>
+    </div>
+    <div class="item todo lesson">
+      <span class="n">06</span>
+      <span class="body"><span class="t">Chasing the Ball</span>
+        <span class="d">Catching someone who got past you — and what's legal doing it.</span></span>
+      <span class="tag">draft</span>
+    </div>
+    <div class="item todo lesson">
+      <span class="n">07</span>
+      <span class="body"><span class="t">Getting Back on Defense</span>
+        <span class="d">Where you should be when the other team has the ball.</span></span>
+      <span class="tag">draft</span>
+    </div>
+    <div class="item todo lesson">
+      <span class="n">08</span>
+      <span class="body"><span class="t">Defend Corner Kicks</span>
+        <span class="d">Who marks, who takes the post, who stays out for the clear.</span></span>
+      <span class="tag">stub</span>
+    </div>
+    <div class="item todo lesson">
+      <span class="n">09</span>
+      <span class="body"><span class="t">Defend Goal Kicks</span>
+        <span class="d">Where we stand when they restart from their own goal.</span></span>
+      <span class="tag">stub</span>
+    </div>
+    <div class="item todo lesson">
+      <span class="n">10</span>
+      <span class="body"><span class="t">Passing Fundamentals</span>
+        <span class="d">What makes a pass good, and looking before you pass.</span></span>
+      <span class="tag">stub</span>
+    </div>
+    <div class="item todo lesson">
+      <span class="n">11</span>
+      <span class="body"><span class="t">Throw-in Strategy</span>
+        <span class="d">The rule in 60 seconds, then: throw down the line, not into the middle.</span></span>
+      <span class="tag">stub</span>
+    </div>
+    <div class="item todo lesson">
+      <span class="n">12</span>
+      <span class="body"><span class="t">Break-aways</span>
+        <span class="d">The attacking one on one. Lesson 03 is the defending side.</span></span>
+      <span class="tag">stub</span>
+    </div>
+    <div class="item todo lesson">
+      <span class="n">13</span>
+      <span class="body"><span class="t">Goalie Techniques</span>
+        <span class="d">What to do once you have the ball in your hands.</span></span>
+      <span class="tag">draft</span>
+    </div>
+
   </div>
 </div></section>
 
