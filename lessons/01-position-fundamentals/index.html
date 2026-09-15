@@ -1,0 +1,284 @@
+<title>Lesson 01 — Position Fundamentals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{
+  --page:#F1F4EE; --page-ink:#131C17; --page-muted:#5E6E64; --page-line:#CFD7CB; --page-soft:#E5EBE1;
+  --card:#FFFFFF; --ink:#131C17; --muted:#61715F; --line:#C7D1C4;
+  --grass:#E9EFE6; --grass-2:#DCE6D7;
+  --cone:#C1451C; --pitch:#1B5340; --keeper:#EFBE12;
+  --yes:#177A46; --yes-soft:#E1F0E7;
+  --no:#C1352A; --no-soft:#F8E3E0;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --page:#0C1310; --page-ink:#E6ECE6; --page-muted:#93A297; --page-line:#222E27; --page-soft:#161F1A;
+}}
+:root[data-theme="dark"]{
+  --page:#0C1310; --page-ink:#E6ECE6; --page-muted:#93A297; --page-line:#222E27; --page-soft:#161F1A;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--page-ink);
+  font-family:"Asap",system-ui,-apple-system,sans-serif;font-size:18px;line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Archivo",system-ui,sans-serif;margin:0;line-height:1.08;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+
+/* hero */
+header{padding:44px 0 34px}
+header .kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--cone);font-weight:600}
+header h1{font-size:clamp(38px,8vw,64px);font-weight:800;letter-spacing:-.03em;margin:12px 0 0}
+.goals{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.goal{background:var(--page-soft);border-radius:4px;padding:16px 18px;display:flex;gap:13px;align-items:baseline}
+.goal .n{font-family:"Archivo",sans-serif;font-weight:800;font-size:26px;color:var(--cone);line-height:1}
+.goal .t{font-family:"Archivo",sans-serif;font-weight:700;font-size:18px}
+.rule{margin-top:20px;padding:16px 20px;background:var(--cone);color:#fff;border-radius:4px;
+  font-size:17.5px;font-weight:500}
+.rule b{font-weight:600}
+.clock{margin-top:14px;font-size:14.5px;color:var(--page-muted);
+  border-left:3px solid var(--page-line);padding-left:14px}
+.clock b{color:var(--page-ink)}
+
+/* sections */
+section{padding:46px 0;border-top:1px solid var(--page-line)}
+.sechead{display:flex;gap:16px;align-items:baseline;margin-bottom:8px}
+.sechead .n{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(32px,6vw,46px);
+  color:var(--cone);line-height:1;letter-spacing:-.02em}
+.sechead h2{font-size:clamp(28px,5.4vw,42px);font-weight:800;letter-spacing:-.025em}
+.optional{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--page-muted);
+  border:1px solid var(--page-line);border-radius:2px;padding:3px 8px;margin-bottom:12px}
+
+/* drawing card */
+figure{margin:26px 0 0;background:var(--card);border:1px solid var(--line);border-radius:8px;
+  padding:24px 20px 18px;color:var(--ink)}
+figure svg{display:block;width:100%;height:auto}
+figure .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:560px){figure .pair{grid-template-columns:1fr}}
+figure .pane{display:flex;flex-direction:column;gap:10px}
+.verdict{font-family:"Archivo",sans-serif;font-weight:700;font-size:17px;display:flex;
+  align-items:center;gap:8px;justify-content:center}
+.verdict.y{color:var(--yes)} .verdict.n{color:var(--no)}
+figcaption{margin-top:16px;text-align:center;font-family:"Archivo",sans-serif;font-weight:700;
+  font-size:clamp(20px,4.4vw,27px);letter-spacing:-.015em;color:var(--ink);text-wrap:balance}
+figcaption span{display:block;font-family:"Asap",sans-serif;font-weight:400;font-size:16px;
+  color:var(--muted);margin-top:7px;letter-spacing:0}
+
+/* what we tell them */
+h3{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--page-muted);margin:34px 0 16px}
+.says{display:flex;flex-direction:column;gap:14px}
+.say{background:var(--page-soft);border-left:4px solid var(--pitch);border-radius:0 4px 4px 0;padding:15px 18px}
+.say .who{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--pitch);display:block;margin-bottom:5px}
+.say .quote{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(19px,3.6vw,23px);
+  letter-spacing:-.015em;line-height:1.25}
+.say .after{font-size:16px;color:var(--page-muted);margin-top:7px}
+.say.big{border-left-color:var(--cone);background:var(--page-soft)}
+.say.big .quote{font-size:clamp(22px,4.6vw,29px)}
+.say.big .who{color:var(--cone)}
+
+.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
+.trio div{background:var(--page-soft);border-radius:4px;padding:13px 15px}
+.trio b{font-family:"Archivo",sans-serif;font-size:16px;display:block;color:var(--cone)}
+.trio span{font-size:16px;color:var(--page-ink)}
+
+/* exercise */
+.ex{margin-top:32px;border:2px solid var(--page-line);border-radius:6px;padding:22px}
+.ex .top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.ex h4{font-size:23px;font-weight:800;letter-spacing:-.02em}
+.badge{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.11em;
+  text-transform:uppercase;padding:4px 9px;border-radius:3px;background:var(--pitch);color:#fff}
+.badge.two{background:var(--cone)}
+.ex ol,.ex ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:7px}
+.ex li::marker{color:var(--cone);font-weight:600}
+.ex p+p,.ex p+ol,.ex p+ul,.ex ol+p,.ex ul+p{margin-top:13px}
+.ex .call{font-family:"Archivo",sans-serif;font-weight:800;font-size:26px;color:var(--cone);
+  letter-spacing:-.01em;margin:10px 0}
+
+.cues{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.cues span{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(16px,3.4vw,20px);
+  background:var(--cone);color:#fff;padding:9px 14px;border-radius:4px}
+footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--page-muted);font-size:15px}
+:focus-visible{outline:3px solid var(--cone);outline-offset:2px}
+
+/* two-tier vocabulary: the real word and the one we say to kids */
+.vocab{width:100%;border-collapse:collapse;margin:18px 0 0}
+.vocab th{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--page-muted);text-align:left;padding:0 0 9px}
+.vocab td{padding:12px 0;border-top:1px solid var(--page-line);
+  font-family:"Archivo",sans-serif;letter-spacing:-.01em}
+.vocab td.c{font-weight:700;font-size:18px;color:var(--page-muted)}
+.vocab td.k{font-weight:800;font-size:22px;color:var(--cone)}
+.chain{font-family:"Archivo",sans-serif;font-weight:800;letter-spacing:-.02em;
+  font-size:clamp(22px,5vw,34px);margin:22px 0 0;color:var(--page-ink);text-wrap:balance}
+.beat{margin-top:30px;border-top:2px solid var(--page-line);padding-top:18px}
+.beat .name{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(24px,5vw,32px);
+  letter-spacing:-.025em;color:var(--cone);line-height:1}
+.beat .alias{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--page-muted);margin-left:10px}
+.beat .lede{font-size:18px;margin-top:8px}
+.note{font-size:16px;color:var(--page-muted);margin-top:10px}
+
+/* ══════════ print ══════════
+   Canonical copy: work/printout-maker/practice-print.css
+   Edit there too, or the next practice document starts from a stale version. */
+@media print{
+  @page{size:Letter portrait;margin:.55in .6in}
+
+  /* Force the light palette. Chrome still reports the OS dark preference when
+     printing, which otherwise produces a black page and an empty toner cart. */
+  :root{--page:#fff;--page-ink:#131C17;--page-muted:#5E6E64;--page-line:#CFD7CB;--page-soft:#E5EBE1}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  html,body{background:#fff;font-size:11pt;line-height:1.5}
+  .wrap{max-width:none;padding:0}
+  header{padding:0 0 18px}
+  header h1{font-size:30pt}
+  a{text-decoration:none;color:inherit}
+
+  /* A drawing is never cut in half. If it doesn't fit in what's left of the
+     page it moves to the next one whole. This has to sit on the figure —
+     putting it on the section asks for something impossible, so it's ignored. */
+  figure,.ex,.say,.goal,.cues,.rule,.clock,table,.sechead{break-inside:avoid;page-break-inside:avoid}
+  figure{margin:14px 0}
+  /* 6in leaves room for the caption under the tallest drawing, so the figure and
+     its caption still fit one page together. At 7.5in the pair overflowed, the
+     browser gave up on break-inside, and captions stranded at the top of the
+     next page. */
+  figure svg{max-height:6in;height:auto}
+  figcaption{break-inside:avoid;page-break-inside:avoid;
+             break-before:avoid;page-break-before:avoid}
+
+  /* clamp() display type resolves off the page width in print and lands far
+     bigger than the column, which wraps a cue mid-phrase. Any display-size
+     component needs an explicit print size — see header h1 above. */
+  .chain{font-size:19pt;line-height:1.15}
+  .chain,.vocab,.trio div{break-inside:avoid;page-break-inside:avoid}
+
+  /* A heading never strands at the foot of a page. */
+  h1,h2,h3,h4,.sechead{break-after:avoid;page-break-after:avoid}
+  p,li{orphans:3;widows:3}
+
+  /* Nothing that isn't content. */
+  nav,footer,.noprint{display:none}
+}
+
+/* ── lesson page ───────────────────────────────────────── */
+.pitch-fig { padding:18px 20px 14px }
+/* The field is the page. Sized off HEIGHT so the width follows the aspect ratio,
+   and given as much of the screen as the furniture above it can spare — which is
+   why the header and section heading are squeezed hard on this page rather than
+   the field being shrunk to fit them. 70vh not more: real iPad Safari spends
+   its toolbars, which dvh accounts for and vh does not. */
+.pitch-fig { padding:14px 16px 10px; margin-top:14px }
+.pitch-fig svg { height:min(70vh,780px);   /* fallback for old browsers */
+                 height:min(70dvh,780px);  /* dvh tracks the VISIBLE viewport, so it
+                                              shrinks when Safari's toolbars appear —
+                                              vh does not, which is what cut the field
+                                              off on a real iPad */
+                 width:auto; max-width:100%; margin:0 auto; display:block }
+
+/* Short screens — iPad landscape, small windows. The field gives some back too,
+   not just the header, or it runs off the bottom. */
+@media (max-height:880px) {
+  .pitch-fig svg { height:min(58vh,470px); height:min(58dvh,470px) }
+  header { padding:16px 0 12px }
+  header h1 { font-size:clamp(26px,5vw,34px) }
+  .meta { margin-top:8px; font-size:13.5px }
+}
+
+/* Give the drawing the room: this page's furniture is deliberately small. */
+header { padding:24px 0 16px }
+header h1 { font-size:clamp(30px,6vw,44px) }
+header .kicker { font-size:11px }
+section { padding:20px 0 }
+.sechead h2 { font-size:clamp(22px,4vw,30px) }
+.sechead { margin-bottom:4px }
+
+.meta { display:flex; flex-wrap:wrap; gap:10px 26px; margin-top:20px;
+  font-size:15.5px; color:var(--page-muted) }
+.meta b { color:var(--page-ink); font-weight:600 }
+figure a .pos { transition:none }
+figure a:hover .ring, figure a:focus-visible .ring { opacity:1 }
+.ring { opacity:0; fill:none; stroke:var(--cone); stroke-width:3.5 }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr));
+  gap:12px; margin-top:18px }
+.card-l { display:flex; align-items:center; gap:13px; text-decoration:none; color:inherit;
+  background:var(--page-soft); border:1px solid var(--page-line); border-radius:5px;
+  padding:13px 15px }
+.card-l:hover { border-color:var(--cone) }
+.card-l .badge2 { font-family:"Archivo",sans-serif; font-weight:800; font-size:15px;
+  color:#fff; background:var(--pitch); width:34px; height:34px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; flex:0 0 auto }
+.card-l .badge2.gk { background:var(--keeper); color:var(--ink) }
+.card-l .badge2.fw { background:var(--cone) }
+.card-l .t2 { font-family:"Archivo",sans-serif; font-weight:700; font-size:16px }
+.card-l .s2 { display:block; font-family:"Asap",sans-serif; font-weight:400;
+  font-size:13.5px; color:var(--page-muted) }
+.todo { border:2px dashed var(--page-line); border-radius:6px; padding:18px 20px;
+  margin-top:26px; color:var(--page-muted); font-size:15.5px }
+@media print { .card-l { break-inside:avoid } .cards { gap:8px } }
+</style>
+
+<header><div class="wrap">
+  <p class="kicker">Lesson 01</p>
+  <h1>Position Fundamentals</h1>
+  <p class="meta"><span><b>Teaches</b> · everyone has a spot, and the spot has a job</span>
+    <span><b>Shape</b> · 2-3-1</span></p>
+</div></header>
+
+<section><div class="wrap">
+  <div class="sechead"><h2>The Shape</h2></div>
+  <figure class="pitch-fig">
+    <svg viewBox="0 0 400 500" role="img" aria-label="The 2-3-1 on the field. Every position links to its printout.">
+      <text x="200" y="16" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="600" letter-spacing="1.8" fill="var(--page-muted)">THEIR GOAL ↑</text>
+      <rect x="18" y="28" width="364" height="434" rx="4" fill="var(--grass)" stroke="var(--line)" stroke-width="2.5"/>
+      <line x1="18" y1="245" x2="382" y2="245" stroke="var(--line)" stroke-width="2"/>
+      <circle cx="200" cy="245" r="4" fill="var(--line)"/>
+      <rect x="128" y="28" width="144" height="58" fill="none" stroke="var(--line)" stroke-width="2.5"/>
+      <rect x="128" y="404" width="144" height="58" fill="var(--grass-2)" stroke="var(--line)" stroke-width="2.5"/>
+      <line x1="162" y1="28" x2="238" y2="28" stroke="var(--muted)" stroke-width="5" stroke-linecap="round"/>
+      <line x1="162" y1="462" x2="238" y2="462" stroke="var(--cone)" stroke-width="7" stroke-linecap="round"/>
+      <text x="200" y="486" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="600" letter-spacing="1.8" fill="var(--page-muted)">OUR GOAL</text>
+      <g font-family="Archivo,sans-serif" text-anchor="middle">
+        <a href="position-forward.html"><circle cx="200" cy="185" r="22" fill="var(--cone)"/><text x="200" y="191" font-size="15" font-weight="700" fill="#fff">F</text><text x="200" y="227" font-size="12" font-weight="700" fill="var(--ink)">FORWARD</text><circle class="ring" cx="200" cy="185" r="28"/></a><a href="position-mid-left.html"><circle cx="76" cy="280" r="22" fill="var(--pitch)"/><text x="76" y="286" font-size="15" font-weight="700" fill="#fff">M</text><text x="76" y="322" font-size="12" font-weight="700" fill="var(--ink)">LEFT MID</text><circle class="ring" cx="76" cy="280" r="28"/></a><a href="position-mid-center.html"><circle cx="200" cy="280" r="22" fill="var(--pitch)"/><text x="200" y="286" font-size="15" font-weight="700" fill="#fff">M</text><text x="200" y="322" font-size="12" font-weight="700" fill="var(--ink)">CENTER MID</text><circle class="ring" cx="200" cy="280" r="28"/></a><a href="position-mid-right.html"><circle cx="324" cy="280" r="22" fill="var(--pitch)"/><text x="324" y="286" font-size="15" font-weight="700" fill="#fff">M</text><text x="324" y="322" font-size="12" font-weight="700" fill="var(--ink)">RIGHT MID</text><circle class="ring" cx="324" cy="280" r="28"/></a><a href="position-defender-left.html"><circle cx="128" cy="352" r="22" fill="#2C4A3E"/><text x="128" y="358" font-size="15" font-weight="700" fill="#fff">D</text><text x="128" y="394" font-size="12" font-weight="700" fill="var(--ink)">LEFT DEF</text><circle class="ring" cx="128" cy="352" r="28"/></a><a href="position-defender-right.html"><circle cx="272" cy="352" r="22" fill="#2C4A3E"/><text x="272" y="358" font-size="15" font-weight="700" fill="#fff">D</text><text x="272" y="394" font-size="12" font-weight="700" fill="var(--ink)">RIGHT DEF</text><circle class="ring" cx="272" cy="352" r="28"/></a>
+        <a href="position-goalie.html"><circle cx="200" cy="432" r="22" fill="var(--keeper)" stroke="var(--ink)" stroke-width="2.5"/><text x="200" y="438" font-size="15" font-weight="700" fill="var(--ink)">G</text><circle class="ring" cx="200" cy="432" r="28"/></a>
+      </g>
+    </svg>
+  </figure>
+
+  <h3>What we tell the players</h3>
+  <div class="says">
+    <div class="say big"><span class="who">Forward</span><span class="quote">“Be someone we can pass up to.”</span></div>
+    <div class="say big"><span class="who">Midfield</span><span class="quote">“Stay behind the ball - constant pressure.”</span></div>
+    <div class="say big"><span class="who">Defenders</span><span class="quote">“Protect the goal and help each other.”</span></div>
+    <div class="say big"><span class="who">Goalie</span><span class="quote">“Hug the ball, then start our attack.”</span></div>
+  </div>
+  <p class="note" style="margin-top:16px">Left and right positions don’t cross center field.<br>Instead they stay open or defend cross passes.</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sechead"><h2>Your Neighborhood</h2></div>
+  <p><strong>Select a position</strong> to learn more about each position's neighborhood.</p>
+  <div class="cards">
+    <a class="card-l" href="position-goalie.html"><span class="badge2 gk">G</span><span><span class="t2">Goalie</span><span class="s2">Hug the ball<br>Then start our attack</span></span></a>
+    <a class="card-l" href="position-defender-left.html"><span class="badge2 ">D</span><span><span class="t2">Left Defender</span><span class="s2">Closest pressures<br>Other backs up</span></span></a>
+    <a class="card-l" href="position-defender-right.html"><span class="badge2 ">D</span><span><span class="t2">Right Defender</span><span class="s2">Closest pressures<br>Other backs up</span></span></a>
+    <a class="card-l" href="position-mid-left.html"><span class="badge2 ">M</span><span><span class="t2">Left Mid</span><span class="s2">Stay behind the ball</span></span></a>
+    <a class="card-l" href="position-mid-center.html"><span class="badge2 ">M</span><span><span class="t2">Center Mid</span><span class="s2">Stay behind the ball</span></span></a>
+    <a class="card-l" href="position-mid-right.html"><span class="badge2 ">M</span><span><span class="t2">Right Mid</span><span class="s2">Stay behind the ball</span></span></a>
+    <a class="card-l" href="position-forward.html"><span class="badge2 fw">F</span><span><span class="t2">Forward</span><span class="s2">Be someone we can pass up to</span></span></a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sechead"><h2>Drills</h2></div>
+  <div class="todo">No drills written yet. When <code>work/drills/</code> fills up, the ones
+  that serve this lesson land here — starting with <b>Find Your Position</b>, from practice 1.</div>
+</div></section>
+
+<footer><div class="wrap">Lesson 01 · Position Fundamentals · 10U</div></footer>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Right Defender</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Asap:wght@400;600;700&family=IBM+Plex+Mono:wght@600&display=swap">
+<style>
+@page { size: Letter portrait; margin: 0.42in; }
+*,*::before,*::after { box-sizing: border-box; }
+html, body { margin:0; padding:0; background:#fff; color:#000; }
+body {
+  font-family:"Asap","Helvetica Neue",Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased; font-variant-ligatures:none;
+}
+.sheet {
+  width:7.66in; height:10.16in; margin:0 auto; padding:0;
+  display:flex; flex-direction:column; overflow:hidden;
+  break-inside:avoid; page-break-inside:avoid;
+}
+@media screen {                 /* screen-only trim guide; never printed */
+  body { background:#fff; padding:26px 0; }
+  .sheet { outline:1px dashed #bbb; outline-offset:15px; }
+}
+@media print { .sheet { outline:none; } }
+
+/* ── header ─────────────────────────────────────────────── */
+.hd { display:flex; align-items:flex-end; justify-content:space-between;
+      border-bottom:3px solid #000; padding-bottom:5px; flex:0 0 auto; }
+.hd.bare { border-bottom:none; padding-bottom:0; }
+.hd h1 { font-family:"Archivo","Arial Black",Impact,sans-serif; font-weight:800;
+         font-size:35pt; line-height:.86; letter-spacing:-.022em; margin:0;
+         text-transform:uppercase; }
+.hd .tag { font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace; font-size:8pt;
+           font-weight:600; letter-spacing:.18em; text-transform:uppercase;
+           text-align:right; line-height:1.35; padding-bottom:3px; }
+
+/* ── a drawing block ────────────────────────────────────── */
+.block { flex:0 0 auto; padding-top:7px; }
+.block > h2 { font-family:"Archivo","Arial Black",Impact,sans-serif; font-weight:800;
+  font-size:11.6pt; line-height:1.04; letter-spacing:-.008em; margin:0 0 4px;
+  text-transform:uppercase; }
+.art { display:flex; align-items:center; justify-content:center; }
+.art svg { height:3.24in; width:auto; max-width:100%; }
+.block.sm .art svg { height:2.74in; }
+svg { display:block; overflow:visible; }
+
+/* ── black-and-white drawing vocabulary ─────────────────── */
+.fl    { fill:none; stroke:#000; stroke-width:2; }          /* field lines, thin solid */
+.fl .solid, .solid { fill:#000; stroke:none; }
+.goal  { fill:none; stroke:#000; stroke-width:3.6; }        /* goal frames, heavier */
+.nb    { fill:none; stroke:#000; stroke-width:6;            /* neighbourhood: thick dotted */
+         stroke-dasharray:1 11; stroke-linecap:round; }
+.sm circle { fill:#fff; stroke:#000; stroke-width:2.2; }    /* a teammate */
+.sm text   { fill:#000; font-family:"Archivo",Arial,sans-serif; font-weight:700;
+             font-size:11.5px; text-anchor:middle; }
+.big circle{ fill:#000; stroke:none; }                      /* THIS page's player */
+.big text  { fill:#fff; font-family:"Archivo",Arial,sans-serif; font-weight:800;
+             font-size:17px; text-anchor:middle; }
+.them circle{ fill:#fff; stroke:#000; stroke-width:2.6;     /* an opponent: dotted ring */
+             stroke-dasharray:3 4.4; }
+.them text { fill:#000; font-family:"Archivo",Arial,sans-serif; font-weight:700;
+             font-size:10.5px; text-anchor:middle; }
+.ball circle{ fill:#fff; stroke:#000; stroke-width:2; }     /* the ball */
+.ball .pip { fill:#000; stroke:none; }
+.go    { fill:none; stroke:#000; stroke-width:5.4;          /* a good path: solid arrow */
+         stroke-linecap:round; marker-end:url(#ah); }
+.no    { fill:none; stroke:#000; stroke-width:5;            /* a bad path: dotted arrow */
+         stroke-dasharray:1.5 8.5; stroke-linecap:round; }
+.x     { fill:none; stroke:#000; stroke-width:7.5; stroke-linecap:round; }  /* crossed out */
+.lead  { fill:none; stroke:#000; stroke-width:1.6; }        /* pointer line */
+.split { fill:none; stroke:#000; stroke-width:1; stroke-dasharray:1.5 5.5;
+         stroke-linecap:round; }                            /* quiet panel divider */
+.brk   { fill:none; stroke:#000; stroke-width:1.3; }
+.dim   { fill:none; stroke:#000; stroke-width:1.4; }        /* measurement line */
+.dim text { fill:#000; stroke:none; font-family:"IBM Plex Mono",monospace;
+         font-size:11px; font-weight:600; letter-spacing:.09em; }
+.tag text, .tag { font-family:"Archivo",Arial,sans-serif; font-weight:800;
+         font-size:13px; fill:#000; text-anchor:end; letter-spacing:.03em; }
+.lbl   { font-family:"Archivo",Arial,sans-serif; font-weight:800; font-size:14px;
+         fill:#000; text-anchor:middle; letter-spacing:.05em; }
+.verdict { font-family:"Archivo",Arial,sans-serif; font-weight:800; font-size:17px;
+         fill:#000; text-anchor:middle; letter-spacing:.09em; }
+
+/* ── neighbourhood row: pitch left, callouts right ──────── */
+.zone { flex:1 1 auto; display:flex; gap:30px; padding-top:10px; min-height:0; }
+/* The pitch is sized by HEIGHT and lets its width follow, so the column has a
+   definite size of its own and never depends on a sibling to prop it up. */
+.zone .left  { flex:0 0 auto; height:100%; display:flex; flex-direction:column;
+               align-items:center; justify-content:center; }
+.zone .pitch { height:100%; width:auto; max-height:5.2in; }
+.zone .right { flex:1 1 auto; display:flex; flex-direction:column;
+               justify-content:center; gap:9px; }
+
+/* Goalie: pitch and close-up stack, so the column gets an explicit width and
+   both drawings take it. */
+.zone.gk .left  { flex:0 0 3.1in; height:100%; align-items:stretch;
+                  justify-content:center; }
+.zone.gk .pitch { width:100%; height:auto; max-height:none; }
+.zoom .nb { stroke-width:3.2; stroke-dasharray:1 4.6; }
+.zoomblk { flex:0 0 auto; padding-top:4px; }
+.zoomblk > h2 { font-family:"Archivo","Arial Black",Impact,sans-serif; font-weight:800;
+  font-size:11.6pt; line-height:1.04; letter-spacing:-.008em; margin:0 0 4px;
+  text-transform:uppercase; }
+.zoomblk .art { justify-content:flex-start; }
+.zoomblk .art svg { width:3.1in; height:auto; }
+
+/* ── callouts: 3 or 4 short lines, nothing under them ───── */
+.say { border-left:7px solid #000; padding:2px 0 2px 11px; }
+.say b { display:block; font-family:"Archivo","Arial Black",Impact,sans-serif;
+  font-weight:800; font-size:15pt; line-height:1.07; text-transform:uppercase;
+  letter-spacing:-.004em; }
+.say.lg b { font-size:16.5pt; }
+
+/* ── footer ─────────────────────────────────────────────── */
+.ft { flex:0 0 auto; border-top:1.5px solid #000; margin-top:7px; padding-top:4px;
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace; font-size:7.4pt;
+  font-weight:600; letter-spacing:.11em; text-transform:uppercase;
+  display:flex; justify-content:space-between; }
+</style></head>
+<body><div class="sheet">
+<div class="hd bare"><h1>Right Defender</h1></div>
+<div class="block"><h2>Closest pressures, the other backs up.</h2><div class="art"><svg viewBox="0 0 470 300" role="img" aria-label="Good: one defender steps out at the opponent while the second hangs back in the centre, behind them. Bad: both defenders level with each other, and the opponent runs straight through the gap between them."><defs><marker id="ah" viewBox="0 0 12 12" refX="6.2" refY="6" markerWidth="4.4" markerHeight="4.4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="#000"/></marker></defs>
+<path class="split" d="M235 62 L235 268"/>
+<text class="verdict" x="118" y="26">GOOD</text>
+<g class="them"><circle cx="74" cy="84" r="21"/><text x="74" y="90.51"></text></g>
+<path class="go" d="M98 146 L84 114"/>
+<g class="big"><circle cx="106" cy="168" r="20"/><text x="106" y="174.2" font-size="16">D</text></g>
+<g class="sm"><circle cx="166" cy="246" r="20"/><text x="166" y="252.2" font-size="16">D</text></g>
+<text class="verdict" x="354" y="26">BAD</text>
+<g class="them"><circle cx="354" cy="88" r="21"/><text x="354" y="94.51"></text></g>
+<path class="no" d="M354 118 L354 250" marker-end="url(#ah)"/>
+<g class="sm"><circle cx="306" cy="180" r="21"/><text x="306" y="186.51" font-size="16">D</text></g>
+<g class="sm"><circle cx="402" cy="180" r="21"/><text x="402" y="186.51" font-size="16">D</text></g>
+</svg></div></div>
+<div class="zone">
+  <div class="left"><svg viewBox="0 0 400 580" class="pitch" role="img" aria-label="The 2-3-1 on the field with the RD neighbourhood marked">
+<g class="fl">
+<rect x="20" y="20" width="360" height="540"/>
+<line x1="20" y1="290" x2="380" y2="290"/>
+<rect x="92" y="20" width="216" height="108"/>
+<rect x="92" y="452" width="216" height="108"/>
+</g>
+<circle class="solid" cx="200" cy="290" r="3.5"/>
+<g class="goal">
+<rect x="173" y="7" width="54" height="13"/>
+<rect x="173" y="560" width="54" height="13"/>
+</g>
+<rect class="nb" x="168" y="304" width="198" height="242"/>
+<g class="sm"><circle cx="200" cy="222" r="15"/><text x="200" y="227.5">F</text></g>
+<g class="sm"><circle cx="104" cy="330" r="15"/><text x="104" y="335.5">M</text></g>
+<g class="sm"><circle cx="200" cy="330" r="15"/><text x="200" y="335.5">M</text></g>
+<g class="sm"><circle cx="296" cy="330" r="15"/><text x="296" y="335.5">M</text></g>
+<g class="sm"><circle cx="134" cy="420" r="15"/><text x="134" y="425.5">D</text></g>
+<g class="big"><circle cx="266" cy="420" r="24"/><text x="266" y="427.5">D</text></g>
+<g class="sm"><circle cx="200" cy="505" r="15"/><text x="200" y="510.5">G</text></g>
+</svg></div>
+  <div class="right"><div class="say lg"><b>One pressures. One backs up.</b></div>
+<div class="say"><b>Guard the front of the big box.</b></div>
+<div class="say"><b>Keep the ball away from the center.</b></div>
+<div class="say"><b>Control the ball &mdash; kicking away is a pass to the other team.</b></div></div>
+</div>
+
+</div></body></html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coach Cheatsheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Asap:wght@400;600;700&family=IBM+Plex+Mono:wght@600&display=swap">
+<style>
+@page { size: Letter portrait; margin: 0.42in; }
+*,*::before,*::after { box-sizing: border-box; }
+html, body { margin:0; padding:0; background:#fff; color:#000; }
+body {
+  font-family:"Asap","Helvetica Neue",Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased; font-variant-ligatures:none;
+}
+.sheet {
+  width:7.66in; height:10.16in; margin:0 auto; padding:0;
+  display:flex; flex-direction:column; overflow:hidden;
+  break-inside:avoid; page-break-inside:avoid;
+}
+@media screen {                 /* screen-only trim guide; never printed */
+  body { background:#fff; padding:26px 0; }
+  .sheet { outline:1px dashed #bbb; outline-offset:15px; }
+}
+@media print { .sheet { outline:none; } }
+
+.sheet { justify-content:flex-start; }
+.card { flex:1 1 50%; display:flex; flex-direction:column; min-height:0; padding:0; }
+.cut { flex:0 0 auto; border-top:1.5px dashed #000; margin:10px 0 0;
+  position:relative; height:16px; }
+.cut span { position:absolute; left:50%; top:3px; transform:translateX(-50%);
+  background:#fff; padding:0 8px; font-family:"IBM Plex Mono",monospace;
+  font-size:7pt; font-weight:600; letter-spacing:.16em; text-transform:uppercase; }
+.cardhd { display:flex; align-items:baseline; justify-content:space-between;
+  border-bottom:2.5px solid #000; padding-bottom:3px; margin-bottom:7px; }
+.cardhd h2 { font-family:"Archivo","Arial Black",Impact,sans-serif; font-weight:800;
+  font-size:19pt; line-height:1; margin:0; text-transform:uppercase; letter-spacing:-.015em; }
+.cardhd .sub { font-family:"IBM Plex Mono",monospace; font-size:7.2pt; font-weight:600;
+  letter-spacing:.13em; text-transform:uppercase; text-align:right; line-height:1.4; }
+
+table.grid { width:100%; border-collapse:collapse; table-layout:fixed;
+  font-family:"Archivo",Arial,sans-serif; }
+table.grid { flex:1 1 auto; }
+table.grid th, table.grid td { border:1px solid #000; text-align:center; padding:0;
+  font-size:13pt; font-weight:700; height:0.355in; }
+table.grid th { font-size:8pt; letter-spacing:.06em; font-weight:800; height:0.2in; }
+table.grid th.q { border-bottom:none; font-size:10pt; height:0.19in; }
+table.grid td.lbl, table.grid th.lbl { font-size:11pt; letter-spacing:.04em;
+  border-right:2.5px solid #000; }
+table.grid .qs { border-left:2.5px solid #000; }
+table.grid tr.gk td, table.grid tr.gk th { border-bottom:2.5px solid #000; }
+table.grid tr.gk td { font-size:14pt; font-weight:800; }
+table.grid tr.off td { font-size:9.4pt; font-weight:700; border-top:2.5px solid #000;
+  height:0.26in; }
+table.grid tr.off td.lbl { font-size:9pt; font-weight:800; }
+.grid tr.off span { display:inline-block; min-width:1.45em; }
+.gridnote { font-family:"IBM Plex Mono",monospace; font-size:7.2pt; font-weight:600;
+  letter-spacing:.05em; text-transform:uppercase; margin-top:5px;
+  display:flex; justify-content:space-between; }
+
+.cols { display:flex; gap:13px; flex:1 1 auto; min-height:0; }
+.cols > div { display:flex; flex-direction:column; }
+.c-names { flex:0 0 25%; } .c-say { flex:1 1 auto; } .c-rules { flex:0 0 25%; }
+.colhd { font-family:"IBM Plex Mono",monospace; font-size:7pt; font-weight:600;
+  letter-spacing:.15em; text-transform:uppercase; border-bottom:1.5px solid #000;
+  padding-bottom:2.5px; margin-bottom:5px; }
+.nm { display:flex; align-items:baseline; gap:5px; margin-bottom:1px; }
+.nm i { font-family:"Archivo",Arial,sans-serif; font-style:normal; font-weight:800;
+  font-size:9pt; width:2.1em; flex:0 0 auto; }
+.nm u { flex:1 1 auto; border-bottom:1px solid #000; height:14.4px; text-decoration:none; }
+.co { margin-bottom:4.2px; }
+.co b { font-family:"Archivo","Arial Black",Impact,sans-serif; font-weight:800;
+  font-size:11.2pt; line-height:1.06; display:block; text-transform:uppercase;
+  letter-spacing:-.004em; }
+.co i { font-family:"Asap",Arial,sans-serif; font-style:normal; font-size:7.6pt;
+  font-weight:600; text-transform:uppercase; letter-spacing:.07em; }
+.never { border:2px solid #000; padding:4px 6px; margin-top:5px; }
+.never b { font-family:"Archivo",Arial,sans-serif; font-size:7.6pt; font-weight:800;
+  letter-spacing:.14em; display:block; }
+.never span { font-family:"Asap",Arial,sans-serif; font-size:8.2pt; font-weight:600; }
+.gkrow { display:flex; border:2px solid #000; margin-bottom:6px; }
+.gkrow div { flex:1 1 0; text-align:center; padding:2.5px 0; border-right:1px solid #000;
+  font-family:"Archivo",Arial,sans-serif; }
+.gkrow div:last-child { border-right:none; }
+.gkrow small { display:block; font-size:6.6pt; font-weight:700; letter-spacing:.1em; }
+.gkrow b { font-size:11.5pt; font-weight:800; }
+.rule { font-family:"Asap",Arial,sans-serif; font-size:8pt; line-height:1.3;
+  margin-bottom:4.5px; padding-left:9px; border-left:3px solid #000; }
+.rule b { font-weight:700; }
+</style></head>
+<body><div class="sheet">
+<div class="card">
+  <div class="cardhd"><h2>Rotations</h2><div class="sub">11 players &middot; 7 on<br>
+    &#9733; = quarter start</div></div>
+  <table class="grid"><colgroup><col style="width:8.5%"><col><col><col><col><col><col><col><col></colgroup><thead>
+<tr><th class="lbl q"></th><th class="q qs" colspan="2">Q1</th><th class="q qs" colspan="2">Q2</th><th class="q qs" colspan="2">Q3</th><th class="q qs" colspan="2">Q4</th></tr>
+<tr><th class="lbl"></th><th class="qs">&#9733;R1</th><th>R2</th><th class="qs">&#9733;R3</th><th>R4</th><th class="qs">&#9733;R5</th><th>R6</th><th class="qs">&#9733;R7</th><th>R8</th></tr></thead><tbody>
+<tr class="gk"><th class="lbl">GK</th><td class="qs">P1</td><td class="">P1</td><td class="qs">P4</td><td class="">P4</td><td class="qs">P7</td><td class="">P7</td><td class="qs">P10</td><td class="">P10</td></tr>
+<tr><th class="lbl">LD</th><td class="qs">P6</td><td class="">P9</td><td class="qs">P5</td><td class="">P1</td><td class="qs">P2</td><td class="">P3</td><td class="qs">P11</td><td class="">P8</td></tr>
+<tr><th class="lbl">RD</th><td class="qs">P3</td><td class="">P10</td><td class="qs">P8</td><td class="">P11</td><td class="qs">P9</td><td class="">P5</td><td class="qs">P4</td><td class="">P6</td></tr>
+<tr><th class="lbl">LM</th><td class="qs">P5</td><td class="">P8</td><td class="qs">P9</td><td class="">P2</td><td class="qs">P11</td><td class="">P6</td><td class="qs">P3</td><td class="">P1</td></tr>
+<tr><th class="lbl">CM</th><td class="qs">P2</td><td class="">P11</td><td class="qs">P10</td><td class="">P3</td><td class="qs">P8</td><td class="">P4</td><td class="qs">P5</td><td class="">P7</td></tr>
+<tr><th class="lbl">RM</th><td class="qs">P7</td><td class="">P3</td><td class="qs">P6</td><td class="">P5</td><td class="qs">P1</td><td class="">P9</td><td class="qs">P2</td><td class="">P11</td></tr>
+<tr><th class="lbl">F</th><td class="qs">P4</td><td class="">P2</td><td class="qs">P7</td><td class="">P6</td><td class="qs">P10</td><td class="">P8</td><td class="qs">P1</td><td class="">P9</td></tr>
+<tr class="off"><td class="lbl">OFF</td><td class="qs"><span>8</span><span>9</span><span>10</span><span>11</span></td><td class=""><span>4</span><span>5</span><span>6</span><span>7</span></td><td class="qs"><span>1</span><span>2</span><span>3</span><span>11</span></td><td class=""><span>7</span><span>8</span><span>9</span><span>10</span></td><td class="qs"><span>3</span><span>4</span><span>5</span><span>6</span></td><td class=""><span>1</span><span>2</span><span>10</span><span>11</span></td><td class="qs"><span>6</span><span>7</span><span>8</span><span>9</span></td><td class=""><span>2</span><span>3</span><span>4</span><span>5</span></td></tr>
+</tbody></table>
+  <div class="gridnote"><span>Only got 4 subs in? Use the &#9733; columns &mdash; still even.</span>
+    <span>Never sub the goalie mid-quarter.</span></div>
+</div>
+<div class="cut"><span>cut here &middot; fold once &middot; pocket</span></div>
+<div class="card">
+  <div class="cardhd"><h2>Names &amp; Callouts</h2><div class="sub">write names here only<br>
+    numbers are used everywhere else</div></div>
+  <div class="cols">
+    <div class="c-names"><div class="colhd">Roster</div>
+      <div class="nm"><i>P1</i><u></u></div><div class="nm"><i>P2</i><u></u></div><div class="nm"><i>P3</i><u></u></div><div class="nm"><i>P4</i><u></u></div><div class="nm"><i>P5</i><u></u></div><div class="nm"><i>P6</i><u></u></div><div class="nm"><i>P7</i><u></u></div><div class="nm"><i>P8</i><u></u></div><div class="nm"><i>P9</i><u></u></div><div class="nm"><i>P10</i><u></u></div><div class="nm"><i>P11</i><u></u></div>
+    </div>
+    <div class="c-say"><div class="colhd">What to yell</div>
+      <div class="co"><b>&ldquo;Stay in your neighborhood!&rdquo;</b><i>the one cue that fixes the swarm</i></div><div class="co"><b>&ldquo;Walk to where the ball is GOING.&rdquo;</b><i>for the kid with nothing left</i></div><div class="co"><b>&ldquo;Pass to where your friend is going.&rdquo;</b><i>not to where they are standing</i></div><div class="co"><b>&ldquo;Keep going &mdash; it's never over.&rdquo;</b><i>say it louder when we are behind</i></div><div class="co"><b>&ldquo;One pressures, one backs up!&rdquo;</b><i>defenders</i></div><div class="co"><b>&ldquo;Behind the ball!&rdquo;</b><i>midfield</i></div><div class="co"><b>&ldquo;Stay ahead!&rdquo;</b><i>forward</i></div><div class="co"><b>&ldquo;Goalie &mdash; LOOK first!&rdquo;</b><i>then roll, throw or pass</i></div>
+      <div class="never"><b>NEVER SAY</b><span>Boot it &middot; Kick it &middot; Get it out &middot; Go go go &middot; Shoot</span></div>
+    </div>
+    <div class="c-rules"><div class="colhd">Goalies &mdash; 1, 4, 7, 10</div>
+      <div class="gkrow"><div><small>Q1</small><b>P1</b></div><div><small>Q2</small><b>P4</b></div><div><small>Q3</small><b>P7</b></div><div><small>Q4</small><b>P10</b></div></div>
+      <div class="rule"><b>Goalie crying?</b> Bring in the next one on the list early,
+        then keep going in order.</div>
+      <div class="rule"><b>Read down a column</b>, not across. One column = seven names.</div>
+      <div class="rule"><b>Skip a rotation</b> if the game is flowing. The next
+        &#9733; still works.</div>
+      <div class="rule"><b>Praise the kid who stayed wide</b> and never touched it.
+        By name. Loudly.</div>
+    </div>
+  </div>
+</div>
+</div></body></html>

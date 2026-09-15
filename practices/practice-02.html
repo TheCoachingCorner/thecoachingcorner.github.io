@@ -1,0 +1,433 @@
+<title>Welcome to Defense</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{
+  --page:#F1F4EE; --page-ink:#131C17; --page-muted:#5E6E64; --page-line:#CFD7CB; --page-soft:#E5EBE1;
+  --card:#FFFFFF; --ink:#131C17; --muted:#61715F; --line:#C7D1C4;
+  --grass:#E9EFE6; --grass-2:#DCE6D7;
+  --cone:#C1451C; --pitch:#1B5340; --keeper:#EFBE12;
+  --yes:#177A46; --yes-soft:#E1F0E7;
+  --no:#C1352A; --no-soft:#F8E3E0;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --page:#0C1310; --page-ink:#E6ECE6; --page-muted:#93A297; --page-line:#222E27; --page-soft:#161F1A;
+}}
+:root[data-theme="dark"]{
+  --page:#0C1310; --page-ink:#E6ECE6; --page-muted:#93A297; --page-line:#222E27; --page-soft:#161F1A;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--page-ink);
+  font-family:"Asap",system-ui,-apple-system,sans-serif;font-size:18px;line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Archivo",system-ui,sans-serif;margin:0;line-height:1.08;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+
+/* hero */
+header{padding:44px 0 34px}
+header .kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--cone);font-weight:600}
+header h1{font-size:clamp(38px,8vw,64px);font-weight:800;letter-spacing:-.03em;margin:12px 0 0}
+.goals{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.goal{background:var(--page-soft);border-radius:4px;padding:16px 18px;display:flex;gap:13px;align-items:baseline}
+.goal .n{font-family:"Archivo",sans-serif;font-weight:800;font-size:26px;color:var(--cone);line-height:1}
+.goal .t{font-family:"Archivo",sans-serif;font-weight:700;font-size:18px}
+.rule{margin-top:20px;padding:16px 20px;background:var(--cone);color:#fff;border-radius:4px;
+  font-size:17.5px;font-weight:500}
+.rule b{font-weight:600}
+.clock{margin-top:14px;font-size:14.5px;color:var(--page-muted);
+  border-left:3px solid var(--page-line);padding-left:14px}
+.clock b{color:var(--page-ink)}
+
+/* sections */
+section{padding:46px 0;border-top:1px solid var(--page-line)}
+.sechead{display:flex;gap:16px;align-items:baseline;margin-bottom:8px}
+.sechead .n{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(32px,6vw,46px);
+  color:var(--cone);line-height:1;letter-spacing:-.02em}
+.sechead h2{font-size:clamp(28px,5.4vw,42px);font-weight:800;letter-spacing:-.025em}
+.optional{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--page-muted);
+  border:1px solid var(--page-line);border-radius:2px;padding:3px 8px;margin-bottom:12px}
+
+/* drawing card */
+figure{margin:26px 0 0;background:var(--card);border:1px solid var(--line);border-radius:8px;
+  padding:24px 20px 18px;color:var(--ink)}
+figure svg{display:block;width:100%;height:auto}
+figure .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:560px){figure .pair{grid-template-columns:1fr}}
+figure .pane{display:flex;flex-direction:column;gap:10px}
+.verdict{font-family:"Archivo",sans-serif;font-weight:700;font-size:17px;display:flex;
+  align-items:center;gap:8px;justify-content:center}
+.verdict.y{color:var(--yes)} .verdict.n{color:var(--no)}
+figcaption{margin-top:16px;text-align:center;font-family:"Archivo",sans-serif;font-weight:700;
+  font-size:clamp(20px,4.4vw,27px);letter-spacing:-.015em;color:var(--ink);text-wrap:balance}
+figcaption span{display:block;font-family:"Asap",sans-serif;font-weight:400;font-size:16px;
+  color:var(--muted);margin-top:7px;letter-spacing:0}
+
+/* what we tell them */
+h3{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--page-muted);margin:34px 0 16px}
+.says{display:flex;flex-direction:column;gap:14px}
+.say{background:var(--page-soft);border-left:4px solid var(--pitch);border-radius:0 4px 4px 0;padding:15px 18px}
+.say .who{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--pitch);display:block;margin-bottom:5px}
+.say .quote{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(19px,3.6vw,23px);
+  letter-spacing:-.015em;line-height:1.25}
+.say .after{font-size:16px;color:var(--page-muted);margin-top:7px}
+.say.big{border-left-color:var(--cone);background:var(--page-soft)}
+.say.big .quote{font-size:clamp(22px,4.6vw,29px)}
+.say.big .who{color:var(--cone)}
+
+.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
+.trio div{background:var(--page-soft);border-radius:4px;padding:13px 15px}
+.trio b{font-family:"Archivo",sans-serif;font-size:16px;display:block;color:var(--cone)}
+.trio span{font-size:16px;color:var(--page-ink)}
+
+/* exercise */
+.ex{margin-top:32px;border:2px solid var(--page-line);border-radius:6px;padding:22px}
+.ex .top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.ex h4{font-size:23px;font-weight:800;letter-spacing:-.02em}
+.badge{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.11em;
+  text-transform:uppercase;padding:4px 9px;border-radius:3px;background:var(--pitch);color:#fff}
+.badge.two{background:var(--cone)}
+.ex ol,.ex ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:7px}
+.ex li::marker{color:var(--cone);font-weight:600}
+.ex p+p,.ex p+ol,.ex p+ul,.ex ol+p,.ex ul+p{margin-top:13px}
+.ex .call{font-family:"Archivo",sans-serif;font-weight:800;font-size:26px;color:var(--cone);
+  letter-spacing:-.01em;margin:10px 0}
+
+.cues{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.cues span{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(16px,3.4vw,20px);
+  background:var(--cone);color:#fff;padding:9px 14px;border-radius:4px}
+footer{padding:40px 0 60px;border-top:1px solid var(--page-line);color:var(--page-muted);font-size:15px}
+:focus-visible{outline:3px solid var(--cone);outline-offset:2px}
+
+/* two-tier vocabulary: the real word and the one we say to kids */
+.vocab{width:100%;border-collapse:collapse;margin:18px 0 0}
+.vocab th{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--page-muted);text-align:left;padding:0 0 9px}
+.vocab td{padding:12px 0;border-top:1px solid var(--page-line);
+  font-family:"Archivo",sans-serif;letter-spacing:-.01em}
+.vocab td.c{font-weight:700;font-size:18px;color:var(--page-muted)}
+.vocab td.k{font-weight:800;font-size:22px;color:var(--cone)}
+.chain{font-family:"Archivo",sans-serif;font-weight:800;letter-spacing:-.02em;
+  font-size:clamp(22px,5vw,34px);margin:22px 0 0;color:var(--page-ink);text-wrap:balance}
+.beat{margin-top:30px;border-top:2px solid var(--page-line);padding-top:18px}
+.beat .name{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(24px,5vw,32px);
+  letter-spacing:-.025em;color:var(--cone);line-height:1}
+.beat .alias{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--page-muted);margin-left:10px}
+.beat .lede{font-size:18px;margin-top:8px}
+.note{font-size:16px;color:var(--page-muted);margin-top:10px}
+
+/* ══════════ print ══════════
+   Canonical copy: work/printout-maker/practice-print.css
+   Edit there too, or the next practice document starts from a stale version. */
+@media print{
+  @page{size:Letter portrait;margin:.55in .6in}
+
+  /* Force the light palette. Chrome still reports the OS dark preference when
+     printing, which otherwise produces a black page and an empty toner cart. */
+  :root{--page:#fff;--page-ink:#131C17;--page-muted:#5E6E64;--page-line:#CFD7CB;--page-soft:#E5EBE1}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  html,body{background:#fff;font-size:11pt;line-height:1.5}
+  .wrap{max-width:none;padding:0}
+  header{padding:0 0 18px}
+  header h1{font-size:30pt}
+  a{text-decoration:none;color:inherit}
+
+  /* A drawing is never cut in half. If it doesn't fit in what's left of the
+     page it moves to the next one whole. This has to sit on the figure —
+     putting it on the section asks for something impossible, so it's ignored. */
+  figure,.ex,.say,.goal,.cues,.rule,.clock,table,.sechead{break-inside:avoid;page-break-inside:avoid}
+  figure{margin:14px 0}
+  /* 6in leaves room for the caption under the tallest drawing, so the figure and
+     its caption still fit one page together. At 7.5in the pair overflowed, the
+     browser gave up on break-inside, and captions stranded at the top of the
+     next page. */
+  figure svg{max-height:6in;height:auto}
+  figcaption{break-inside:avoid;page-break-inside:avoid;
+             break-before:avoid;page-break-before:avoid}
+
+  /* clamp() display type resolves off the page width in print and lands far
+     bigger than the column, which wraps a cue mid-phrase. Any display-size
+     component needs an explicit print size — see header h1 above. */
+  .chain{font-size:19pt;line-height:1.15}
+  .chain,.vocab,.trio div{break-inside:avoid;page-break-inside:avoid}
+
+  /* A heading never strands at the foot of a page. */
+  h1,h2,h3,h4,.sechead{break-after:avoid;page-break-after:avoid}
+  p,li{orphans:3;widows:3}
+
+  /* Nothing that isn't content. */
+  nav,footer,.noprint{display:none}
+}
+</style>
+
+<header><div class="wrap">
+  <p class="kicker">Practice 2</p>
+  <h1>Welcome to Defense</h1>
+  <div class="goals">
+    <div class="goal"><span class="n">1</span><span class="t">How to slow down<br>an attacker</span></div>
+    <div class="goal"><span class="n">2</span><span class="t">How defenders<br>help each other</span></div>
+    <div class="goal"><span class="n">3</span><span class="t">How to chase<br>someone down</span></div>
+  </div>
+</div></header>
+
+<!-- ══════════ 1 ══════════ -->
+<section id="slow"><div class="wrap">
+  <div class="sechead"><span class="n">1</span><h2>Slow Them Down</h2></div>
+
+
+  <h3>What we tell the players</h3>
+
+  <p class="chain">PRESSURE → TURN THEM → RUN TOGETHER</p>
+  <p class="footnote">Coaches: this is <i>close, contain, capitalize</i>. Never say those words to the kids.</p>
+
+  <div class="beat">
+    <p><span class="name">PRESSURE</span></p>
+    <p class="lede">Close the space fast — then stop before you reach them.</p>
+  <figure>
+    <div class="pair">
+      <div class="pane"><svg viewBox="0 0 220 300" role="img" aria-label="Wrong: the defender runs in a straight line at the attacker, who curls around them and is gone."><defs><marker id="a-ink" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--ink)"/></marker><marker id="a-no" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--no)"/></marker><marker id="a-yes" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--yes)"/></marker><marker id="a-att" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--cone)"/></marker></defs><rect x="6" y="6" width="208" height="288" rx="4" fill="var(--grass)" stroke="var(--line)" stroke-width="2"/><path d="M80 210 L80 88" fill="none" stroke="var(--ink)" stroke-width="6" stroke-linecap="round" marker-end="url(#a-ink)"/><g transform="rotate(0 80 52)"><ellipse cx="80" cy="52" rx="31" ry="16" fill="var(--cone)"/><circle cx="80" cy="52" r="16" fill="#D3AC80" stroke="var(--ink)" stroke-width="2.5"/></g><g transform="rotate(0 80 238)"><ellipse cx="80" cy="238" rx="31" ry="16" fill="var(--pitch)"/><circle cx="80" cy="238" r="16" fill="#D3AC80" stroke="var(--ink)" stroke-width="2.5"/></g><path d="M112 62 C 172 100, 184 194, 172 266" fill="none" stroke="var(--no)" stroke-width="5.5" stroke-linecap="round" marker-end="url(#a-no)"/></svg><span class="verdict n">✕ Straight in — burned</span></div>
+      <div class="pane"><svg viewBox="0 0 220 300" role="img" aria-label="Right: the defender runs a curved path, arrives turned side-on, and stops a step short of the attacker."><defs><marker id="a-ink" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--ink)"/></marker><marker id="a-no" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--no)"/></marker><marker id="a-yes" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--yes)"/></marker><marker id="a-att" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--cone)"/></marker></defs><rect x="6" y="6" width="208" height="288" rx="4" fill="var(--grass)" stroke="var(--line)" stroke-width="2"/><path d="M92 240 C 126 220, 142 194, 138 176" fill="none" stroke="var(--ink)" stroke-width="6" stroke-linecap="round" marker-end="url(#a-ink)"/><g transform="rotate(0 80 254)" opacity=".24"><ellipse cx="80" cy="254" rx="31" ry="16" fill="var(--pitch)"/><circle cx="80" cy="254" r="16" fill="#D3AC80" stroke="var(--ink)" stroke-width="2.5"/></g><g transform="rotate(0 74 52)"><ellipse cx="74" cy="52" rx="31" ry="16" fill="var(--cone)"/><circle cx="74" cy="52" r="16" fill="#D3AC80" stroke="var(--ink)" stroke-width="2.5"/></g><g transform="rotate(-38 132 146)"><ellipse cx="132" cy="146" rx="31" ry="16" fill="var(--pitch)"/><circle cx="132" cy="146" r="16" fill="#D3AC80" stroke="var(--ink)" stroke-width="2.5"/></g></svg><span class="verdict y">✓ Stop short</span></div>
+    </div>
+    <figcaption>Get there fast, then stop short.<span>We need space so they don’t blow by us.</span></figcaption>
+  </figure>
+    <div class="says" style="margin-top:14px">
+      <div class="say big"><span class="who">The point</span><span class="quote">“Fast to get there. But stop short.”</span>
+        <p class="after">If we stop short, that gives us space and time to keep up and force a mistake.</p></div>
+    <div class="say big"><span class="who">The gap</span><span class="quote">“Stay one big step away.”</span>
+        <p class="after">Close enough to touch them — but don’t. Too far and they go by you; too close and one touch beats you.</p></div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <p><span class="name">TURN THEM</span></p>
+    <p class="lede">Block off one path. Give them only one way to go.</p>
+
+  <figure>
+    <div class="pair">
+      <div class="pane"><svg viewBox="0 0 220 300" role="img" aria-label="Wrong: the defender stands square, so the attacker can go either side of them."><defs><marker id="a-ink" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--ink)"/></marker><marker id="a-no" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--no)"/></marker><marker id="a-yes" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--yes)"/></marker><marker id="a-att" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--cone)"/></marker></defs><rect x="6" y="6" width="208" height="288" rx="4" fill="var(--grass)" stroke="var(--line)" stroke-width="2"/><path d="M84 76 C 48 122, 42 212, 50 266" fill="none" stroke="var(--no)" stroke-width="5.5" stroke-linecap="round" marker-end="url(#a-no)"/><path d="M136 76 C 172 122, 178 212, 170 266" fill="none" stroke="var(--no)" stroke-width="5.5" stroke-linecap="round" marker-end="url(#a-no)"/><g transform="rotate(0 110 56)"><ellipse cx="110" cy="56" rx="31" ry="16" fill="var(--cone)"/><circle cx="110" cy="56" r="16" fill="#D3AC80" stroke="var(--ink)" stroke-width="2.5"/></g><g transform="rotate(0 110 168)"><ellipse cx="110" cy="168" rx="31" ry="16" fill="var(--pitch)"/><circle cx="110" cy="168" r="16" fill="#D3AC80" stroke="var(--ink)" stroke-width="2.5"/></g><text x="110" y="214" text-anchor="middle" font-family="Asap,sans-serif" font-size="15" font-weight="600" fill="var(--no)">Which way?</text></svg><span class="verdict n">✕ On your heels</span></div>
+      <div class="pane"><svg viewBox="0 0 220 300" role="img" aria-label="Right: the defender stands side-on, leaving the attacker only one way to go, and travels with them."><defs><marker id="a-ink" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--ink)"/></marker><marker id="a-no" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--no)"/></marker><marker id="a-yes" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--yes)"/></marker><marker id="a-att" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--cone)"/></marker></defs><rect x="6" y="6" width="208" height="288" rx="4" fill="var(--grass)" stroke="var(--line)" stroke-width="2"/><path d="M72 80 C 56 124, 50 168, 56 202" fill="none" stroke="var(--ink)" stroke-width="6" stroke-linecap="round" marker-end="url(#a-ink)"/><path d="M140 192 C 124 218, 106 236, 92 248" fill="none" stroke="var(--yes)" stroke-width="5.5" stroke-linecap="round" marker-end="url(#a-yes)"/><g transform="rotate(0 88 56)"><ellipse cx="88" cy="56" rx="31" ry="16" fill="var(--cone)"/><circle cx="88" cy="56" r="16" fill="#D3AC80" stroke="var(--ink)" stroke-width="2.5"/></g><g transform="rotate(-38 152 158)"><ellipse cx="152" cy="158" rx="31" ry="16" fill="var(--pitch)"/><circle cx="152" cy="158" r="16" fill="#D3AC80" stroke="var(--ink)" stroke-width="2.5"/></g><text x="110" y="286" text-anchor="middle" font-family="Asap,sans-serif" font-size="15" font-weight="600" fill="var(--pitch)">Only one way</text></svg><span class="verdict y">✓ Turn towards their only way</span></div>
+    </div>
+  </figure>
+
+    <div class="says" style="margin-top:20px">
+      <div class="say"><span class="who">The feet</span><span class="quote">“Scooter stance.”</span>
+        <p class="after">One foot in front, one behind. Show them only one shoulder.</p></div>
+      <div class="say big"><span class="who">Where to look</span><span class="quote">“Watch their belly button, not the ball.”</span>
+        <p class="after">Feet can trick you. Their hips can’t lie.</p></div>
+      <div class="say"><span class="who">Which way</span><span class="quote">“Send them to the sideline.”</span>
+        <p class="after">Stand so one way is easy and one way is hard, and the easy way is always away from the middle. Same thing their position card says: <i>keep the ball away from the center.</i></p></div>
+      <div class="say"><span class="who">Careful</span><span class="quote">“You turn them by standing in the way. Not by running through them.”</span></div>
+    </div>
+    <p class="note">If they stop, turn, or go backwards — <b>that’s the whole job done.</b> You already won.</p>
+  </div>
+
+  <div class="beat">
+    <p><span class="name">RUN TOGETHER</span></p>
+    <p class="lede">Now you’re going down the field side by side. Stay with them for as long as it takes — and <b>when the ball comes loose, take it and go.</b></p>
+  <figure>
+    <div class="pair">
+      <div class="pane"><svg viewBox="0 0 220 300" role="img" aria-label="The attacker and the defender have run down the field together and are side by side, with the ball between them."><defs><marker id="a-ink" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--ink)"/></marker><marker id="a-no" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--no)"/></marker><marker id="a-yes" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--yes)"/></marker><marker id="a-att" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--cone)"/></marker></defs><rect x="6" y="6" width="208" height="288" rx="4" fill="var(--grass)" stroke="var(--line)" stroke-width="2"/><path d="M62 26 C 78 70, 96 96, 88 118" fill="none" stroke="var(--cone)" stroke-width="5.5" stroke-linecap="round" marker-end="url(#a-att)"/><path d="M186 44 C 178 96, 162 130, 154 148" fill="none" stroke="var(--yes)" stroke-width="5.5" stroke-linecap="round" marker-end="url(#a-yes)"/><g transform="rotate(-22 78 142)"><ellipse cx="78" cy="142" rx="31" ry="16" fill="var(--cone)"/><circle cx="78" cy="142" r="16" fill="#D3AC80" stroke="var(--ink)" stroke-width="2.5"/></g><g transform="rotate(-22 146 168)"><ellipse cx="146" cy="168" rx="31" ry="16" fill="var(--pitch)"/><circle cx="146" cy="168" r="16" fill="#D3AC80" stroke="var(--ink)" stroke-width="2.5"/></g><circle cx="104" cy="182" r="10.5" fill="var(--ink)"/><circle cx="104" cy="182" r="3.6" fill="#fff"/></svg><span class="verdict ">1 · Run with them</span></div>
+      <div class="pane"><svg viewBox="0 0 220 300" role="img" aria-label="The same two players, with the ball now leaving with the defender on a curve away from the attacker."><defs><marker id="a-ink" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--ink)"/></marker><marker id="a-no" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--no)"/></marker><marker id="a-yes" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--yes)"/></marker><marker id="a-att" viewBox="0 0 12 12" refX="7" refY="6" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="var(--cone)"/></marker></defs><rect x="6" y="6" width="208" height="288" rx="4" fill="var(--grass)" stroke="var(--line)" stroke-width="2"/><path d="M62 26 C 78 70, 96 96, 88 118" fill="none" stroke="var(--cone)" stroke-width="5.5" stroke-linecap="round" marker-end="url(#a-att)"/><path d="M186 44 C 178 96, 162 130, 154 148" fill="none" stroke="var(--yes)" stroke-width="5.5" stroke-linecap="round" marker-end="url(#a-yes)"/><g transform="rotate(-22 78 142)"><ellipse cx="78" cy="142" rx="31" ry="16" fill="var(--cone)"/><circle cx="78" cy="142" r="16" fill="#D3AC80" stroke="var(--ink)" stroke-width="2.5"/></g><g transform="rotate(-22 146 168)"><ellipse cx="146" cy="168" rx="31" ry="16" fill="var(--pitch)"/><circle cx="146" cy="168" r="16" fill="#D3AC80" stroke="var(--ink)" stroke-width="2.5"/></g><circle cx="104" cy="182" r="10.5" fill="var(--ink)"/><circle cx="104" cy="182" r="3.6" fill="#fff"/><path d="M116 198 C 146 238, 172 258, 196 262" fill="none" stroke="var(--yes)" stroke-width="7" stroke-linecap="round" marker-end="url(#a-yes)"/></svg><span class="verdict ">2 · Take it and go</span></div>
+    </div>
+    <figcaption>When they lose it, take it and go.<span>You ran down together and the ball came loose. Don’t kick it away — dribble out with it.</span></figcaption>
+  </figure>
+    <div class="says" style="margin-top:14px">
+      <div class="say big"><span class="who">The whole idea</span><span class="quote">“Don’t kick it away. Dribble it away.”</span>
+        <p class="after">This is the one that kills stabbing, and it does it without a single “don’t”: <b>you cannot dribble away from a stab.</b> A poke sends the ball somewhere random. To come away dribbling you have to arrive under control — which only happens if you waited until the ball was actually loose.</p></div>
+      <div class="say big"><span class="who">If it never comes</span><span class="quote">“No ball? You still won.”</span>
+        <p class="after">This one is a bonus, not the job. If you ran with them the whole way and they never got past you, that is a complete piece of defending — whoever ends up with the ball.</p></div>
+      <div class="say"><span class="who">When it does come</span><span class="quote">“Wait for them to lose it. Then it’s yours.”</span>
+        <p class="after">Their position card says the same thing: <i>control the ball — kicking away is a pass to the other team.</i> <b>If you reach, they go past you.</b></p></div>
+    </div>
+  </div>
+
+  <h3>Midfield — stay behind the ball</h3>
+  <p>Imagine a line drawn across the field through the ball. Everyone except the forward wants to be on <b>our</b> side of that line.</p>
+  <div class="says" style="margin-top:14px">
+    <div class="say big"><span class="who">Getting back</span><span class="quote">“Beat the ball home.”</span></div>
+    <div class="say"><span class="who">How hard to run</span><span class="quote">“Run to where the ball is going, not where it is.”</span>
+      <p class="after">If you’ll get there either way — walk. If you won’t — run.</p></div>
+  </div>
+
+  <div class="ex">
+    <div class="top"><h4>Exercise — The 6-Second Wall</h4><span class="badge">Whole team</span></div>
+    <p>Set up <b>3 or 4 channels</b> side by side, about <b>12 yds long and 6 yds wide</b>. One attacker with a ball at one end, one defender at the other. Everyone is in a channel — nobody watching.</p>
+    <p><b>The defender’s job is not to win the ball.</b> It’s to stop the attacker crossing the end line for <b>6 seconds</b>. Count it out loud.</p>
+    <ul>
+      <li>Attacker crosses the line → <b>attacker gets the point</b></li>
+      <li>Defender survives 6 seconds → <b>defender gets the point</b></li>
+    </ul>
+    <p class="call">Round 1 — walking only, no ball.</p>
+    <p>This is the round that teaches it. A walking defender cannot stab, so the only thing that works is arriving on a curve, getting sideways, and staying in front.</p>
+    <p><b>Round 2</b> — defender may jog. <b>Round 3</b> — live.</p>
+    <p>Swap attacker and defender every rep. Play to 3 points, then find a new partner.</p>
+    <div class="cues">
+      <span>“Turn them!”</span><span>“One big step away!”</span><span>“Scooter feet!”</span><span>“Run together!”</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- ══════════ 2 ══════════ -->
+<section id="partners"><div class="wrap">
+  <div class="sechead"><span class="n">2</span><h2>Defenders Help Each Other</h2></div>
+
+  <figure>
+    <div class="pair">
+      <div class="pane">
+        <svg viewBox="0 0 220 300" role="img" aria-label="Wrong: both defenders level with each other, so the attacker goes straight through the gap between them.">
+          <rect x="8" y="8" width="204" height="284" rx="4" fill="var(--grass)" stroke="var(--line)" stroke-width="2"/>
+          <line x1="78" y1="292" x2="142" y2="292" stroke="var(--ink)" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="110" cy="48" r="22" fill="var(--cone)"/>
+          <text x="110" y="55" text-anchor="middle" font-family="Archivo,sans-serif" font-size="13" font-weight="700" fill="#fff">ATT</text>
+          <path d="M110 78 L110 268" fill="none" stroke="var(--no)" stroke-width="4" stroke-dasharray="9 8" stroke-linecap="round"/>
+          <circle cx="62" cy="150" r="22" fill="var(--muted)"/>
+          <text x="62" y="157" text-anchor="middle" font-family="Archivo,sans-serif" font-size="13" font-weight="700" fill="#fff">D</text>
+          <circle cx="158" cy="150" r="22" fill="var(--muted)"/>
+          <text x="158" y="157" text-anchor="middle" font-family="Archivo,sans-serif" font-size="13" font-weight="700" fill="#fff">D</text>
+          <text x="110" y="216" text-anchor="middle" font-family="Asap,sans-serif" font-size="13" font-weight="600" fill="var(--no)">straight through</text>
+          <g stroke="var(--no)" stroke-width="6" stroke-linecap="round">
+            <line x1="168" y1="34" x2="192" y2="58"/><line x1="192" y1="34" x2="168" y2="58"/>
+          </g>
+        </svg>
+        <span class="verdict n">✕ Side by side</span>
+      </div>
+      <div class="pane">
+        <svg viewBox="0 0 220 300" role="img" aria-label="Right: one defender goes to the attacker while the second waits behind them, between the attacker and the goal.">
+          <rect x="8" y="8" width="204" height="284" rx="4" fill="var(--grass)" stroke="var(--line)" stroke-width="2"/>
+          <line x1="78" y1="292" x2="142" y2="292" stroke="var(--ink)" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="86" cy="48" r="22" fill="var(--cone)"/>
+          <text x="86" y="55" text-anchor="middle" font-family="Archivo,sans-serif" font-size="13" font-weight="700" fill="#fff">ATT</text>
+          <path d="M92 78 L96 98" stroke="var(--yes)" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="100" cy="128" r="22" fill="var(--pitch)"/>
+          <text x="100" y="135" text-anchor="middle" font-family="Archivo,sans-serif" font-size="13" font-weight="700" fill="#fff">D</text>
+          <text x="100" y="170" text-anchor="middle" font-family="Archivo,sans-serif" font-size="12" font-weight="700" fill="var(--pitch)">PRESSURE</text>
+          <circle cx="132" cy="216" r="22" fill="#2C4A3E"/>
+          <text x="132" y="223" text-anchor="middle" font-family="Archivo,sans-serif" font-size="13" font-weight="700" fill="#fff">D</text>
+          <text x="132" y="258" text-anchor="middle" font-family="Archivo,sans-serif" font-size="12" font-weight="700" fill="#2C4A3E">BACKUP</text>
+          <g stroke="var(--yes)" stroke-width="6" stroke-linecap="round" fill="none">
+            <polyline points="168,46 178,58 196,32"/>
+          </g>
+        </svg>
+        <span class="verdict y">✓ One pressures, one backs up</span>
+      </div>
+    </div>
+    <figcaption>Never stand beside each other.<span>Side by side means one dribble beats both of you. If they get past your partner — you’re there.</span></figcaption>
+  </figure>
+
+  <h3>What we tell the players</h3>
+  <p>The two defenders are <b>partners</b>. This section is about <b>which one goes</b> — what that one does when they get there is <i>pressure → turn them → run together</i>, from section 1.</p>
+  <div class="says" style="margin-top:14px">
+    <div class="say big"><span class="who">The cue</span><span class="quote">“ONE PRESSURES — ONE BACKS UP.”</span></div>
+    <div class="say"><span class="who">Pressure — closest to the ball</span><span class="quote">“Go slow them down.”</span></div>
+    <div class="say"><span class="who">Backup — the other one</span><span class="quote">“Get behind your partner and protect the goal.”</span>
+      <p class="after">If they get past your partner, you’re there.</p></div>
+  </div>
+
+  <div class="ex">
+    <div class="top"><h4>Exercise — Partners at the Gate</h4><span class="badge">Adult #1</span><span class="badge two">Adult #2</span></div>
+    <p><b>Two stations, one adult each.</b> Split the team in half.</p>
+    <p>Each station: a <b>3-yd gate</b> made of two cones. <b>Two defenders</b> protect it. Everyone else is an attacker with a ball, spread out about 15 yds away.</p>
+    <p><b>Attackers go one at a time, every 8 seconds</b> — try to dribble through the gate. <b>Waiting attackers keep dribbling in their own space. Nobody stands still.</b></p>
+    <p class="call">Who pressures? Who backs up?</p>
+    <p>Don’t worry yet about whether the attacker scores. Stop for five seconds and praise the <b>shape</b>: <i>“Perfect — you went, and you were behind helping.”</i></p>
+    <p><b>Swap rule, say it once:</b> <i>“After four attackers, the two defenders join the attackers and the next two become defenders.”</i></p>
+    <p><b>Progression:</b> attackers go <b>in pairs</b> — now it’s 2v2 and the backup defender has a real decision to make.</p>
+    <div class="cues">
+      <span>“Who’s pressuring?”</span><span>“Get behind your partner!”</span><span>“Don’t stand beside each other!”</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- ══════════ 3 ══════════ -->
+<section id="chase"><div class="wrap">
+  <div class="sechead"><span class="n">3</span><h2>How to Chase Someone Down</h2></div>
+
+  <figure>
+    <svg viewBox="0 0 460 300" role="img" aria-label="An attacker dribbling on a curving path. One chaser follows the same path and arrives late; another runs straight to where the attacker is heading and gets there first.">
+      <rect x="10" y="10" width="440" height="280" rx="4" fill="var(--grass)" stroke="var(--line)" stroke-width="2"/>
+      <path d="M186 214 C 250 202, 316 158, 356 92" fill="none" stroke="var(--cone)" stroke-width="4" stroke-dasharray="2 9" stroke-linecap="round"/>
+      <circle cx="166" cy="220" r="21" fill="var(--cone)"/>
+      <text x="166" y="227" text-anchor="middle" font-family="Archivo,sans-serif" font-size="13" font-weight="700" fill="#fff">ATT</text>
+      <circle cx="374" cy="70" r="9" fill="none" stroke="var(--ink)" stroke-width="3"/>
+      <text x="374" y="44" text-anchor="middle" font-family="Asap,sans-serif" font-size="13" font-weight="600" fill="var(--ink)">where they’re going</text>
+      <path d="M116 246 C 200 242, 292 196, 344 104" fill="none" stroke="var(--no)" stroke-width="4.5" stroke-dasharray="10 8" stroke-linecap="round"/>
+      <text x="238" y="272" text-anchor="middle" font-family="Asap,sans-serif" font-size="13" font-weight="600" fill="var(--no)">✕ following their path — arrives second</text>
+      <path d="M112 226 L352 82" fill="none" stroke="var(--yes)" stroke-width="5.5" stroke-linecap="round"/>
+      <path d="M362 76 l -16 -2 l 6 14 z" fill="var(--yes)"/>
+      <text x="196" y="140" text-anchor="middle" font-family="Asap,sans-serif" font-size="13" font-weight="600" fill="var(--yes)">✓ cut the corner — arrives first</text>
+      <circle cx="94" cy="238" r="21" fill="var(--pitch)"/>
+      <text x="94" y="245" text-anchor="middle" font-family="Archivo,sans-serif" font-size="12" font-weight="700" fill="#fff">YOU</text>
+    </svg>
+    <figcaption>Run to where they’re going, not where they are.<span>Following someone’s path means arriving just behind them, every time.</span></figcaption>
+  </figure>
+
+  <h3>What we tell the players</h3>
+  <p>The best time to win the ball back is <b>right away</b> — most players slow down as soon as they get it.</p>
+  <div class="says" style="margin-top:14px">
+    <div class="say big"><span class="who">First</span><span class="quote">“Win it back in three seconds.”</span></div>
+    <div class="say"><span class="who">If you didn’t</span><span class="quote">“Run to where they’re going, not where they are.”</span>
+      <p class="after">Cut the corner. Run alongside the ball, not behind the player.</p></div>
+    <div class="say"><span class="who">Getting past them</span><span class="quote">“Get your shoulder in front of theirs.”</span>
+      <p class="after">Swim your arm through and take the space — now they’re running behind you instead of past you.</p></div>
+    <div class="say big"><span class="who">The line refs call</span><span class="quote">“Shoulder to shoulder is soccer. Hands are a foul.”</span>
+      <p class="after">Shoulder next to shoulder is legal. An arm across their body, a pull, or a push in the back is not.</p></div>
+  </div>
+  <p class="note"><b>Don’t</b> chase someone for 40 yards when you’re never going to catch them. Turn around and get back to your position instead.</p>
+
+  <div class="ex">
+    <div class="top"><h4>Exercise — Shoulder to Shoulder</h4><span class="badge">Whole team</span></div>
+    <p>Pairs, side by side on a line. A cone <b>12 yds</b> away. Coach rolls a ball toward the cone; both players go.</p>
+    <p class="call">Round 1 — walking only, friendly.</p>
+    <p>Both players get there. Practice the shoulder and the swim on the way. Nobody wins.</p>
+    <p><b>Round 2</b> — walking only, competitive. First to the ball. <b>Round 3</b> — running, competitive.</p>
+    <p><b>One rule the whole time:</b> <i>“Shoulder to shoulder. No hands.”</i> Hands means the other player gets the point.</p>
+    <p>Then move the cone <b>off to one side</b> so they have to cut the angle to get there first.</p>
+    <div class="cues">
+      <span>“Cut the corner!”</span><span>“Shoulder, not hands!”</span><span>“Three seconds — go get it!”</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- ══════════ extra ══════════ -->
+<section id="extra"><div class="wrap">
+  <span class="optional">Only if there’s time</span>
+  <div class="sechead"><h2>Extra Credit</h2></div>
+  <p>Most likely a sentence during the scrimmage, not a lesson.</p>
+  <div class="trio">
+    <div><b>Up the sides</b><span>Defenders move the ball up the sides — don’t kick it away to the other team unless there’s no other choice.</span></div>
+    <div><b>Corner kicks</b><span>How to defend a corner.</span></div>
+    <div><b>Goal kicks</b><span>How we build out of the back.</span></div>
+  </div>
+</div></section>
+
+<!-- ══════════ scrimmage ══════════ -->
+<section id="scrimmage"><div class="wrap">
+  <div class="sechead"><h2>Scrimmage</h2></div>
+  <p>Finish with as much <b>7v7-style soccer</b> as our numbers allow. Don’t constantly stop play. Three things to watch for:</p>
+  <div class="says" style="margin-top:16px">
+    <div class="say"><span class="who">A defender stabs and gets beaten</span><span class="quote">Freeze it. Replay it.</span>
+      <p class="after">Back them up five steps and run it again with tiny steps. Takes 20 seconds.</p></div>
+    <div class="say"><span class="who">Both defenders go to the ball</span><span class="quote">“Who’s backing up?”</span></div>
+    <div class="say"><span class="who">We lose the ball</span><span class="quote">“One — two — three!”</span>
+      <p class="after">Count out loud so they hear the window to win it back.</p></div>
+  </div>
+  <p class="note"><b>Praise the backup defender who never touched the ball.</b> Loudly, by name. That job is invisible and it dies without it.</p>
+
+  <h3>Today’s cues</h3>
+  <div class="cues">
+    <span>“PRESSURE — TURN THEM — RUN TOGETHER”</span>
+    <span>“ONE PRESSURES — ONE BACKS UP”</span>
+    <span>“STAY BEHIND THE BALL”</span>
+    <span>“MISTAKES ARE OK — WIN IT BACK”</span>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Practice 2 · Welcome to Defense · 10U</div></footer>

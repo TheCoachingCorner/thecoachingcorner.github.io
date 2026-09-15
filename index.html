@@ -1,0 +1,102 @@
+<title>10U Coaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{
+  --page:#F1F4EE; --page-ink:#131C17; --page-muted:#5E6E64; --page-line:#CFD7CB; --page-soft:#E5EBE1;
+  --card:#FFFFFF; --line:#C7D1C4; --cone:#C1451C; --pitch:#1B5340;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --page:#0C1310; --page-ink:#E6ECE6; --page-muted:#93A297; --page-line:#222E27; --page-soft:#161F1A;
+  --card:#131C17; --line:#2A362E;
+}}
+:root[data-theme="dark"]{
+  --page:#0C1310; --page-ink:#E6ECE6; --page-muted:#93A297; --page-line:#222E27; --page-soft:#161F1A;
+  --card:#131C17; --line:#2A362E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--page-ink);
+  font-family:"Asap",system-ui,-apple-system,sans-serif;font-size:18px;line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+h1,h2{font-family:"Archivo",system-ui,sans-serif;margin:0;line-height:1.08;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+
+header{padding:52px 0 32px}
+header .kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--cone);font-weight:600}
+header h1{font-size:clamp(40px,9vw,70px);font-weight:800;letter-spacing:-.03em;margin:12px 0 0}
+header .sub{margin-top:16px;color:var(--page-muted);max-width:50ch}
+
+section{padding:32px 0;border-top:1px solid var(--page-line)}
+h2{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--page-muted);margin:0 0 18px}
+.list{display:flex;flex-direction:column;gap:10px}
+
+a.item{display:flex;gap:18px;align-items:baseline;text-decoration:none;color:inherit;
+  background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px 20px;
+  transition:border-color .12s, transform .12s}
+a.item:hover{border-color:var(--cone);transform:translateX(2px)}
+.n{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--cone);flex:0 0 auto;width:74px}
+.body{flex:1 1 auto;min-width:0}
+.t{font-family:"Archivo",sans-serif;font-weight:700;font-size:22px;letter-spacing:-.015em;
+  display:block;text-decoration:underline;text-decoration-color:var(--page-line);
+  text-underline-offset:3px}
+a.item:hover .t{text-decoration-color:var(--cone)}
+.d{font-size:15.5px;color:var(--page-muted);margin-top:4px;display:block}
+
+footer{padding:28px 0 60px;border-top:1px solid var(--page-line);color:var(--page-muted);
+  font-size:14.5px}
+</style>
+
+<header><div class="wrap">
+  <div class="kicker">10U · 7v7</div>
+  <h1>Coaching</h1>
+  <p class="sub">Lessons teach one idea each. Practices are built from them. Game day kit
+  is what the coach carries.</p>
+</div></header>
+
+<section><div class="wrap">
+  <h2>Lessons</h2>
+  <div class="list">
+    <a class="item" href="lessons/index.html">
+      <span class="n">All 13</span>
+      <span class="body"><span class="t">Lesson list</span>
+        <span class="d">Three are ready to teach. Position cards live inside lesson 01.</span></span>
+    </a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Practices</h2>
+  <div class="list">
+    <a class="item" href="practices/practice-01.html">
+      <span class="n">Practice 1</span>
+      <span class="body"><span class="t">Welcome to 7v7</span>
+        <span class="d">Positions, the shape, and what each spot is for.</span></span>
+    </a>
+    <a class="item" href="practices/practice-02.html">
+      <span class="n">Practice 2</span>
+      <span class="body"><span class="t">Welcome to Defense</span>
+        <span class="d">Pressure, turn them, run together.</span></span>
+    </a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Game day</h2>
+  <div class="list">
+    <a class="item" href="rotations/coach-cheatsheet.html">
+      <span class="n">Sideline</span>
+      <span class="body"><span class="t">Coach Cheatsheet</span>
+        <span class="d">Eight rotations, even playing time whether you get through four or all eight.</span></span>
+    </a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  Printouts are black and white, one page each.
+</div></footer>
