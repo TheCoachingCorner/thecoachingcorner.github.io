@@ -148,22 +148,29 @@ figure a:hover .ring, figure a:focus-visible .ring{opacity:1}
    description on every row is what stops that. The detail lives in the section
    the row links to. */
 .toc{margin-top:6px;border-top:1px solid var(--page-line)}
-.toc .row{display:grid;grid-template-columns:54px 1fr auto;gap:16px;align-items:baseline;
+.toc .row{display:grid;grid-template-columns:30px 1fr 50px 54px;gap:14px;align-items:baseline;
   padding:8px 2px;border-bottom:1px solid var(--page-line);
   text-decoration:none;color:inherit}
 .toc a.row:hover{background:var(--page-soft)}
 .toc a.row:hover .what{color:var(--cone)}
-.toc .at{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;
-  letter-spacing:.04em;color:var(--page-muted)}
+/* the item number, repeated on the section heading below so the two line up */
+.toc .num{font-family:"Archivo",sans-serif;font-weight:800;font-size:20px;line-height:1;
+  letter-spacing:-.02em;color:var(--cone)}
 .toc .what{font-family:"Archivo",sans-serif;font-weight:700;font-size:17.5px;
   letter-spacing:-.012em}
+.toc .at{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;
+  letter-spacing:.04em;color:var(--page-muted);text-align:right}
 .toc .len{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
-  color:var(--page-muted);white-space:nowrap}
+  color:var(--page-muted);white-space:nowrap;text-align:right}
 
-/* water and moving the cones: time that passes, but not a thing you do */
+/* water and moving the cones: time that passes, but not a thing you do, so it
+   gets no number */
 .toc .break .what{font-family:"Asap",sans-serif;font-weight:400;font-size:15px;
   color:var(--page-muted)}
 .toc .break .at{opacity:.7}
+
+/* the same number, big, at the head of the section it points at */
+.sechead .n{font-size:clamp(26px,4.4vw,34px)}
 
 .toc-total{display:flex;justify-content:space-between;align-items:baseline;
   margin-top:11px;
