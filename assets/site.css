@@ -78,6 +78,10 @@ a.item:hover .t{text-decoration-color:var(--cone)}
   text-transform:uppercase;border:1px solid var(--page-line);border-radius:2px;padding:3px 7px;
   color:var(--page-muted);flex:0 0 auto;align-self:center}
 .tag.accent{border-color:var(--cone);color:var(--cone)}
+/* several tags in the slot one tag normally occupies */
+.tags{display:flex;flex-wrap:wrap;gap:6px;flex:0 0 auto;align-self:center;
+  justify-content:flex-end;max-width:46%}
+.tags .tag{align-self:auto}
 
 /* ─ back link ───────────────────────────────────────────────────────────────
    Every page below the front page carries one at the top and one at the bottom,
