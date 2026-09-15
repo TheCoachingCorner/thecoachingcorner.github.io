@@ -88,6 +88,8 @@ a.item:hover .t{text-decoration-color:var(--cone)}
   display:inline-flex;align-items:center;gap:7px;padding:5px 0;
   border-bottom:1px solid transparent;transition:color .12s, border-color .12s}
 .back:hover{color:var(--cone);border-bottom-color:var(--cone)}
-.back-top{display:flex;justify-content:flex-end;padding-top:18px}
-.back-bottom{display:flex;justify-content:flex-end;padding:0 0 46px}
-@media print{ .back-top, .back-bottom, .noprint { display:none } }
+/* It shares a line with the kicker at the top and the footer text at the bottom,
+   rather than sitting in a row of its own above and below them. */
+.topline, .footline{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.footline > :first-child{flex:1 1 auto;min-width:0}
+@media print{ .back, .noprint { display:none } }
