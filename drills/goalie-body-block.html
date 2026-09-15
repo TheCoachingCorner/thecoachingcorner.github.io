@@ -1,0 +1,152 @@
+<title>Goalie Body Block</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/document.css">
+<link rel="stylesheet" href="../assets/print.css">
+
+<header><div class="wrap">
+  <div class="topline"><p class="kicker">Drill</p>
+    <a class="back" href="./">&larr; All drills</a></div>
+  <h1>Goalie Body Block</h1>
+  <p class="meta"><span><b>Serves</b> ·
+      <a href="../lessons/02-goalie-introduction/">Lesson 02 &mdash; Goalie Introduction</a></span>
+    <span><b>10 minutes</b></span>
+    <span><b>Any even number</b></span></p>
+  <p class="meta"><span><b>Needs</b> · a ball per pair &middot; two lines ten feet apart</span></p>
+  <p class="tags" style="justify-content:flex-start;max-width:none;margin-top:14px">
+    <span class="tag accent">intro</span><span class="tag">goalkeeping</span></p>
+
+  <div class="callout">
+    <p class="label">The big idea</p>
+    <p class="lead"><span class="step">HANDS MIGHT MISS</span> <span class="sep">&rarr;</span>
+      <span class="step">THE BODY IS THE BACKUP</span></p>
+    <p class="aside">Get behind the ball first. Then the hands only have to hold it.</p>
+  </div>
+</div></header>
+
+<section id="set-up"><div class="wrap">
+  <div class="sechead"><h2>Set Up</h2></div>
+  <p class="lede-p">Two lines facing each other, <b>ten feet apart</b>, everyone opposite a
+  partner. One ball per pair.</p>
+
+  <figure class="wide-fig">
+    <svg viewBox="0 0 400 250" role="img" aria-label="Two lines of players facing each other ten feet apart, each player opposite a partner, with a ball rolling between each pair off to one side.">
+      <rect x="8" y="8" width="384" height="234" rx="4" fill="var(--grass)" stroke="var(--line)" stroke-width="2"/>
+
+      <!-- the ten-foot gap -->
+      <g stroke="var(--muted)" stroke-width="1.4" stroke-dasharray="4 5">
+        <line x1="34" y1="72" x2="34" y2="178"/>
+      </g>
+      <g fill="var(--muted)">
+        <path d="M34 66 l5 10 h-10 z"/><path d="M34 184 l5 -10 h-10 z"/>
+      </g>
+      <text x="46" y="129" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="600"
+            letter-spacing="1" fill="var(--muted)">10 ft</text>
+
+      <!-- top line: four players facing down -->
+      <g>
+        <g><ellipse cx="110" cy="66" rx="17" ry="9" fill="var(--pitch)"/><circle cx="110" cy="66" r="9" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.6"/></g>
+        <g><ellipse cx="190" cy="66" rx="17" ry="9" fill="var(--pitch)"/><circle cx="190" cy="66" r="9" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.6"/></g>
+        <g><ellipse cx="270" cy="66" rx="17" ry="9" fill="var(--pitch)"/><circle cx="270" cy="66" r="9" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.6"/></g>
+        <g><ellipse cx="350" cy="66" rx="17" ry="9" fill="var(--pitch)"/><circle cx="350" cy="66" r="9" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.6"/></g>
+      </g>
+
+      <!-- bottom line: their partners -->
+      <g>
+        <g><ellipse cx="110" cy="184" rx="17" ry="9" fill="var(--cone)"/><circle cx="110" cy="184" r="9" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.6"/></g>
+        <g><ellipse cx="190" cy="184" rx="17" ry="9" fill="var(--cone)"/><circle cx="190" cy="184" r="9" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.6"/></g>
+        <g><ellipse cx="270" cy="184" rx="17" ry="9" fill="var(--cone)"/><circle cx="270" cy="184" r="9" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.6"/></g>
+        <g><ellipse cx="350" cy="184" rx="17" ry="9" fill="var(--cone)"/><circle cx="350" cy="184" r="9" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.6"/></g>
+      </g>
+
+      <!-- the ball goes to one side, not at their feet -->
+      <defs>
+        <marker id="a" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+          <path d="M1 1 L11 6 L1 11 z" fill="var(--ink)"/>
+        </marker>
+      </defs>
+      <g fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round" marker-end="url(#a)">
+        <path d="M110 82 C 104 110, 96 140, 88 166"/>
+        <path d="M190 168 C 196 140, 204 110, 212 84"/>
+        <path d="M270 82 C 276 110, 284 140, 292 166"/>
+        <path d="M350 168 C 344 140, 336 110, 328 84"/>
+      </g>
+      <g fill="#fff" stroke="var(--ink)" stroke-width="1.6">
+        <circle cx="99" cy="126" r="6"/><circle cx="201" cy="126" r="6"/>
+        <circle cx="281" cy="126" r="6"/><circle cx="339" cy="126" r="6"/>
+      </g>
+
+      <text x="200" y="228" text-anchor="middle" font-family="Asap,sans-serif" font-size="13"
+            font-weight="600" fill="var(--muted)">roll it a step to their side &mdash; never at their feet</text>
+    </svg>
+  </figure>
+
+  <p class="note">Ten feet is close, and it has to be. From twenty feet away they have time
+  to stroll across; the whole point is getting the body over in time.</p>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="sechead"><h2>How It Runs</h2></div>
+
+  <div class="ex">
+    <div class="top"><h4>In pairs</h4><span class="badge two">Everyone at once</span><span class="badge">10 min</span></div>
+    <ol>
+      <li>Roll the ball to your partner &mdash; <b>one or two steps to their left</b>, not at their feet.</li>
+      <li>They get their <b>body in front of the ball</b>, scoop it up, and <b>hug it</b>.</li>
+      <li>They roll or kick it back the same way, to your side.</li>
+      <li>Next one goes to the <b>right</b>. Keep alternating.</li>
+    </ol>
+    <p class="call">&ldquo;Feet first. Then hug it.&rdquo;</p>
+    <p>Two hands, and the ball finishes against the chest. A ball trapped between the hands
+    and the ground is caught; a ball that goes under a diving hand was never caught.</p>
+  </div>
+</div></section>
+
+<section id="why"><div class="wrap">
+  <div class="sechead"><h2>The Whole Point</h2></div>
+  <div class="says">
+    <div class="say big"><span class="title">Why the body</span>
+      <span class="quote">&ldquo;Your hands might miss. Your body is your backup.&rdquo;</span>
+      <p class="after">Reach sideways with hands alone and there is one thing between the ball
+      and the goal. Shuffle across first and there are two &mdash; and the second one is much bigger.</p></div>
+    <div class="say"><span class="title">Why to the side</span>
+      <span class="quote">&ldquo;Never at their feet.&rdquo;</span>
+      <p class="after">Straight at them, they never have to move, and the drill teaches nothing.</p></div>
+  </div>
+</div></section>
+
+<section id="shout"><div class="wrap">
+  <div class="sechead"><h2>What You Shout</h2></div>
+  <div class="cues">
+    <span>&ldquo;Feet first!&rdquo;</span>
+    <span>&ldquo;Hug it!&rdquo;</span>
+    <span>&ldquo;Behind it!&rdquo;</span>
+  </div>
+  <p class="note"><i>&ldquo;Behind it!&rdquo;</i> goes to the player who reached across instead of
+  moving across &mdash; the exact mistake this drill exists to catch.</p>
+</div></section>
+
+<section id="dials"><div class="wrap">
+  <div class="sechead"><h2>Harder / Easier</h2></div>
+  <div class="trio">
+    <div><b>Harder</b><span>Roll it further to the side, so they shuffle two or three steps.</span></div>
+    <div><b>Harder</b><span>Bounce it instead of rolling it.</span></div>
+    <div><b>Harder</b><span>Don&rsquo;t say which side it is going to.</span></div>
+    <div><b>Easier</b><span>Straight at them for the first minute, just to get the hug right.</span></div>
+    <div><b>Easier</b><span>Five feet apart, so nobody is beaten by the distance.</span></div>
+    <div><b>Easier</b><span>On their knees &mdash; body behind it only, no footwork.</span></div>
+  </div>
+
+  <div class="todo">
+    <b>Open questions.</b> How hard is too hard: the drill gets better the firmer the ball is
+    struck and worse the moment one child is frightened of it, and that line is different for
+    every pair. Letting the pairs set it themselves is probably right. &mdash; And whether to run
+    it in front of a real goal, which adds the fear of conceding. That is either the point or
+    exactly the thing to keep out. Untested.
+  </div>
+</div></section>
+
+<footer><div class="wrap footline">Goalie Body Block &middot; serves lesson 02 &middot; 10U<a class="back" href="./">&larr; All drills</a></div></footer>
