@@ -142,27 +142,34 @@ figure a:hover .ring, figure a:focus-visible .ring{opacity:1}
   letter-spacing:.13em;text-transform:uppercase;color:var(--page-muted);
   border:1px solid var(--page-line);border-radius:2px;padding:3px 8px;margin-bottom:12px}
 
-/* ─ agenda ──────────────────────────────────────────────────────────────────
-   The run sheet: what happens, when, and a link to it. Built from the .list /
-   .item row in site.css — the clock goes where the label goes and the length
-   goes where the tag goes — so it is the same object, not a second one. */
-.agenda .item{padding:13px 18px}
-.agenda .item .n{font-size:13px;letter-spacing:.06em;color:var(--page-ink);width:58px}
-.agenda .item .t{font-size:18.5px}
-.agenda .tag{color:var(--page-ink)}
-/* A gap between two hard activities: water, and moving the cones. Not a thing you
-   do, so it is not a link and it is quieter than the rows either side. */
-.agenda .break{display:flex;gap:18px;align-items:baseline;padding:7px 18px;
-  color:var(--page-muted);font-size:15px}
-.agenda .break .n{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:13px;
-  letter-spacing:.06em;color:var(--page-muted);flex:0 0 auto;width:58px}
-.agenda .break .d{flex:1 1 auto}
-.agenda .break .tag{border-style:dashed;color:var(--page-muted)}
-.agenda-total{display:flex;justify-content:space-between;align-items:baseline;
-  margin-top:12px;padding-top:12px;border-top:1px solid var(--page-line);
+/* ─ table of contents ──────────────────────────────────────────────────────────────────
+   The run sheet: when, what, how long. A table, not a stack of cards — the whole
+   practice has to be readable in one glance on half a laptop screen, and a
+   description on every row is what stops that. The detail lives in the section
+   the row links to. */
+.toc{margin-top:6px;border-top:1px solid var(--page-line)}
+.toc .row{display:grid;grid-template-columns:54px 1fr auto;gap:16px;align-items:baseline;
+  padding:8px 2px;border-bottom:1px solid var(--page-line);
+  text-decoration:none;color:inherit}
+.toc a.row:hover{background:var(--page-soft)}
+.toc a.row:hover .what{color:var(--cone)}
+.toc .at{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;
+  letter-spacing:.04em;color:var(--page-muted)}
+.toc .what{font-family:"Archivo",sans-serif;font-weight:700;font-size:17.5px;
+  letter-spacing:-.012em}
+.toc .len{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+  color:var(--page-muted);white-space:nowrap}
+
+/* water and moving the cones: time that passes, but not a thing you do */
+.toc .break .what{font-family:"Asap",sans-serif;font-weight:400;font-size:15px;
+  color:var(--page-muted)}
+.toc .break .at{opacity:.7}
+
+.toc-total{display:flex;justify-content:space-between;align-items:baseline;
+  margin-top:11px;
   font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.13em;
   text-transform:uppercase;color:var(--page-muted)}
-.agenda-total b{font-family:"Archivo",sans-serif;font-size:19px;letter-spacing:-.01em;
+.toc-total b{font-family:"Archivo",sans-serif;font-size:19px;letter-spacing:-.01em;
   color:var(--page-ink);text-transform:none}
 
 /* ─ activity ────────────────────────────────────────────────────────────────
