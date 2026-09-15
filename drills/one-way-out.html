@@ -16,8 +16,8 @@
       the <i>pressure</i> and <i>turn them</i> beats</span>
     <span><b>10 minutes</b></span>
     <span><b>Any even number</b></span></p>
-  <p class="meta"><span><b>Needs</b> · a channel about 12 &times; 8 yds &middot; 4 cones for two
-    gates &middot; a ball per pair</span></p>
+  <p class="meta"><span><b>Needs</b> · 8 cones per box &middot; a ball per pair. <b>Cones, no nets</b> &mdash;
+    nothing to fish a ball out of</span></p>
   <p class="tags" style="justify-content:flex-start;max-width:none;margin-top:14px">
     <span class="tag accent">intro</span><span class="tag">defense</span></p>
 
@@ -25,72 +25,75 @@
     <p class="label">The big idea</p>
     <p class="lead"><span class="step">DON&rsquo;T TACKLE</span> <span class="sep">&rarr;</span>
       <span class="step">STEER</span></p>
-    <p class="aside">Two gates, one of them closed. Make them use the other.</p>
+    <p class="aside">Two goals behind you, one behind them. Win it and <b>dribble</b> through
+      yours &mdash; a kick through is not a win.</p>
   </div>
 </div></header>
 
 <section id="set-up"><div class="wrap">
   <div class="sechead"><h2>Set Up</h2></div>
-  <p class="lede-p">A channel with <b>two gates at the defender&rsquo;s end</b>, one each side.
-  Attacker with a ball at the far end, defender starting in the middle.</p>
+  <p class="lede-p">A box about 12 yds square with <b>three goals</b>. The attacker comes in at
+  one end and attacks the goal at the far end. <b>The defender has a goal on each side.</b></p>
 
   <figure class="wide-fig">
-    <svg viewBox="0 0 400 230" role="img" aria-label="A channel with an attacker and a ball at the left end and a defender in the middle. At the right end are two gates made of cones; one is crossed out as closed, and an arrow curves from the attacker toward the open one.">
-      <rect x="14" y="20" width="372" height="192" rx="4" fill="var(--grass)" stroke="var(--line)" stroke-width="2"/>
+    <svg viewBox="0 0 400 240" role="img" aria-label="A square box. The attacker enters at the left and attacks a cone goal at the far right end. The defender has a cone goal in the middle of each side, left and right of the box, and wins by dribbling the ball through either one.">
+      <rect x="34" y="42" width="332" height="164" rx="3" fill="var(--grass)" stroke="var(--line)" stroke-width="2"/>
 
-      <!-- the two gates -->
-      <g fill="var(--cone)">
-        <path d="M356 42 l8 16 h-16 z"/><path d="M356 86 l8 16 h-16 z"/>
-        <path d="M356 132 l8 16 h-16 z"/><path d="M356 176 l8 16 h-16 z"/>
+      <!-- attacker's goal, far end -->
+      <g fill="var(--no)">
+        <path d="M366 102 l9 18 h-18 z"/><path d="M366 146 l9 18 h-18 z"/>
       </g>
-      <!-- closed gate -->
-      <g stroke="var(--no)" stroke-width="5" stroke-linecap="round">
-        <line x1="344" y1="60" x2="368" y2="84"/><line x1="368" y1="60" x2="344" y2="84"/>
+      <text x="356" y="96" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="10"
+            font-weight="700" letter-spacing="1" fill="var(--no)">ATTACKER</text>
+
+      <!-- defender's two goals, one on each side -->
+      <g fill="var(--yes)">
+        <path d="M176 42 l9 18 h-18 z"/><path d="M228 42 l9 18 h-18 z"/>
+        <path d="M176 206 l9 18 h-18 z"/><path d="M228 206 l9 18 h-18 z"/>
       </g>
-      <text x="330" y="36" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11"
-            font-weight="700" letter-spacing="1" fill="var(--no)">CLOSED</text>
-      <text x="330" y="208" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11"
-            font-weight="700" letter-spacing="1" fill="var(--yes)">OPEN</text>
+      <text x="202" y="26" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10"
+            font-weight="700" letter-spacing="1" fill="var(--yes)">DEFENDER</text>
+      <text x="202" y="236" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10"
+            font-weight="700" letter-spacing="1" fill="var(--yes)">DEFENDER</text>
 
       <defs>
-        <marker id="way" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
-          <path d="M1 1 L11 6 L1 11 z" fill="var(--yes)"/>
-        </marker>
+        <marker id="out" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+          <path d="M1 1 L11 6 L1 11 z" fill="var(--yes)"/></marker>
+        <marker id="thru" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+          <path d="M1 1 L11 6 L1 11 z" fill="var(--no)"/></marker>
       </defs>
-      <path d="M96 110 C 170 108, 230 140, 330 158" fill="none" stroke="var(--yes)"
-            stroke-width="2.6" stroke-linecap="round" marker-end="url(#way)"/>
+      <path d="M104 124 L 300 124" fill="none" stroke="var(--no)" stroke-width="2.2"
+            stroke-dasharray="6 6" stroke-linecap="round" marker-end="url(#thru)"/>
+      <g fill="none" stroke="var(--yes)" stroke-width="2.6" stroke-linecap="round" marker-end="url(#out)">
+        <path d="M206 108 C 204 90, 203 78, 202 66"/>
+        <path d="M206 140 C 204 162, 203 174, 202 186"/>
+      </g>
 
-      <!-- attacker with the ball -->
-      <g><ellipse cx="66" cy="108" rx="17" ry="9" fill="var(--cone)"/><circle cx="66" cy="108" r="9" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.6"/></g>
-      <circle cx="66" cy="128" r="6" fill="#fff" stroke="var(--ink)" stroke-width="1.5"/>
-
-      <!-- defender, side-on -->
-      <g transform="rotate(-34 214 112)"><ellipse cx="214" cy="112" rx="17" ry="9" fill="var(--pitch)"/><circle cx="214" cy="112" r="9" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.6"/></g>
+      <g><ellipse cx="74" cy="122" rx="17" ry="9" fill="var(--cone)"/><circle cx="74" cy="122" r="9" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.6"/></g>
+      <circle cx="74" cy="142" r="6" fill="#fff" stroke="var(--ink)" stroke-width="1.5"/>
+      <g transform="rotate(-32 206 124)"><ellipse cx="206" cy="124" rx="17" ry="9" fill="var(--pitch)"/><circle cx="206" cy="124" r="9" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.6"/></g>
     </svg>
   </figure>
+
+  <p class="note">Three cone goals and no nets. A ball through any of them rolls on, and the
+  next pair is already going.</p>
 </div></section>
 
 <section id="how"><div class="wrap">
   <div class="sechead"><h2>How It Runs</h2></div>
 
   <div class="ex">
-    <div class="top"><h4>The rule that makes it safe</h4><span class="badge">Say it first</span></div>
-    <p class="call">&ldquo;The defender may not tackle. At all.&rdquo;</p>
-    <p>No stabbing, no lunging, no going to ground. <b>The only tool is where you stand.</b></p>
-  </div>
-
-  <div class="ex">
-    <div class="top"><h4>The drill</h4><span class="badge two">Whole team</span><span class="badge">10 min</span></div>
+    <div class="top"><h4>Basic 1v1</h4><span class="badge two">Whole team</span><span class="badge">10 min</span></div>
     <ol>
-      <li>Coach names a gate: <b>that one is closed.</b></li>
-      <li>The attacker tries to get through the closed gate. The defender makes them use the
-      other one.</li>
-      <li>Through the closed gate &rarr; attacker&rsquo;s point. Through the open one, <b>or stopped
-      for 6 seconds</b> &rarr; defender&rsquo;s point.</li>
+      <li>Attacker comes in at one end with the ball.</li>
+      <li><b>Attacker wins</b> by dribbling through the goal at the far end.</li>
+      <li><b>Defender wins</b> by taking the ball and <b>dribbling through either side goal</b>.</li>
+      <li><b>A kick through does not count.</b> Poke it away and the attacker just goes and gets it.</li>
       <li>Swap every rep. Play to 3, then find a new partner.</li>
     </ol>
-    <p class="note">Round 1 walking. Round 2 the defender may jog. Round 3 live. Run two or
-    three channels side by side so nobody is standing and watching.</p>
+    <p class="call">&ldquo;Direct traffic!&rdquo;</p>
+    <p class="note">First round, <b>the defender may not tackle at all</b> &mdash; only stand in the
+    way. It takes the stabbing out before it becomes a habit. Let tackling in from round two.</p>
   </div>
 </div></section>
 
@@ -99,16 +102,16 @@
   <div class="modifiers">
     <div class="group easier"><span class="lab">Easier</span>
       <ul>
-        <li>Wider gap between the gates &mdash; more room to be wrong in.</li>
+        <li>Wider box &mdash; more room to be wrong in.</li>
         <li>Walking only, every round.</li>
-        <li>Defender starts closer to the gates.</li>
+        <li>Defender starts closer to the gate, so there is less space to cover.</li>
       </ul>
     </div>
     <div class="group harder"><span class="lab">Harder</span>
       <ul>
-        <li>Narrow the channel, so getting side-on matters more.</li>
-        <li>The defender picks the closed gate and does not say which. The attacker has to read it.</li>
-        <li>Once the attacker has committed to a gate, <b>now</b> the defender may win the ball.</li>
+        <li>Narrow the box, so the angle matters more.</li>
+        <li>Coach names a side before each rep &mdash; that is the way the defender must send them.</li>
+        <li>Once the attacker has committed to a side, <b>now</b> the defender may win the ball.</li>
       </ul>
     </div>
   </div>
@@ -117,8 +120,8 @@
 <section id="shout"><div class="wrap">
   <div class="sechead"><h2>What You Shout</h2></div>
   <div class="cues">
-    <span>&ldquo;Which gate is closed?&rdquo;</span>
-    <span>&ldquo;Show them the open one!&rdquo;</span>
+    <span>&ldquo;Dribble it out!&rdquo;</span>
+    <span>&ldquo;Direct traffic!&rdquo;</span>
     <span>&ldquo;Stop short!&rdquo;</span>
   </div>
 </div></section>
@@ -137,21 +140,23 @@
       <p class="after">It removes every way a nine-year-old gets hurt in a 1v1, and it is the
       only way they learn the angle. A child allowed to tackle will always tackle, and never
       finds out that standing in the right place would have done it for them.</p></div>
-    <div class="say big"><span class="title">Why two gates, not a goal</span>
-      <span class="quote">&ldquo;Make them go left&rdquo; beats &ldquo;stop them&rdquo;.</span>
-      <p class="after">A defender told to stop someone tries to win the ball. A defender told
-      to send them one way has to solve it with their body, which is what <i>turn them</i> is.
-      The gates score the thing being taught rather than the thing that is easy to count.</p></div>
+    <div class="say big"><span class="title">Why dribbling out, not kicking out</span>
+      <span class="quote">&ldquo;A kick is a pass to the other team.&rdquo;</span>
+      <p class="after">Winning by kicking it away rewards the exact habit we are trying to
+      remove. Making the defender <i>keep</i> the ball turns a tackle into possession, which is
+      the fourth takeaway of the lesson and the hardest one to get on a Saturday.</p></div>
     <div class="say"><span class="title">The mistake shows itself</span>
-      <span class="quote">Through the closed gate means you were square.</span>
+      <span class="quote">Straight down the middle means you were square.</span>
       <p class="after">You gave them both ways. Nobody has to be told.</p></div>
   </div>
 
   <div class="todo">
     <b>Open questions.</b> When to allow tackling: never means they never practise the last
-    part, too early means they go back to stabbing, and letting it in only after the attacker
-    commits is the guess. &mdash; And gate width: too narrow and the defender wins by standing
-    still. 2 yds is a starting point, untested.
+    part, too early means they go back to stabbing, and round two is the guess. &mdash; And box
+    size: too small and the defender wins by standing still, too big and the attacker never
+    gets caught. 12 yds square is a starting point, untested. &mdash; <i>Direct traffic</i> beat
+    <i>block traffic</i> because a traffic cop who blocks the road is standing still, and the
+    third takeaway is being turned ready to run. Directing is steering, which is the thing.
   </div>
 </div></section>
 
