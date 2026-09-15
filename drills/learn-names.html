@@ -27,11 +27,52 @@
   </div>
 </div></header>
 
-<section id="how"><div class="wrap">
-  <div class="sechead"><h2>How It Runs</h2></div>
+<section id="set-up"><div class="wrap">
+  <div class="sechead"><h2>Set Up</h2></div>
   <p class="lede-p">One box, big enough that nobody queues for space. A ball each. This one
   exists to be started in ten seconds.</p>
 
+  <figure class="wide-fig">
+    <svg viewBox="0 0 400 250" role="img" aria-label="Players spread across a box, each with a ball. The coach has called one player's name and every other player has an arrow pointing at them.">
+      <rect x="8" y="8" width="384" height="234" rx="4" fill="var(--grass)" stroke="var(--line)" stroke-width="2"/>
+      <defs>
+        <marker id="to" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+          <path d="M1 1 L11 6 L1 11 z" fill="var(--ink)"/>
+        </marker>
+      </defs>
+      <g fill="none" stroke="var(--ink)" stroke-width="2.3" stroke-linecap="round" marker-end="url(#to)">
+        <line x1="80"  y1="64"  x2="184" y2="107"/>
+        <line x1="164" y1="62"  x2="193" y2="94"/>
+        <line x1="311" y1="70"  x2="245" y2="104"/>
+        <line x1="76"  y1="168" x2="183" y2="131"/>
+        <line x1="155" y1="189" x2="193" y2="146"/>
+        <line x1="283" y1="176" x2="241" y2="142"/>
+        <line x1="333" y1="128" x2="249" y2="122"/>
+      </g>
+      <g>
+        <g><ellipse cx="60"  cy="55"  rx="16" ry="8.5" fill="var(--pitch)"/><circle cx="60"  cy="55"  r="8.5" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.5"/></g>
+        <g><ellipse cx="150" cy="45"  rx="16" ry="8.5" fill="var(--pitch)"/><circle cx="150" cy="45"  r="8.5" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.5"/></g>
+        <g><ellipse cx="330" cy="60"  rx="16" ry="8.5" fill="var(--pitch)"/><circle cx="330" cy="60"  r="8.5" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.5"/></g>
+        <g><ellipse cx="55"  cy="175" rx="16" ry="8.5" fill="var(--pitch)"/><circle cx="55"  cy="175" r="8.5" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.5"/></g>
+        <g><ellipse cx="140" cy="205" rx="16" ry="8.5" fill="var(--pitch)"/><circle cx="140" cy="205" r="8.5" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.5"/></g>
+        <g><ellipse cx="300" cy="190" rx="16" ry="8.5" fill="var(--pitch)"/><circle cx="300" cy="190" r="8.5" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.5"/></g>
+        <g><ellipse cx="355" cy="130" rx="16" ry="8.5" fill="var(--pitch)"/><circle cx="355" cy="130" r="8.5" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.5"/></g>
+      </g>
+      <g fill="#fff" stroke="var(--ink)" stroke-width="1.4">
+        <circle cx="60"  cy="72"  r="5"/><circle cx="150" cy="62"  r="5"/>
+        <circle cx="330" cy="77"  r="5"/><circle cx="55"  cy="192" r="5"/>
+        <circle cx="140" cy="222" r="5"/><circle cx="300" cy="207" r="5"/>
+        <circle cx="355" cy="147" r="5"/>
+      </g>
+      <g><ellipse cx="215" cy="120" rx="18" ry="9.5" fill="var(--cone)"/><circle cx="215" cy="120" r="9.5" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.8"/></g>
+      <text x="200" y="232" text-anchor="middle" font-family="Asap,sans-serif" font-size="13"
+            font-weight="600" fill="var(--muted)">coach calls a name &mdash; everybody dribbles to that player</text>
+    </svg>
+  </figure>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="sechead"><h2>How It Runs</h2></div>
   <div class="ex">
     <div class="top"><h4>The whole drill</h4><span class="badge two">Whole team</span><span class="badge">5 min</span></div>
     <ol>
@@ -45,13 +86,21 @@
 
 <section id="dials"><div class="wrap">
   <div class="sechead"><h2>Harder / Easier</h2></div>
-  <div class="trio">
-    <div><b>Harder</b><span>The player who was called calls the next name. Get to this one &mdash; now they are <i>saying</i> names, not just hearing them.</span></div>
-    <div><b>Harder</b><span>Two names at once. Dribble to whichever is closer.</span></div>
-    <div><b>Harder</b><span>Call a name and shout &ldquo;AWAY!&rdquo; &mdash; dribble as far from them as you can.</span></div>
-    <div><b>Easier</b><span>No ball for the first round. Just run.</span></div>
-    <div><b>Easier</b><span>Point as you call, for the first few names, then stop pointing.</span></div>
-    <div><b>Easier</b><span>Call the quiet ones early and often. They are the point of the drill.</span></div>
+  <div class="dials">
+    <div class="group harder"><span class="lab">Harder</span>
+      <ul>
+        <li>The player who was called calls the next name. Get to this one &mdash; now they are <i>saying</i> names, not just hearing them.</li>
+        <li>Two names at once. Dribble to whichever is closer.</li>
+        <li>Call a name and shout &ldquo;AWAY!&rdquo; &mdash; dribble as far from them as you can.</li>
+      </ul>
+    </div>
+    <div class="group easier"><span class="lab">Easier</span>
+      <ul>
+        <li>No ball for the first round. Just run.</li>
+        <li>Point as you call, for the first few names, then stop pointing.</li>
+        <li>Call the quiet ones early and often. They are the point of the drill.</li>
+      </ul>
+    </div>
   </div>
 
   <div class="todo">

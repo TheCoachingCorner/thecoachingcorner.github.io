@@ -14,14 +14,19 @@
   --cone:#C1451C; --pitch:#1B5340; --keeper:#EFBE12;
   --yes:#177A46; --yes-soft:#E1F0E7;
   --no:#C1352A; --no-soft:#F8E3E0;
+  /* --yes / --no sit on a figure's light card in both themes. These are the same
+     two colours for text on the PAGE, which does follow the theme. */
+  --yes-ink:#177A46; --no-ink:#C1352A;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --page:#0C1310; --page-ink:#E6ECE6; --page-muted:#93A297; --page-line:#222E27; --page-soft:#161F1A;
   --surface:#131C17; --surface-line:#2A362E;
+  --yes-ink:#4FB37C; --no-ink:#E8695B;
 }}
 :root[data-theme="dark"]{
   --page:#0C1310; --page-ink:#E6ECE6; --page-muted:#93A297; --page-line:#222E27; --page-soft:#161F1A;
   --surface:#131C17; --surface-line:#2A362E;
+  --yes-ink:#4FB37C; --no-ink:#E8695B;
 }
 
 /* ─ base ────────────────────────────────────────────────────────────────── */

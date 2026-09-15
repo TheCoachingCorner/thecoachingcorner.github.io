@@ -39,11 +39,13 @@ section{padding:20px 0}
   padding-top:11px;border-top:1px solid var(--page-line)}
 .lede-p{font-size:18.5px;margin-top:4px}
 .note{font-size:16px;color:var(--page-muted);margin-top:10px}
-/* Links inside running text carry the accent and an underline. Without this they
-   fall back to the browser default, which is unreadable on a dark page. */
-.note a, .meta a, .ex a, .lede-p a, .say .after a{color:var(--cone);text-decoration:none;
-  border-bottom:1.5px solid var(--cone)}
-.note a:hover, .meta a:hover, .ex a:hover, .lede-p a:hover, .say .after a:hover{
+/* Every link in running text carries the accent and an underline. Written as a
+   blanket rule with the component links excused, rather than a list of places
+   that need it — the list version silently missed .dials, and the link fell back
+   to the browser default, which is unreadable on a dark page. */
+section a:not(.back):not(.item):not(.card-l):not(.row):not(.tag){
+  color:var(--cone);text-decoration:none;border-bottom:1.5px solid var(--cone)}
+section a:not(.back):not(.item):not(.card-l):not(.row):not(.tag):hover{
   border-bottom-color:transparent}
 
 /* ─ figures ─────────────────────────────────────────────────────────────────
@@ -212,6 +214,29 @@ section > .wrap > ul li::marker, section > .wrap > ol li::marker{color:var(--con
 /* everything after the divide reads as background, not instruction */
 .divide ~ section{border-top:none;padding-top:8px}
 .divide ~ section .sechead h2{font-size:clamp(20px,3.4vw,26px)}
+
+/* ─ dials ───────────────────────────────────────────────────────────────────
+   Harder and easier, never mixed and never on the same line. A grid that let
+   them interleave made a coach read every card to find the one they wanted;
+   grouped, they can go straight to the half they need.
+   A group is labelled whatever the drill needs — Harder, Easier, Level 1, More
+   fun, Variation. The default accent is the usual orange; .harder and .easier
+   are the two exceptions, because red and green mean something there rather
+   than decorating. Do not reach for them on a group that is not about
+   difficulty. */
+.dials{margin-top:14px;display:flex;flex-direction:column;gap:9px}
+.dials .group{background:var(--page-soft);border-left:4px solid var(--cone);
+  border-radius:0 4px 4px 0;padding:11px 15px 12px}
+.dials .lab{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;display:block;color:var(--cone)}
+.dials ul{margin:7px 0 0;padding-left:19px;display:flex;flex-direction:column;gap:5px}
+.dials li{font-size:16px}
+.dials li::marker{color:var(--cone)}
+
+.dials .harder{border-left-color:var(--no-ink)}
+.dials .harder .lab, .dials .harder li::marker{color:var(--no-ink)}
+.dials .easier{border-left-color:var(--yes-ink)}
+.dials .easier .lab, .dials .easier li::marker{color:var(--yes-ink)}
 
 /* ─ trio ────────────────────────────────────────────────────────────────────
    A small grid of short labelled points: ready-position checks, harder/easier
