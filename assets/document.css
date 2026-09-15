@@ -199,6 +199,20 @@ section > .wrap > ul, section > .wrap > ol{margin:14px 0 0;padding-left:22px;
   display:flex;flex-direction:column;gap:8px}
 section > .wrap > ul li::marker, section > .wrap > ol li::marker{color:var(--cone);font-weight:600}
 
+/* ─ divide ──────────────────────────────────────────────────────────────────
+   The line between what you need standing on grass and everything else. Above
+   it: setup, how to run it, the dials. Below it: why it is shaped that way.
+   Deliberately loud — a coach reading on a phone in the cold needs to see where
+   they can stop. */
+.divide{margin:52px 0 0;padding-top:20px;border-top:3px solid var(--cone)}
+.divide .t{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--cone);display:block}
+.divide .d{display:block;margin-top:7px;font-size:15.5px;color:var(--page-muted);
+  max-width:56ch}
+/* everything after the divide reads as background, not instruction */
+.divide ~ section{border-top:none;padding-top:8px}
+.divide ~ section .sechead h2{font-size:clamp(20px,3.4vw,26px)}
+
 /* ─ trio ────────────────────────────────────────────────────────────────────
    A small grid of short labelled points: ready-position checks, harder/easier
    dials. Two to six of them; the label is a block so it sits above its line. */
