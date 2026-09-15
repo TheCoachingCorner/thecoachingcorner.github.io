@@ -99,6 +99,10 @@ a.item:hover .t{text-decoration-color:var(--cone)}
 .back:hover{color:var(--cone);border-bottom-color:var(--cone)}
 /* It shares a line with the kicker at the top and the footer text at the bottom,
    rather than sitting in a row of its own above and below them. */
-.topline, .footline{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
-.footline > :first-child{flex:1 1 auto;min-width:0}
+.topline, .footline{display:flex;align-items:baseline;justify-content:space-between;
+  gap:10px 16px;flex-wrap:wrap}
+/* Push the link right off its own margin, not off a sibling. The footer's text is a
+   bare text node, so :first-child matched the LINK and stretched it — which left it
+   sitting immediately after the text instead of at the right edge. */
+.topline .back, .footline .back{margin-left:auto}
 @media print{ .back, .noprint { display:none } }

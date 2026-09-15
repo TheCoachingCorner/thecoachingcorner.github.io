@@ -41,7 +41,7 @@ section{padding:20px 0}
 .note{font-size:16px;color:var(--page-muted);margin-top:10px}
 /* Every link in running text carries the accent and an underline. Written as a
    blanket rule with the component links excused, rather than a list of places
-   that need it — the list version silently missed .dials, and the link fell back
+   that need it — the list version silently missed .modifiers, and the link fell back
    to the browser default, which is unreadable on a dark page. */
 section a:not(.back):not(.item):not(.card-l):not(.row):not(.tag){
   color:var(--cone);text-decoration:none;border-bottom:1.5px solid var(--cone)}
@@ -203,7 +203,7 @@ section > .wrap > ul li::marker, section > .wrap > ol li::marker{color:var(--con
 
 /* ─ divide ──────────────────────────────────────────────────────────────────
    The line between what you need standing on grass and everything else. Above
-   it: setup, how to run it, the dials. Below it: why it is shaped that way.
+   it: setup, how to run it, the modifiers. Below it: why it is shaped that way.
    Deliberately loud — a coach reading on a phone in the cold needs to see where
    they can stop. */
 .divide{margin:52px 0 0;padding-top:20px;border-top:3px solid var(--cone)}
@@ -215,7 +215,7 @@ section > .wrap > ul li::marker, section > .wrap > ol li::marker{color:var(--con
 .divide ~ section{border-top:none;padding-top:8px}
 .divide ~ section .sechead h2{font-size:clamp(20px,3.4vw,26px)}
 
-/* ─ dials ───────────────────────────────────────────────────────────────────
+/* ─ modifiers ───────────────────────────────────────────────────────────────────
    Harder and easier, never mixed and never on the same line. A grid that let
    them interleave made a coach read every card to find the one they wanted;
    grouped, they can go straight to the half they need.
@@ -224,23 +224,23 @@ section > .wrap > ul li::marker, section > .wrap > ol li::marker{color:var(--con
    are the two exceptions, because red and green mean something there rather
    than decorating. Do not reach for them on a group that is not about
    difficulty. */
-.dials{margin-top:14px;display:flex;flex-direction:column;gap:9px}
-.dials .group{background:var(--page-soft);border-left:4px solid var(--cone);
+.modifiers{margin-top:14px;display:flex;flex-direction:column;gap:9px}
+.modifiers .group{background:var(--page-soft);border-left:4px solid var(--cone);
   border-radius:0 4px 4px 0;padding:11px 15px 12px}
-.dials .lab{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:700;
+.modifiers .lab{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:700;
   letter-spacing:.14em;text-transform:uppercase;display:block;color:var(--cone)}
-.dials ul{margin:7px 0 0;padding-left:19px;display:flex;flex-direction:column;gap:5px}
-.dials li{font-size:16px}
-.dials li::marker{color:var(--cone)}
+.modifiers ul{margin:7px 0 0;padding-left:19px;display:flex;flex-direction:column;gap:5px}
+.modifiers li{font-size:16px}
+.modifiers li::marker{color:var(--cone)}
 
-.dials .harder{border-left-color:var(--no-ink)}
-.dials .harder .lab, .dials .harder li::marker{color:var(--no-ink)}
-.dials .easier{border-left-color:var(--yes-ink)}
-.dials .easier .lab, .dials .easier li::marker{color:var(--yes-ink)}
+.modifiers .harder{border-left-color:var(--no-ink)}
+.modifiers .harder .lab, .modifiers .harder li::marker{color:var(--no-ink)}
+.modifiers .easier{border-left-color:var(--yes-ink)}
+.modifiers .easier .lab, .modifiers .easier li::marker{color:var(--yes-ink)}
 
 /* ─ trio ────────────────────────────────────────────────────────────────────
    A small grid of short labelled points: ready-position checks, harder/easier
-   dials. Two to six of them; the label is a block so it sits above its line. */
+   modifiers. Two to six of them; the label is a block so it sits above its line. */
 .trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
 .trio div{background:var(--page-soft);border-radius:4px;padding:13px 15px}
 .trio b{font-family:"Archivo",sans-serif;font-size:16px;display:block;color:var(--cone);
