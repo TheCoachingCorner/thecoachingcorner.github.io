@@ -1,0 +1,226 @@
+<title>Lightning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/document.css">
+<link rel="stylesheet" href="../assets/print.css">
+
+<header><div class="wrap">
+  <div class="topline"><p class="kicker">Drill</p>
+    <a class="back" href="./">&larr; All drills</a></div>
+  <h1>Lightning</h1>
+  <p class="meta"><span><b>Serves</b> ·
+      <a href="../lessons/14-shooting-mechanics/">Lesson 14 &mdash; Shooting Mechanics</a>,
+      <a href="../lessons/02-goalie-introduction/">Lesson 02 &mdash; Goalie Introduction</a></span>
+    <span><b>10 minutes</b></span>
+    <span><b>6&ndash;8 per goal</b></span></p>
+  <p class="meta"><span><b>Needs</b> · one goal, <b>two balls</b>, a cone for the shooting
+    mark about 12 yards out, two cones for the way back</span></p>
+  <p class="tags" style="justify-content:flex-start;max-width:none;margin-top:14px">
+    <span class="tag">shooting</span><span class="tag">goalkeeping</span></p>
+
+  <div class="callout">
+    <p class="label">The big idea</p>
+    <p class="lead"><span class="step">SHOOT</span> <span class="sep">&rarr;</span>
+      <span class="step">GO IN GOAL</span> <span class="sep">&rarr;</span>
+      <span class="step">GET THE BALL</span> <span class="sep">&rarr;</span>
+      <span class="step">BACK IN LINE</span></p>
+    <p class="aside">It never stops. The shooter is the next goalie, and the next shot is
+    already on its way. <b>One round of this is also the finish to
+    <a href="power-shot-basics.html">Power Shot Basics</a>.</b></p>
+  </div>
+</div></header>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     ABOVE THE DIVIDE — what you need standing on grass, and nothing else.
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<section id="set-up"><div class="wrap">
+  <div class="sechead"><span class="n">1</span><h2>Set Up</h2></div>
+  <p class="lede-p">One goal, a shooting cone <b>12 yards out</b>, the line behind it, and two
+  cones marking the way back. <b>Two balls</b> &mdash; that is the whole engine.</p>
+
+  <figure class="wide-fig">
+    <svg viewBox="0 0 400 260" role="img" aria-label="Seen from above. A goal across the top with a goalie in it. Three shooting cones sit in an arc about twelve yards out, numbered one on the right, two in the centre, three on the left. A queue of players stands behind cone one. A solid arrow runs from the ball at cone one into the goal. A dashed arrow loops from the goal out around the right-hand side and back to the queue.">
+      <rect x="10" y="16" width="380" height="236" fill="var(--grass)"/>
+
+      <!-- goal, top -->
+      <line x1="10" y1="40" x2="390" y2="40" stroke="var(--line)" stroke-width="2"/>
+      <rect x="150" y="26" width="100" height="14" fill="none" stroke="var(--ink)" stroke-width="4"/>
+      <g><ellipse cx="200" cy="52" rx="15" ry="8" fill="var(--keeper)"/><circle cx="200" cy="52" r="8" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.5"/></g>
+
+      <!-- the three shooting cones -->
+      <g fill="var(--cone)">
+        <path d="M312 150 l8 16 h-16 z"/><path d="M200 168 l8 16 h-16 z"/><path d="M88 150 l8 16 h-16 z"/>
+      </g>
+      <g font-family="IBM Plex Mono,monospace" font-size="11" font-weight="700" fill="var(--cone)" text-anchor="middle">
+        <text x="312" y="182">1</text><text x="200" y="200">2</text><text x="88" y="182">3</text>
+      </g>
+
+      <defs>
+        <marker id="shot" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+          <path d="M1 1 L11 6 L1 11 z" fill="var(--pitch)"/></marker>
+        <marker id="home" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+          <path d="M1 1 L11 6 L1 11 z" fill="var(--muted)"/></marker>
+      </defs>
+
+      <!-- the shot, from cone 1 across the keeper to the far post -->
+      <circle cx="312" cy="140" r="6" fill="#fff" stroke="var(--ink)" stroke-width="1.5"/>
+      <path d="M305 133 L 175 46" fill="none" stroke="var(--pitch)" stroke-width="2.6"
+            stroke-linecap="round" marker-end="url(#shot)"/>
+
+      <!-- the way home: wide, outside the shot -->
+      <path d="M232 44 C 300 40, 368 58, 372 130 C 374 178, 360 200, 340 212" fill="none"
+            stroke="var(--muted)" stroke-width="2" stroke-dasharray="6 6" stroke-linecap="round"
+            marker-end="url(#home)"/>
+
+      <!-- the queue behind cone 1 -->
+      <g>
+        <g><ellipse cx="312" cy="196" rx="14" ry="7.5" fill="var(--pitch)"/><circle cx="312" cy="196" r="7.5" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.4"/></g>
+        <g><ellipse cx="312" cy="220" rx="14" ry="7.5" fill="var(--pitch)"/><circle cx="312" cy="220" r="7.5" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.4"/></g>
+        <g><ellipse cx="312" cy="244" rx="14" ry="7.5" fill="var(--pitch)"/><circle cx="312" cy="244" r="7.5" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.4"/></g>
+      </g>
+
+      <text x="118" y="76" font-family="IBM Plex Mono,monospace" font-size="10"
+            font-weight="700" letter-spacing="1" fill="var(--pitch)">FAR POST</text>
+      <text x="236" y="118" font-family="IBM Plex Mono,monospace" font-size="10"
+            font-weight="700" letter-spacing="1" fill="var(--muted)">THE WAY BACK</text>
+    </svg>
+    <figcaption>The cone moves each round: right, then centre, then left.<span>The way back is
+    always outside the line of the shot &mdash; when the cone moves, the road moves with it.</span></figcaption>
+  </figure>
+
+  <p class="rule"><b>The rule that makes it safe:</b> come back the wide way, never across the
+  shot.</p>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="sechead"><span class="n">2</span><h2>How It Runs</h2></div>
+  <ol>
+    <li><b>First player starts in goal.</b> Everybody else is in the line.</li>
+    <li><b>Next player shoots</b> from the cone.</li>
+    <li><b>The shooter runs straight into goal.</b> They are the new goalie, immediately.</li>
+    <li><b>The old goalie collects the ball</b> and takes it back to the line, the wide way.</li>
+    <li><b>The next shooter is already going.</b> They do not wait for anybody.</li>
+  </ol>
+  <p class="note">It does not stop. By the time a shot is taken, the next ball is on the cone.</p>
+
+  <div class="ex">
+    <div class="top"><span class="badge two">Scoring</span><h4>Keep your own, out loud</h4></div>
+    <ul>
+      <li><b>Goal = 1 point.</b></li>
+      <li><b>Save = 1 point</b>, to the goalie.</li>
+      <li><b>Miss = nothing</b>, for anybody.</li>
+      <li><b>Yell your total every time it changes.</b> <i>&ldquo;Four!&rdquo;</i> Nobody is
+      checking, but everybody hears it.</li>
+      <li><b>Forgot your score? You are on zero.</b></li>
+    </ul>
+    <p class="call">First to five wins the round.</p>
+  </div>
+</div></section>
+
+<section id="rounds"><div class="wrap">
+  <div class="sechead"><span class="n">3</span><h2>Three Rounds, Three Angles</h2></div>
+  <p class="lede-p">Everyone back to zero, the cone moves, and go again. Same drill &mdash; what
+  changes is where the goal is from where you are standing.</p>
+  <div class="goals">
+    <div class="goal"><span class="n">1</span><span class="t">Right side<br>far post is the left one</span></div>
+    <div class="goal"><span class="n">2</span><span class="t">Centre<br>both corners open</span></div>
+    <div class="goal"><span class="n">3</span><span class="t">Left side<br>far post is the right one</span></div>
+  </div>
+</div></section>
+
+<section id="modifiers"><div class="wrap">
+  <div class="sechead"><span class="n">4</span><h2>Modifiers</h2></div>
+  <div class="modifiers">
+    <div class="group easier"><span class="lab">Easier</span><ul>
+      <li>Move the cone in to eight yards.</li>
+      <li>No score at all for the first round &mdash; just the loop.</li>
+      <li>One ball, until the loop is understood. Slower, and that is fine the first time.</li>
+    </ul></div>
+    <div class="group harder"><span class="lab">Harder</span><ul>
+      <li>Move the cone back.</li>
+      <li><b>One touch to set it, then shoot.</b> Two touches only.</li>
+      <li>The goalie has to <b>throw the ball to the next shooter</b> instead of carrying it.</li>
+      <li>Weak foot round.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="shout"><div class="wrap">
+  <div class="sechead"><span class="n">5</span><h2>What You Shout</h2></div>
+  <div class="cues">
+    <span>&ldquo;Pass it in!&rdquo;</span><span>&ldquo;Which post?&rdquo;</span>
+    <span>&ldquo;Far post!&rdquo;</span><span>&ldquo;Be big!&rdquo;</span>
+    <span>&ldquo;Next!&rdquo;</span>
+  </div>
+  <p class="footnote">&ldquo;Far post&rdquo; belongs to rounds 1 and 3. From the middle there
+  are two of them.</p>
+</div></section>
+
+<section id="learn"><div class="wrap">
+  <div class="sechead"><span class="n">6</span><h2>What Did We Learn</h2></div>
+  <p class="lede-p">At the water break, not on the grass.</p>
+  <ul>
+    <li>Which was easier today, scoring or saving?</li>
+    <li>Where did the goals go in &mdash; high or low? Middle or corner?</li>
+    <li>The goalies who saved a lot &mdash; what were they doing?</li>
+    <li>What happened when somebody blasted it?</li>
+    <li>Which was easier, shooting from the side or from the middle? Why?</li>
+    <li>Saturday: you are one on one with their goalie. What are you doing with it?</li>
+  </ul>
+</div></section>
+
+<!-- ══════════ THE DIVIDE ══════════ -->
+<div class="wrap"><div class="divide">
+  <span class="t">Why it works</span>
+  <span class="d">Everything above is what you need on the grass. Below is the thinking
+  behind it &mdash; read it once before the session, not during.</span>
+</div></div>
+
+<section id="why"><div class="wrap">
+  <div class="sechead"><h2>Why It Works</h2></div>
+  <div class="says">
+    <div class="say big"><span class="title">Two balls is the engine</span>
+      <p class="after">One ball means the whole group waits for a ball to be fetched, and a
+      fetching queue is where a drill dies. With two, the collecting and the shooting happen at
+      the same time and nobody is watching anybody.</p></div>
+    <div class="say"><span class="title">Everybody keeps goal, every cycle</span>
+      <p class="after">This is the only shape that gives ten children keeper reps in ten minutes.
+      A goalkeeping drill with one goalie is a drill for one child and an audience of nine.</p></div>
+    <div class="say"><span class="title">The score keeps itself</span>
+      <p class="after">A number held in a head and yelled out is not refereed by anybody &mdash;
+      and there is one of you and ten of them. Yelling it is the part that makes it work: a quiet
+      score can be invented, a loud one gets corrected by the kid who was watching.</p></div>
+    <div class="say"><span class="title">Three angles, not three of the same</span>
+      <p class="after">The reset already exists, so moving the cone costs nothing and turns a
+      repeat into a new problem. From the side, <i>far post</i> stops being a thing a coach says
+      and becomes the only sensible answer &mdash; the near post is where the goalie already is.
+      It is also the closest this drill gets to a real chance in a game, which almost never
+      arrives straight on.</p></div>
+    <div class="say"><span class="title">A save is worth the same as a goal</span>
+      <p class="after">Keeping goal is not the punishment for having shot. It is the other half
+      of the drill, worth the same point, which is also what stops the goalie being bored.</p></div>
+  </div>
+</div></section>
+
+<section id="notes"><div class="wrap">
+  <div class="sechead"><h2>Open Questions</h2></div>
+  <ul>
+    <li><b>Five points a round is a guess.</b> Ten was the first number and is probably right for
+    a single round &mdash; but three rounds of ten is the whole practice. Watch how long round 1
+    takes and set the rest from it.</li>
+    <li><b>The cone order starts with the hardest angle.</b> Centre is the easy one. Right, centre,
+    left sweeps across the field, which is easy to see and easy to run; centre first would be the
+    gentler teaching order. Untested either way.</li>
+    <li><b>A miss scores nothing, but a saved shot gives the goalie a point.</b> On paper that makes
+    missing better than testing the keeper. In practice they want to score &mdash; but watch for
+    the child who works it out.</li>
+    <li><b>Two goals needs two adults</b>, and that is the real limit on group size, not the drill.
+    Six to eight per goal; past that the line is the problem.</li>
+  </ul>
+</div></section>
+
+<footer><div class="wrap footline">Drill &middot; Lightning &middot; 10U<a class="back" href="./">&larr; All drills</a></div></footer>

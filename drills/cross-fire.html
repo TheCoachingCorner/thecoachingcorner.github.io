@@ -1,0 +1,251 @@
+<title>Cross-Fire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/document.css">
+<link rel="stylesheet" href="../assets/print.css">
+
+<header><div class="wrap">
+  <div class="topline"><p class="kicker">Drill</p>
+    <a class="back" href="./">&larr; All drills</a></div>
+  <h1>Cross-Fire</h1>
+  <p class="meta"><span><b>Serves</b> · Lesson 10 &mdash; Passing Fundamentals
+      <i>(no page yet)</i></span>
+    <span><b>8 minutes</b></span>
+    <span><b>8&ndash;12, all in at once</b></span></p>
+  <p class="meta"><span><b>Needs</b> · <b>three more cones than players</b>, one or two balls,
+    a circle 12 to 15 yards across</span></p>
+  <p class="tags" style="justify-content:flex-start;max-width:none;margin-top:14px">
+    <span class="tag accent">intro</span><span class="tag">passing</span></p>
+
+  <div class="callout">
+    <p class="label">The big idea</p>
+    <p class="lead"><span class="step">LOOK</span> <span class="sep">&rarr;</span>
+      <span class="step">PASS THROUGH</span> <span class="sep">&rarr;</span>
+      <span class="step">MOVE</span></p>
+    <p class="aside">Never to your neighbour, so the ball has to cross the middle &mdash; and
+    so does everybody else.</p>
+  </div>
+</div></header>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     ABOVE THE DIVIDE — what you need standing on grass, and nothing else.
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<section id="set-up"><div class="wrap">
+  <div class="sechead"><span class="n">1</span><h2>Set Up</h2></div>
+  <p class="lede-p">A ring of cones <b>12 to 15 yards across</b>, one player on a cone.
+  <b>Leave three cones empty</b> &mdash; that is what there is to move to, and without them
+  nobody can go anywhere.</p>
+
+  <figure class="wide-fig">
+    <svg viewBox="0 0 400 330" role="img" aria-label="Seen from above. Twelve cones in a ring about twelve yards across. Nine of them have a player standing on them and three are empty. Two balls are being passed straight across the middle of the circle, their paths crossing. A dashed arrow shows a player who has just passed running round to one of the empty cones.">
+      <circle cx="200" cy="170" r="122" fill="var(--grass)"/>
+      <circle cx="200" cy="170" r="122" fill="none" stroke="var(--line)" stroke-width="2" stroke-dasharray="4 7"/>
+
+      <defs>
+        <marker id="cf-pass" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M1 1 L11 6 L1 11 z" fill="var(--pitch)"/></marker>
+        <marker id="cf-run" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M1 1 L11 6 L1 11 z" fill="var(--cone)"/></marker>
+      </defs>
+
+      <!-- two balls crossing the middle -->
+      <path d="M254 82 L 146 258" fill="none" stroke="var(--pitch)" stroke-width="2.6"
+            stroke-linecap="round" marker-end="url(#cf-pass)"/>
+      <path d="M102 122 L 298 218" fill="none" stroke="var(--pitch)" stroke-width="2.6"
+            stroke-linecap="round" marker-end="url(#cf-pass)"/>
+      <circle cx="222" cy="134" r="6" fill="#fff" stroke="var(--ink)" stroke-width="1.6"/>
+      <circle cx="176" cy="158" r="6" fill="#fff" stroke="var(--ink)" stroke-width="1.6"/>
+
+      <!-- the passer running round to an open cone -->
+      <path d="M272 78 C 306 92, 324 122, 322 162" fill="none" stroke="var(--cone)"
+            stroke-width="2.2" stroke-dasharray="6 5" stroke-linecap="round" marker-end="url(#cf-run)"/>
+
+      <!-- cones: twelve positions -->
+      <g fill="var(--cone)">
+        <path d="M200 42 l7 14 h-14 z"/><path d="M260 58 l7 14 h-14 z"/>
+        <path d="M304 102 l7 14 h-14 z"/><path d="M320 162 l7 14 h-14 z"/>
+        <path d="M304 222 l7 14 h-14 z"/><path d="M260 266 l7 14 h-14 z"/>
+        <path d="M200 282 l7 14 h-14 z"/><path d="M140 266 l7 14 h-14 z"/>
+        <path d="M96 222 l7 14 h-14 z"/><path d="M80 162 l7 14 h-14 z"/>
+        <path d="M96 102 l7 14 h-14 z"/><path d="M140 58 l7 14 h-14 z"/>
+      </g>
+
+      <!-- players: nine of the twelve. cones at 3, 9 and 6 o'clock area left open -->
+      <g fill="var(--pitch)" stroke="var(--ink)" stroke-width="2.2">
+        <circle cx="200" cy="40" r="12"/><circle cx="260" cy="56" r="12"/>
+        <circle cx="304" cy="100" r="12"/>
+        <circle cx="304" cy="220" r="12"/><circle cx="260" cy="264" r="12"/>
+        <circle cx="140" cy="264" r="12"/>
+        <circle cx="96" cy="220" r="12"/><circle cx="96" cy="100" r="12"/>
+        <circle cx="140" cy="56" r="12"/>
+      </g>
+
+      <text x="340" y="186" font-family="IBM Plex Mono,monospace" font-size="10"
+            font-weight="700" letter-spacing="1" fill="var(--cone)">OPEN</text>
+      <text x="200" y="312" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10"
+            font-weight="700" letter-spacing="1" fill="var(--cone)">OPEN</text>
+      <text x="200" y="20" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10"
+            font-weight="700" letter-spacing="1" fill="var(--pitch)">NEVER TO YOUR NEIGHBOUR</text>
+    </svg>
+    <figcaption>Three cones with nobody on them.<span>Pass across, then go find one. Without the
+    spare cones there is nowhere to move to and it is just a passing circle.</span></figcaption>
+  </figure>
+</div></section>
+
+<section id="rule"><div class="wrap">
+  <div class="sechead"><span class="n">2</span><h2>The Only Rule</h2></div>
+  <p class="rule"><b>Pass across. Never to your neighbour.</b></p>
+  <p class="note">Your neighbour is the cone either side of you. Everything else is fair game,
+  and the ball has to cross the middle to get there. <b>After you pass, go to an open cone.</b></p>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="sechead"><span class="n">3</span><h2>How It Runs</h2></div>
+  <ol>
+    <li><b>One ball.</b> Pass across, not to your neighbour. Nobody moves yet.</li>
+    <li><b>Add the move.</b> Pass, then go find an open cone.</li>
+    <li><b>Two balls.</b> Now they have to look before they pass <i>and</i> before they run.</li>
+    <li><b>The challenge</b> &mdash; <i>&ldquo;how many passes can we make in thirty
+    seconds?&rdquo;</i> <b>Count out loud, everybody.</b> Play it twice and try to beat the
+    first number.</li>
+  </ol>
+  <p class="note">Ball out of the circle? <b>Whoever is nearest grabs it and carries on.</b> Do
+  not restart, do not stop to explain. A warm-up that keeps stopping is not warming anybody
+  up.</p>
+</div></section>
+
+<section id="hit"><div class="wrap">
+  <div class="sechead"><span class="n">4</span><h2>When Somebody Gets Hit</h2></div>
+  <p class="lede-p">Balls cross the middle and so do people. It will happen.</p>
+  <p class="rule"><b>Ball hits a runner? Five toe taps &mdash; both of you.</b></p>
+  <p class="note">Foot on top of the ball, tap tap tap, standing still. Five seconds and back in.
+  <b>Both of you, every time</b> &mdash; the passer did not look and the runner did not look, so
+  there is nothing to argue about and nobody to blame. It also stops it being a punishment for
+  passing hard, which would only teach them not to pass.</p>
+</div></section>
+
+<section id="monkey"><div class="wrap">
+  <div class="sechead"><span class="n">5</span><h2>Monkey In The Middle</h2></div>
+  <p class="lede-p">Two rounds in, one player steps into the circle. Nothing else changes
+  &mdash; same cones, same rule, same movement.</p>
+  <p class="rule"><b>Touch the ball and you are out.</b> The monkey takes the passer&rsquo;s cone,
+  and whoever played that pass goes in the middle.</p>
+
+  <div class="goals" style="margin-top:20px">
+    <div class="goal"><span class="n">1</span><span class="t">One monkey<br>swap on every touch</span></div>
+    <div class="goal"><span class="n">2</span><span class="t">Two monkeys<br>once one is too easy</span></div>
+  </div>
+  <p class="note" style="margin-top:16px">No timer and no score &mdash; the swap is the whole
+  game. The circle is now doing the real job: they are looking <i>through</i> pressure instead of
+  passing around it.</p>
+  <p class="footnote">Coaches: this is a rondo. Never say that word to them &mdash; they already
+  know this game.</p>
+</div></section>
+
+<section id="modifiers"><div class="wrap">
+  <div class="sechead"><span class="n">6</span><h2>Modifiers</h2></div>
+  <div class="modifiers">
+    <div class="group easier"><span class="lab">Easier</span><ul>
+      <li>One ball the whole time.</li>
+      <li>Bigger circle &mdash; longer passes, thinner traffic.</li>
+      <li>Walk the movement instead of running it.</li>
+    </ul></div>
+    <div class="group harder"><span class="lab">Harder</span><ul>
+      <li>Three balls.</li>
+      <li><b>Two touches only</b> &mdash; one to control, one to pass.</li>
+      <li><b>Call their name before you pass it.</b></li>
+      <li>Weak foot only.</li>
+      <li>Shrink the circle.</li>
+    </ul></div>
+    <div class="group"><span class="lab">Instead of toe taps</span><ul>
+      <li>The team's count goes back five. Nobody pays anything on their own, and the count is
+      already the thing they care about.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="shout"><div class="wrap">
+  <div class="sechead"><span class="n">7</span><h2>What You Shout</h2></div>
+  <div class="cues">
+    <span>&ldquo;Head up!&rdquo;</span><span>&ldquo;Across, not next door!&rdquo;</span>
+    <span>&ldquo;Find a space!&rdquo;</span><span>&ldquo;Count it!&rdquo;</span>
+  </div>
+</div></section>
+
+<section id="learn"><div class="wrap">
+  <div class="sechead"><span class="n">8</span><h2>What Did We Learn</h2></div>
+  <p class="lede-p">At the water break, not on the grass.</p>
+  <ul>
+    <li>What made a pass easy to receive?</li>
+    <li>When there were two balls, what did you have to do differently?</li>
+    <li>With a monkey in the middle &mdash; where did the open player keep turning up?</li>
+    <li>What happened when you passed without looking first?</li>
+    <li>Saturday: you get the ball with your back to their goal. What is the first thing you
+    do?</li>
+  </ul>
+</div></section>
+
+<!-- ══════════ THE DIVIDE ══════════ -->
+<div class="wrap"><div class="divide">
+  <span class="t">Why it works</span>
+  <span class="d">Everything above is what you need on the grass. Below is the thinking
+  behind it &mdash; read it once before the session, not during.</span>
+</div></div>
+
+<section id="why"><div class="wrap">
+  <div class="sechead"><h2>Why It Works</h2></div>
+  <div class="says">
+    <div class="say big"><span class="title">More cones than players is the whole design</span>
+      <p class="after">With one cone each there is nowhere to go, so the movement half of the
+      drill quietly disappears and it becomes a passing circle. Three spare cones means there is
+      always somewhere to be, and choosing <i>which</i> open cone is a decision they make every
+      few seconds without being asked to.</p></div>
+    <div class="say"><span class="title">Not-your-neighbour forces the head up</span>
+      <p class="after">A pass to the person beside you can be made without looking, which is
+      exactly the habit we are trying not to build. Making the ball cross the middle means the
+      passer has to find somebody first.</p></div>
+    <div class="say"><span class="title">The second ball is what makes it worth doing</span>
+      <p class="after">One ball is a passing drill where nine children stand still. Two means
+      everybody is watching all the time, because the one you cannot see is the one that hits
+      you.</p></div>
+    <div class="say"><span class="title">The count belongs to the team</span>
+      <p class="after">A child who mis-passes has not lost anything of their own &mdash; and
+      everybody hears the number, so nobody has to referee it.</p></div>
+    <div class="say"><span class="title">The forfeit is deliberately tiny and shared</span>
+      <p class="after">Five toe taps is five seconds, done standing up so nobody is on the ground
+      getting trodden on, and it is a touch on the ball rather than a punishment exercise. Making
+      both players do it removes the argument about whose fault it was, which is the only way a
+      rule like this survives contact with ten nine-year-olds.</p></div>
+    <div class="say"><span class="title">Swapping on a touch runs itself</span>
+      <p class="after">No timer to watch and nothing to keep score of &mdash; the monkey gets out
+      by earning it, and the player who lost the ball goes in. It also puts the consequence on the
+      pass rather than on the defending, which is the half of it we are actually trying to
+      improve.</p></div>
+    <div class="say"><span class="title">The name does the explaining</span>
+      <p class="after"><i>Monkey in the middle</i> is a game they have played since they were
+      five, so the rules arrive for free and nobody has to be told what a rondo is. Same circle,
+      same rule, same movement &mdash; one child steps in and every pass has to be found through
+      somebody.</p></div>
+  </div>
+</div></section>
+
+<section id="notes"><div class="wrap">
+  <div class="sechead"><h2>Open Questions</h2></div>
+  <ul>
+    <li><b>Three spare cones is a guess.</b> Two might be enough with one ball; four might be
+    needed with three. Watch whether anybody is standing still with nowhere to go.</li>
+    <li><b>Twelve yards across for 10U.</b> Long enough to need a proper pass, short enough that
+    a weak one still arrives. Untested.</li>
+    <li><b>Whether the toe-tap forfeit is needed at all.</b> It might be funnier than it is
+    useful, and the team-count version may do the same job with less stopping.</li>
+    <li><b>Whether the monkeys belong in the warm-up slot.</b> Once there is somebody in the
+    middle it is a rondo, and it may want its own place in the session rather than the first
+    eight minutes.</li>
+  </ul>
+</div></section>
+
+<footer><div class="wrap footline">Drill &middot; Cross-Fire &middot; 10U<a class="back" href="./">&larr; All drills</a></div></footer>

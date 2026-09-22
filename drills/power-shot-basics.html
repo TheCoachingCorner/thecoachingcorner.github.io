@@ -1,0 +1,281 @@
+<title>Power Shot Basics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/document.css">
+<link rel="stylesheet" href="../assets/print.css">
+
+<header><div class="wrap">
+  <div class="topline"><p class="kicker">Drill</p>
+    <a class="back" href="./">&larr; All drills</a></div>
+  <h1>Power Shot Basics</h1>
+  <p class="meta"><span><b>Serves</b> ·
+      <a href="../lessons/14-shooting-mechanics/">Lesson 14 &mdash; Shooting Mechanics</a></span>
+    <span><b>15 minutes</b></span>
+    <span><b>any number</b></span></p>
+  <p class="meta"><span><b>Needs</b> · a ball each, two cone lines far enough apart to take
+    half a field apart, a third line five big steps behind the start, a goal for the
+    <a href="lightning.html">Lightning</a> finish</span></p>
+  <p class="tags" style="justify-content:flex-start;max-width:none;margin-top:14px">
+    <span class="tag accent">intro</span><span class="tag">shooting</span></p>
+
+  <div class="callout">
+    <p class="label">The big idea</p>
+    <p class="lead"><span class="step">KICK</span> <span class="sep">&rarr;</span>
+      <span class="step">WALK</span> <span class="sep">&rarr;</span>
+      <span class="step">GET ACROSS</span></p>
+    <p class="aside">Everybody kicks at once, on the call. The walk to your ball is how you
+    get it back.</p>
+  </div>
+</div></header>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     ABOVE THE DIVIDE — what you need standing on grass, and nothing else.
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<section id="set-up"><div class="wrap">
+  <div class="sechead"><span class="n">1</span><h2>Set Up</h2></div>
+  <p class="lede-p">Two cone lines, <b>about half a field apart</b> &mdash; that is
+  <b>three to five kicks</b> for most of them. The team spreads along one of them, one ball
+  each, <b>five big steps apart</b>, all facing the same way.</p>
+
+  <figure class="wide-fig">
+    <svg viewBox="0 0 400 240" role="img" aria-label="Seen from above. A line of cones down the left side with five players spread along it, a ball in front of each. Each player has their own lane running straight to a second cone line down the right side. One lane shows the ball moving across in a series of hops, one per kick.">
+      <rect x="10" y="20" width="380" height="204" fill="var(--grass)"/>
+
+      <!-- the two cone lines -->
+      <g fill="var(--cone)">
+        <path d="M36 34 l7 14 h-14 z"/><path d="M36 82 l7 14 h-14 z"/>
+        <path d="M36 130 l7 14 h-14 z"/><path d="M36 178 l7 14 h-14 z"/>
+        <path d="M36 210 l7 14 h-14 z"/>
+      </g>
+      <g fill="var(--cone)">
+        <path d="M368 34 l7 14 h-14 z"/><path d="M368 82 l7 14 h-14 z"/>
+        <path d="M368 130 l7 14 h-14 z"/><path d="M368 178 l7 14 h-14 z"/>
+        <path d="M368 210 l7 14 h-14 z"/>
+      </g>
+
+      <defs>
+        <marker id="kick" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+          <path d="M1 1 L11 6 L1 11 z" fill="var(--muted)"/></marker>
+      </defs>
+
+      <!-- four quiet lanes -->
+      <g fill="none" stroke="var(--muted)" stroke-width="1.8" stroke-dasharray="5 6"
+         stroke-linecap="round" opacity=".55" marker-end="url(#kick)">
+        <path d="M88 44 L 350 44"/>
+        <path d="M88 92 L 350 92"/>
+        <path d="M88 188 L 350 188"/>
+      </g>
+
+      <!-- the lane that shows the hops, one arc per kick -->
+      <g fill="none" stroke="var(--pitch)" stroke-width="2.4" stroke-linecap="round">
+        <path d="M88 140 C 112 114, 151 114, 175 140"/>
+        <path d="M175 140 C 199 114, 238 114, 262 140"/>
+        <path d="M262 140 C 286 114, 326 114, 350 140" marker-end="url(#kick)"/>
+      </g>
+      <g fill="#fff" stroke="var(--ink)" stroke-width="1.4">
+        <circle cx="175" cy="140" r="5"/><circle cx="262" cy="140" r="5"/>
+      </g>
+
+      <!-- players on the line, ball in front of each -->
+      <g>
+        <g><ellipse cx="62" cy="44" rx="15" ry="8" fill="var(--pitch)"/><circle cx="62" cy="44" r="8" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.5"/></g>
+        <g><ellipse cx="62" cy="92" rx="15" ry="8" fill="var(--pitch)"/><circle cx="62" cy="92" r="8" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.5"/></g>
+        <g><ellipse cx="62" cy="140" rx="15" ry="8" fill="var(--pitch)"/><circle cx="62" cy="140" r="8" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.5"/></g>
+        <g><ellipse cx="62" cy="188" rx="15" ry="8" fill="var(--pitch)"/><circle cx="62" cy="188" r="8" fill="#D3AC80" stroke="var(--ink)" stroke-width="1.5"/></g>
+      </g>
+      <g fill="#fff" stroke="var(--ink)" stroke-width="1.5">
+        <circle cx="82" cy="44" r="6"/><circle cx="82" cy="92" r="6"/>
+        <circle cx="82" cy="140" r="6"/><circle cx="82" cy="188" r="6"/>
+      </g>
+
+      <text x="12" y="14" font-family="IBM Plex Mono,monospace" font-size="10"
+            font-weight="700" letter-spacing="1" fill="var(--cone)">ALL KICK ON THE CALL</text>
+      <text x="252" y="114" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10"
+            font-weight="700" letter-spacing="1" fill="var(--pitch)">3&ndash;5 KICKS ACROSS</text>
+    </svg>
+    <figcaption>A lane each, and the far line is where you are standing next.<span>The walk
+    to your ball is the only ball-collecting in this drill.</span></figcaption>
+  </figure>
+
+  <p class="rule"><b>The rule that makes it safe:</b> nobody kicks until the call, nobody walks
+  until the call. Everyone faces one way, so there is never anybody downfield.</p>
+
+  <div class="says" style="margin-top:20px">
+    <div class="say big"><span class="title">The back line</span>
+      <span class="quote">&ldquo;Got across in two? You start from the back line.&rdquo;</span>
+      <p class="after">A third row of cones, five big steps behind the start. One or two of them
+      will cross half a field in two kicks &mdash; they move themselves back, and nobody has to be
+      told they are the strong kicker or left standing at the far line waiting for the rest.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="sechead"><span class="n">2</span><h2>How It Runs</h2></div>
+  <p class="lede-p">Three rounds. <b>A round is one crossing</b>, and each one adds one thing
+  to the kick and one notch of power.</p>
+
+  <ol>
+    <li>Explain the one new thing. <b>Under a minute.</b></li>
+    <li><b>Everyone kicks on the call.</b> Nobody kicks between calls.</li>
+    <li><b>&ldquo;Go get it&rdquo;</b> &mdash; everyone walks to their own ball and waits there.</li>
+    <li>Call again, and again, until the last player is over the far line.</li>
+    <li>Turn around. The next round comes back the other way.</li>
+  </ol>
+
+  <div class="ex">
+    <div class="top"><span class="badge">Round 1</span><h4>Hammer foot &middot; half power</h4></div>
+    <ul>
+      <li>Everybody press the hard bone above your big toe. <b>That is what hits the ball.</b></li>
+      <li>Toes down, ankle locked. Hard foot.</li>
+      <li><b>Half power.</b> You cannot feel where the ball hit your foot when you are swinging
+      as hard as you can.</li>
+    </ul>
+  </div>
+
+  <div class="ex">
+    <div class="top"><span class="badge">Round 2</span><h4>Plant foot &middot; three-quarter power</h4></div>
+    <ul>
+      <li>Other foot <b>next to the ball</b>, pointing where the ball is going.</li>
+      <li>Head down while you kick.</li>
+    </ul>
+  </div>
+
+  <div class="ex">
+    <div class="top"><span class="badge two">Round 3</span><h4>Swing through &middot; full power</h4></div>
+    <ul>
+      <li>Sandcastle right behind the ball. Kick the top off it.</li>
+      <li>Finish with your foot out in front. Let the kick pull you forward.</li>
+      <li><b>Now</b> they may hit it as hard as they like.</li>
+      <li><b>Count your kicks on this one.</b> That number is the one to beat next time.</li>
+    </ul>
+  </div>
+
+  <div class="ex">
+    <div class="top"><span class="badge two">Finish</span><h4>Lightning &middot; five minutes</h4></div>
+    <p>The fun part, and where the kicking turns into shooting. Do not cut it for one more
+    crossing.</p>
+    <ul>
+      <li>Go straight into <a href="lightning.html">Lightning</a> &mdash; one goal, two balls,
+      shoot and then go in goal.</li>
+      <li><b>One round only</b>, cone in the centre, <b>first to five</b>. The full three-round
+      version with the cone moving across the field is its own drill.</li>
+      <li>Everything they just built is in it: laces, hard foot, plant foot, swing through
+      &mdash; now at a goal with somebody in it.</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="modifiers"><div class="wrap">
+  <div class="sechead"><span class="n">3</span><h2>Modifiers</h2></div>
+  <div class="modifiers">
+    <div class="group easier"><span class="lab">Easier</span><ul>
+      <li>Move the lines closer, so a crossing is two or three kicks.</li>
+      <li>Half power the whole way through.</li>
+      <li>No step into it &mdash; stand still and kick.</li>
+      <li>Two rounds instead of three. Round 3 keeps until next time.</li>
+    </ul></div>
+    <div class="group harder"><span class="lab">Harder</span><ul>
+      <li>Move the lines further apart, so a crossing is six or seven.</li>
+      <li>Two steps of run-up.</li>
+      <li><b>One touch to set the ball, then kick it.</b> This is the real thing.</li>
+      <li>A round with the other foot.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="shout"><div class="wrap">
+  <div class="sechead"><span class="n">4</span><h2>What You Shout</h2></div>
+  <div class="cues">
+    <span>&ldquo;Half power!&rdquo;</span><span>&ldquo;Toes down!&rdquo;</span>
+    <span>&ldquo;Hard foot!&rdquo;</span><span>&ldquo;Next to the ball!&rdquo;</span>
+    <span>&ldquo;Head down!&rdquo;</span><span>&ldquo;Kick through it!&rdquo;</span>
+  </div>
+</div></section>
+
+<section id="learn"><div class="wrap">
+  <div class="sechead"><span class="n">5</span><h2>What Did We Learn</h2></div>
+  <p class="lede-p">At the water break, not on the grass.</p>
+  <ul>
+    <li>Which part of your foot are we kicking with? Show me where.</li>
+    <li>What happens when your foot goes floppy?</li>
+    <li>Where does your other foot go?</li>
+    <li>Which one of your kicks felt the best today &mdash; what did you do differently on that
+    one?</li>
+    <li>On Saturday you get the ball a long way from their goal and nobody is near you. What
+    are you doing?</li>
+  </ul>
+</div></section>
+
+<!-- ══════════ THE DIVIDE ══════════ -->
+<div class="wrap"><div class="divide">
+  <span class="t">Why it works</span>
+  <span class="d">Everything above is what you need on the grass. Below is the thinking
+  behind it &mdash; read it once before the session, not during.</span>
+</div></div>
+
+<section id="why"><div class="wrap">
+  <div class="sechead"><h2>Why It Works</h2></div>
+
+  <div class="says">
+    <div class="say big"><span class="title">The power comes last</span>
+      <span class="quote">&ldquo;Half power.&rdquo;</span>
+      <p class="after">Tell a nine-year-old they are doing power shots and the first kick is
+      everything they have &mdash; at which point nothing can be felt and nothing can be
+      corrected. Half speed in round 1 is not a warm-up; it is the only speed at which a kid
+      notices where the ball met their foot. Same order as the lesson: placement, technique,
+      power.</p></div>
+    <div class="say"><span class="title">One new thing a round</span>
+      <p class="after">Round 2 does not stop being about the hard foot. It just stops being the
+      thing we are talking about. Five rounds for the lesson&rsquo;s five parts would mean five
+      explanations, and the rule is two minutes of talking a session.</p></div>
+    <div class="say"><span class="title">Eyes on the ball is not a round</span>
+      <p class="after">It cannot really be drilled &mdash; you watch who is looking up at the far
+      line and shout <i>&ldquo;head down!&rdquo;</i>. A correction costs nothing to teach. A round
+      costs a minute of standing still.</p></div>
+    <div class="say"><span class="title">A crossing, not a count</span>
+      <p class="after">It ends on its own, so nobody is counting for the coach. It gives every kid
+      a score they keep themselves &mdash; <i>how many kicks?</i> &mdash; and a good strike is the
+      only way to improve it. And it is a race against your own last number, not against whoever
+      kicks furthest, so the child at the back still has something to win.</p></div>
+    <div class="say"><span class="title">Only round 3 is counted</span>
+      <p class="after">Rounds 1 and 2 are at half and three-quarter power on purpose, so their
+      numbers mean nothing. Comparing them to round 3 would teach the wrong lesson &mdash; that
+      swinging harder is what improved it.</p></div>
+    <div class="say"><span class="title">Empty goal on purpose</span>
+      <p class="after">A keeper makes them aim, and aiming is the other shot. Today is about
+      hitting it cleanly.</p></div>
+  </div>
+
+  <p class="footnote">Three formations were on the table. Shooting at the goal throughout gives the
+  best feedback, but one goal cannot take ten kids kicking at once and ten balls behind the net is
+  two minutes of fetching for thirty seconds of kicking. Pairs kicking to each other is fastest,
+  but a ball hit with full laces at a nine-year-old is a ball they have to deal with, so it becomes
+  a receiving drill. One line, everybody kicks, everybody walks: the walk is the retrieval, and it
+  doubles as the rest that makes five hard kicks in a row survivable. The goal at the end buys back
+  the feedback the lines cannot give.</p>
+</div></section>
+
+<section id="notes"><div class="wrap">
+  <div class="sechead"><h2>Open Questions</h2></div>
+  <ul>
+    <li><b>Half a field is a guess.</b> Three to five kicks is the rule it is trying to produce.
+    Watch round 1 &mdash; if most are across in two at half power, move the far line back rather
+    than sending everybody to the back line.</li>
+    <li><b>Whether one back line is enough.</b> If the spread in the team is wide, the strongest
+    may cross in two from the back line as well. A second back line is the obvious answer, and
+    also five more cones and a thing to explain.</li>
+    <li><b>Whether a crossing is too many kicks.</b> Watch round 3: if the last two kicks look
+    worse than the first two, the lines are too far apart, not the coaching failing.</li>
+    <li><b>Everyone kicks on the call, but they end up at different distances.</b> A player behind
+    the pack is kicking toward players ahead of them in neighbouring lanes. Lanes five steps wide
+    and a ball on the ground make that fine in theory. Watch it the first time.</li>
+    <li><b>Whether the goal finish wants a keeper</b> once they can actually strike it. Not the
+    first time through.</li>
+  </ul>
+</div></section>
+
+<footer><div class="wrap footline">Drill &middot; Power Shot Basics &middot; 10U<a class="back" href="./">&larr; All drills</a></div></footer>
